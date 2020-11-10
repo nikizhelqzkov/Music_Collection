@@ -12,7 +12,7 @@ private:
     std::string fullName;
     Date born;
     std::vector<std::string> typeMusic;
-    void copy(const User&);
+    void copy(const User &);
     //void erase();
 
 public:
@@ -22,16 +22,17 @@ public:
     User &operator=(const User &);
     ~User();
 
-    std::string getUsername()const;
-    std::string getPassword()const;
-    std::string getFullName()const;
-    Date getBornDate()const;
-    std::vector<std::string> getTypesOfMusic()const;
-    void setUsername(const std::string&);
-    void setPassword(const std::string&);
-    void setFullName(const std::string&);
-    void setBornDate(const Date&);
-    void setTypeMusic(const std::vector<std::string>&);
+    std::string getUsername() const;
+    std::string getPassword() const;
+    std::string getFullName() const;
+    Date getBornDate() const;
+    std::vector<std::string> getTypesOfMusic() const;
+    void setUsername(const std::string &);
+    void setPassword(const std::string &);
+    void setFullName(const std::string &);
+    void setBornDate(const Date &);
+    void setTypeMusic(const std::vector<std::string> &);
+    void addTypesOfMusic(const std::string&);
 };
 
 #endif

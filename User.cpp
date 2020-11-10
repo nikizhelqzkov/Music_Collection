@@ -1,12 +1,17 @@
 #include "User.h"
 
-User::User() : username(""), password(""), fullName(""), born(0, 0, 2020), typeMusic({})
+User::User()
+{
+}
+User::User(const std::string &_username, const std::string &_password, const std::string &_fullName, const Date &_born, const std::vector<std::string> &_typeMusic) 
+: username(_username), password(_password), fullName(_fullName), born(_born), typeMusic(_typeMusic)
 {
 }
 User::User(const User &other)
     : username(other.username), password(other.password), fullName(other.fullName), born(other.born), typeMusic(other.typeMusic)
 {
 }
+
 User::~User()
 {
 }
@@ -51,4 +56,7 @@ void User::setBornDate(const Date &_data)
 void User::setTypeMusic(const std::vector<std::string> &_data)
 {
     this->typeMusic = _data;
+}
+void User::addTypesOfMusic(const std::string& type){
+    this->typeMusic.push_back(type);
 }
