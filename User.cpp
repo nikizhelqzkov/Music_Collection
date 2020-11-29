@@ -3,12 +3,12 @@
 User::User()
 {
 }
-User::User(const std::string &_username, const std::string &_password, const std::string &_fullName, const Date &_born, const std::vector<std::string> &_typeMusic) 
-: username(_username), password(_password), fullName(_fullName), born(_born), typeMusic(_typeMusic)
+User::User(const std::string &_username, const std::string &_password, const std::string &_fullName, const Date &_born, const std::vector<std::string> &_genres) 
+: username(_username), password(_password), fullName(_fullName), born(_born), genres(_genres)
 {
 }
 User::User(const User &other)
-    : username(other.username), password(other.password), fullName(other.fullName), born(other.born), typeMusic(other.typeMusic)
+    : username(other.username), password(other.password), fullName(other.fullName), born(other.born), genres(other.genres)
 {
 }
 
@@ -21,7 +21,7 @@ void User::copy(const User &other)
     setPassword(other.password);
     setFullName(other.fullName);
     setBornDate(other.born);
-    setTypeMusic(other.typeMusic);
+    setGenres(other.genres);
 }
 User &User::operator=(const User &other)
 {
@@ -35,7 +35,7 @@ std::string User::getUsername() const { return this->username; }
 std::string User::getPassword() const { return this->password; }
 std::string User::getFullName() const { return this->fullName; }
 Date User::getBornDate() const { return this->born; }
-std::vector<std::string> User::getTypesOfMusic() const { return this->typeMusic; }
+std::vector<std::string> User::getTypesOfMusic() const { return this->genres; }
 
 void User::setUsername(const std::string &_data)
 {
@@ -53,10 +53,10 @@ void User::setBornDate(const Date &_data)
 {
     this->born = _data;
 }
-void User::setTypeMusic(const std::vector<std::string> &_data)
+void User::setGenres(const std::vector<std::string> &_data)
 {
-    this->typeMusic = _data;
+    this->genres = _data;
 }
 void User::addTypesOfMusic(const std::string& type){
-    this->typeMusic.push_back(type);
+    this->genres.push_back(type);
 }

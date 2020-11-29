@@ -11,7 +11,7 @@ private:
     std::string password;
     std::string fullName;
     Date born;
-    std::vector<std::string> typeMusic;
+    std::vector<std::string> genres;
     void copy(const User &);
     //void erase();
 
@@ -31,7 +31,7 @@ public:
     void setPassword(const std::string &);
     void setFullName(const std::string &);
     void setBornDate(const Date &);
-    void setTypeMusic(const std::vector<std::string> &);
+    void setGenres(const std::vector<std::string> &);
     void addTypesOfMusic(const std::string&);
 };
 
