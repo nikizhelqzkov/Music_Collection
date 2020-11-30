@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.h": "cpp",
         "cmath": "cpp",
         "concepts": "cpp",
         "cstddef": "cpp",
@@ -41,6 +42,9 @@
         "vector": "cpp",
         "deque": "cpp",
         "queue": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "cctype": "cpp",
+        "ctime": "cpp",
+        "string": "cpp"
     }
 }

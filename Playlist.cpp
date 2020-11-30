@@ -37,6 +37,10 @@ std::vector<Song> Playlist::getList() const
 }
 std::ostream &operator<<(std::ostream &out, const Playlist &playlist)
 {
+    if (playlist.name == "")
+    {
+        return out;
+    }
     out << "Playlist->Name->" << playlist.name << ";SongList->";
     for (auto &&element : playlist.list)
     {

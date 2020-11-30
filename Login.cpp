@@ -1,7 +1,6 @@
 #include "Login.h"
 
-
-bool Login::login(std::string username, std::string password)
+ bool Login::login(std::string username, std::string password)
 {
     std::ifstream input(username + ".txt");
     if (!input.is_open())
@@ -14,7 +13,7 @@ bool Login::login(std::string username, std::string password)
     std::getline(input, userPass, ';');
     return userPass == password;
 }
-void Login::userLogin()
+bool Login::userLogin()
 {
     std::cout << "WRITE YOUR USERNAME AND PASSWORD \n";
     std::string username;
@@ -28,9 +27,11 @@ void Login::userLogin()
     if (login(username, password))
     {
         std::cout << "Successful login\n";
+        return true;
     }
     else
     {
         std::cout << "Ivalid username or password\n";
+        return false;
     }
 }

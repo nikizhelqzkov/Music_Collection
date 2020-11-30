@@ -7,7 +7,7 @@
  private:
    static bool login(std::string username, std::string password);
  public:
-    static void userLogin();
+    static bool userLogin();
  };
  
  
