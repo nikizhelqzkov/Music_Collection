@@ -1,7 +1,7 @@
 #ifndef Song_INCLUDED
 #define Song_INCLUDED
 #include <string>
-
+#include <iostream>
 class Song
 {
 private:
@@ -31,6 +31,7 @@ public:
     std::string getAlbum() const;
     unsigned int getYear() const;
     double getRating() const;
+    friend std::ostream &operator<<(std::ostream &, const Song&);
 
 };
 

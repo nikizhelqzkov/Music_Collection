@@ -29,7 +29,6 @@ void Song::setRating(const double &rating)
 {
     this->rating = rating;
 }
-// if(!el)
 void Song::copy(const Song &other)
 {
     setTitle(other.title);
@@ -70,4 +69,9 @@ unsigned int Song::getYear() const
 double Song::getRating() const
 {
     return this->rating;
+}
+std::ostream &operator<<(std::ostream &out, const Song &song)
+{
+    out << "Song->Title->" << song.title << ";Author->" << song.author << ";Genre->" << song.genres << ";Album->" << song.album << ";Year->" << song.year << ";Rating->" << song.rating << ";";
+    return out;
 }

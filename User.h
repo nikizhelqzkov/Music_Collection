@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "Date.h"
-
+#include "Playlist.h"
 class User
 {
 private:
@@ -12,27 +12,29 @@ private:
     std::string fullName;
     Date born;
     std::vector<std::string> genres;
+    std::vector<Playlist> playlists;
     void copy(const User &);
-    //void erase();
 
 public:
     User();
-    User(const std::string &, const std::string &, const std::string &, const Date &, const std::vector<std::string> &);
+    User(const std::string &username, const std::string &password, const std::string &fullName, const Date &born, const std::vector<std::string> &genres, const std::vector<Playlist> &playlists);
     User(const User &);
     User &operator=(const User &);
     ~User();
-
     std::string getUsername() const;
     std::string getPassword() const;
     std::string getFullName() const;
     Date getBornDate() const;
-    std::vector<std::string> getTypesOfMusic() const;
+    std::vector<std::string> getGenres() const;
+    std::vector<Playlist> getPlaylists() const;
     void setUsername(const std::string &);
     void setPassword(const std::string &);
     void setFullName(const std::string &);
     void setBornDate(const Date &);
     void setGenres(const std::vector<std::string> &);
-    void addTypesOfMusic(const std::string&);
+    void setPlaylist(const std::vector<Playlist>&);
+    void addTypesOfMusic(const std::string &);
+    friend std::ostream &operator<<(std::ostream &, const User&);
 };
 
 #endif
