@@ -12,6 +12,7 @@ private:
     unsigned int year;
     double rating;
     void copy(const Song &);
+    //std::vector<double>ratings;
 
 public:
     Song() = delete;

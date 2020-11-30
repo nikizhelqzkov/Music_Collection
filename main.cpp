@@ -1,6 +1,10 @@
+// #include "User.cpp"
+// #include "Date.cpp"
+// #include "Playlist.cpp"
+// #include "Song.cpp"
 #include "User.h"
-#include <fstream>
-//g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp
+#include "Login.h"
+//g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp Login.cpp
 
 int main()
 {
@@ -14,11 +18,12 @@ int main()
     // User niki("nikizhelqzkov", "nikiumnikazdr", "Nikolay Zhelyazkov", Date(25, 6, 2000), v, p1);
     niki.setBornDate(Date(25, 7, 2001));
     niki.addTypesOfMusic("Pop");
-    std::cout << niki;
+    //std::cout << niki;
 
-    std::ofstream output(niki.getUsername() + ".txt");
-    output << niki;
-    output.close();
+    // std::ofstream output(niki.getUsername() + ".txt");
+    // output << niki;
+    // output.close();
+    Login::userLogin();
 
     return 0;
 }
