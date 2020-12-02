@@ -32,8 +32,8 @@ public:
     std::string getAlbum() const;
     unsigned int getYear() const;
     double getRating() const;
-    friend std::ostream &operator<<(std::ostream &, const Song&);
-
+    friend std::ostream &operator<<(std::ostream &, const Song &);
+    Song &read(std::istream &in);
 };
 
 #endif

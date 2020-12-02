@@ -75,3 +75,39 @@ std::ostream &operator<<(std::ostream &out, const Song &song)
     out << "Song->Title->" << song.title << ";Author->" << song.author << ";Genre->" << song.genres << ";Album->" << song.album << ";Year->" << song.year << ";Rating->" << song.rating << ";";
     return out;
 }
+Song &Song::read(std::istream &in)
+{
+    /*int res = 10 + username.size() + 11;
+    input.seekg(res);*/
+    in.seekg(13);
+    std::string _title;
+    std::getline(in, _title, ';');
+    int count = _title.size() + 13;
+    count += 9;
+    in.seekg(count);
+    std::string _author;
+    std::getline(in, _author, ';');
+    count += _author.size() + 8;
+    in.seekg(count);
+    std::string _genres;
+    std::getline(in, _genres, ';');
+    count += _genres.size() + 8;
+    in.seekg(count);
+    std::string _album;
+    std::getline(in, _album, ';');
+    count += _album.size() + 7;
+    in.seekg(count);
+    std::string _year;
+    std::getline(in, _year, ';');
+    count += _year.size() + 9;
+    in.seekg(count);
+    std::string _rating;
+    std::getline(in, _rating, ';');
+    this->setTitle(_title);
+    this->setAuthor(_author);
+    this->setGenres(_genres);
+    this->setAlbum(_album);
+    this->setYear(std::stoi(_year));
+    this->setRating(std::atof(_rating.c_str()));
+    return *this;
+}
