@@ -33,7 +33,8 @@ public:
     unsigned int getYear() const;
     double getRating() const;
     friend std::ostream &operator<<(std::ostream &, const Song &);
-    Song &read(std::istream &in);
+    int read(std::istream &in);
+    int readHelper(std::istream &in, int count);
 };
 
 #endif

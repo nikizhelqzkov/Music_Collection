@@ -41,10 +41,44 @@ std::ostream &operator<<(std::ostream &out, const Playlist &playlist)
     {
         return out;
     }
-    out << "Playlist->Name->" << playlist.name << ";SongList->";
+    out << "Playlist->Name->" << playlist.name << ";" << playlist.list.size() << ";SongList->";
     for (auto &&element : playlist.list)
     {
         out << element;
     }
     return out;
+}
+
+int Playlist::readHelper(std::istream &in, int count)
+{
+    count += 16;
+    std::string playlistName;
+    in.seekg(count);
+    std::getline(in, playlistName, ';');
+    if (!playlistName.empty())
+    {
+        count += playlistName.size() + 1;
+        in.seekg(count);
+        std::string s;
+        std::getline(in, s, ';');
+        int size = std::stoi(s);
+        count += s.size() + 11;
+        in.seekg(count);
+        std::vector<Song>v;
+        for (int i = 0; i < size; ++i)
+        {
+           
+            Song temp("", "", "", "", 0, 0);
+            count = temp.readHelper(in, count);
+            v.push_back(temp);
+        }
+
+        this->setName(playlistName);
+        this->setList(v);
+    }
+    return count;
+}
+int Playlist::read(std::istream &in)
+{
+    return readHelper(in, 0);
 }

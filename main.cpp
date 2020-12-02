@@ -15,7 +15,7 @@ int main()
     // std::vector<std::string> v = {"chalga", "rap"};
     Song s1("Kavala Kuchek", "Krisko", "Chalga", "Krisko", 2020, 9.5);
     Song s2("Nartsis", "Tsvetina ft. Toni", "Chalga", "Tsvetina Collection", 2020, 9);
-    // Playlist p1("mazno", {s1, s2});
+    Playlist p1("mazno", {s1, s2});
     // Playlist p2("mazno2", {s1, s2});
     // User niki("nikizhelqzkov", "nikiumnikazdr", "Nikolay Zhelyazkov", fDate, v, {p1, p2});
     // // User niki("nikizhelqzkov", "nikiumnikazdr", "Nikolay Zhelyazkov", Date(25, 6, 2000), v, p1);
@@ -29,9 +29,15 @@ int main()
     // Register::registrate();
     // Login::userLogin();
 
-    std::ifstream in("song.txt");
-    Song s("", "", "", "", 0, 0);
-    s.read(in);
-    std::cout << s << std::endl;
+    // std::ifstream in("song.txt");
+    // Song s("", "", "", "", 0, 0);
+    // std::cout << s.read(in)<<std::endl;
+    // std::cout << s << std::endl;
+
+    std::ifstream in("Playlist.txt");
+    Playlist p3("", {});
+    std::cout << p3.read(in)<<std::endl;
+    std::cout << p3;
+
     return 0;
 }

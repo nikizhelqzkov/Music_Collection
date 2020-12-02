@@ -19,6 +19,8 @@ public:
     std::string getName() const;
     std::vector<Song> getList() const;
     friend std::ostream &operator<<(std::ostream &, const Playlist &);
+    int readHelper(std::istream& in, int count);
+    int read(std::istream& in);
 };
 
 #endif

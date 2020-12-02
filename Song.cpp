@@ -75,14 +75,14 @@ std::ostream &operator<<(std::ostream &out, const Song &song)
     out << "Song->Title->" << song.title << ";Author->" << song.author << ";Genre->" << song.genres << ";Album->" << song.album << ";Year->" << song.year << ";Rating->" << song.rating << ";";
     return out;
 }
-Song &Song::read(std::istream &in)
+int Song::readHelper(std::istream &in, int count)
 {
     /*int res = 10 + username.size() + 11;
     input.seekg(res);*/
-    in.seekg(13);
+    in.seekg(count + 13);
     std::string _title;
     std::getline(in, _title, ';');
-    int count = _title.size() + 13;
+    count += _title.size() + 13;
     count += 9;
     in.seekg(count);
     std::string _author;
@@ -109,5 +109,9 @@ Song &Song::read(std::istream &in)
     this->setAlbum(_album);
     this->setYear(std::stoi(_year));
     this->setRating(std::atof(_rating.c_str()));
-    return *this;
+    return count + _rating.size() + 1;
+}
+int Song::read(std::istream &in)
+{
+    return readHelper(in, 0);
 }
