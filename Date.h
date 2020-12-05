@@ -10,7 +10,7 @@ private:
 
 public:
 	Date();
-	Date(unsigned, unsigned, unsigned);
+	Date(unsigned day, unsigned month, unsigned year);
 	Date(const Date &);
 
 	void read();

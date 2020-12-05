@@ -35,6 +35,7 @@ public:
     void setPlaylist(const std::vector<Playlist>&);
     void addTypesOfMusic(const std::string &);
     friend std::ostream &operator<<(std::ostream &, const User&);
+    int read(std::istream& in);
 };
 
 #endif

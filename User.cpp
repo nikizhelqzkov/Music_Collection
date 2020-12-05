@@ -74,21 +74,81 @@ void User::addTypesOfMusic(const std::string &type)
 }
 std::ostream &operator<<(std::ostream &out, const User &user)
 {
-    out << "Username->" << user.username << ";Password->" << user.password << ";FullName->" << user.fullName << ";Born->" << user.born << ";Genres->";
+    out << "Username->" << user.username << ";Password->"
+        << user.password << ";FullName->" << user.fullName
+        << ";Born->" << user.born << ";" << user.genres.size()
+        << ";Genres->";
     for (auto &&element : user.genres)
     {
-        out << element << ",";
+        out << element << ";";
     }
-    out << ";Playlists->";
+    out << user.playlists.size() << ";Playlists->";
     // for (auto &&element : user.playlists)
     // {
     //     out<<element<<",";
     // }
     for (size_t i = 0; i < user.playlists.size() - 1; i++)
     {
-        out << user.playlists[i] << ",";
+        out << user.playlists[i];
     }
-    out << user.playlists[user.playlists.size() - 1] << ";";
-    out << "!\n";
+    out << user.playlists[user.playlists.size() - 1];
+
     return out;
+}
+int User::read(std::istream &in)
+{
+    int count = 10;
+    in.seekg(count);
+    std::string username, password, fullName, born;
+    std::getline(in, username, ';');
+    count += username.size() + 11;
+    in.seekg(count);
+    std::getline(in, password, ';');
+    count += password.size() + 11;
+    in.seekg(count);
+    std::getline(in, fullName, ';');
+    count += fullName.size() + 7;
+    in.seekg(count);
+    std::getline(in, born, ';');
+    count += born.size() + 1;
+    in.seekg(count);
+    std::string genresSize;
+    std::getline(in, genresSize, ';');
+    count += genresSize.size() + 9;
+    in.seekg(count);
+    int gSize = std::stoi(genresSize);
+    std::vector<std::string> genres;
+    for (int i = 0; i < gSize; ++i)
+    {
+        std::string genre;
+        std::getline(in, genre, ';');
+        count += genre.size() + 1;
+        in.seekg(count);
+        genres.push_back(genre);
+    }
+    std::string plSize;
+    std::getline(in, plSize, ';');
+    int playSize = std::stoi(plSize);
+    count += plSize.size() + 12;
+    in.seekg(count);
+    std::vector<Playlist> p;
+    for (int i = 0; i < playSize; ++i)
+    {
+        Playlist playList;
+        count = playList.readHelper(in, count);
+        p.push_back(playList);
+    }
+    setUsername(username);
+    setPassword(password);
+    setFullName(fullName);
+    int day = std::stoi(born);
+    born.erase(0,3);
+    int month = std::stoi(born);
+    born.erase(0,3);
+    int year = std::stoi(born);
+    Date bornDate(day,month,year);
+    setBornDate(bornDate);
+    setGenres(genres);
+    setPlaylist(p);
+    return count;
 }
