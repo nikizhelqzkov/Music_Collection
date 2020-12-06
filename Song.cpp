@@ -1,7 +1,10 @@
 #include "Song.h"
 
 Song::Song(const std::string &_title, const std::string &_author, const std::string &_genres, const std::string &_album, unsigned int _year, double _rating)
-    : title(_title), author(_author), genres(_genres), album(_album), year(_year), rating(_rating) {}
+    : title(_title), author(_author), genres(_genres), album(_album), year(_year), rating(_rating)
+{
+    this->ratings.push_back(_rating);
+}
 
 Song::~Song() {}
 
@@ -27,7 +30,20 @@ void Song::setYear(const unsigned int &year)
 }
 void Song::setRating(const double &rating)
 {
-    this->rating = rating;
+    if (this->ratings.size() <= 1)
+    {
+        this->rating = rating;
+    }
+    else if (ratings.size() == 2 && isDefaultRating)
+    {
+        ratings.erase(ratings.begin());
+        isDefaultRating = false;
+        this->rating = ratings[0];
+    }
+    else
+    {
+        this->rating = std::accumulate(ratings.begin(), ratings.end(), 0.0) / ratings.size();
+    }
 }
 void Song::copy(const Song &other)
 {
@@ -114,4 +130,8 @@ int Song::readHelper(std::istream &in, int count)
 int Song::read(std::istream &in)
 {
     return readHelper(in, 0);
+}
+
+void Song::setAverageRating(const std::vector<double> &ratings)
+{
 }

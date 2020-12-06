@@ -4,9 +4,13 @@
 #include <fstream>
 class Register
 {
+private:
+    std::string userName;
 
 public:
-    static bool registrate();
+    bool registrate();
+    std::string getUsername()const;
+    void setUsername(std::string username);
 };
 
 #endif

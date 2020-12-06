@@ -64,6 +64,16 @@ bool Register::registrate()
         output << user;
         std::cout << "SUCCESSFUL REGISTRATION!!!\n";
         output.close();
+        Register n;
+        setUsername( username);
         return true;
     }
+}
+std::string Register::getUsername()const
+{
+    return userName;
+}
+void Register::setUsername(std::string _username)
+{
+    userName = _username;
 }

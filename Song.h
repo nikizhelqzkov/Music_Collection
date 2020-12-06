@@ -1,6 +1,9 @@
 #ifndef Song_INCLUDED
 #define Song_INCLUDED
 #include <string>
+#include <vector>
+#include <numeric>
+
 #include <iostream>
 class Song
 {
@@ -12,7 +15,8 @@ private:
     unsigned int year;
     double rating;
     void copy(const Song &);
-    //std::vector<double>ratings;
+    bool isDefaultRating = true;
+    std::vector<double> ratings;
 
 public:
     Song() = delete;
@@ -24,7 +28,7 @@ public:
     void setAlbum(const std::string &album);
     void setYear(const unsigned int &year);
     void setRating(const double &rating);
-
+    void setAverageRating(const std::vector<double> &ratings);
     Song &operator=(const Song &);
     std::string getTitle() const;
     std::string getAuthor() const;
