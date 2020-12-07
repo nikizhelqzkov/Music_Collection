@@ -142,13 +142,192 @@ int User::read(std::istream &in)
     setPassword(password);
     setFullName(fullName);
     int day = std::stoi(born);
-    born.erase(0,3);
+    born.erase(0, 3);
     int month = std::stoi(born);
-    born.erase(0,3);
+    born.erase(0, 3);
     int year = std::stoi(born);
-    Date bornDate(day,month,year);
+    Date bornDate(day, month, year);
     setBornDate(bornDate);
     setGenres(genres);
     setPlaylist(p);
     return count;
+}
+
+void User::changeUserName()
+{
+    std::string uN;
+    std::string oldUsername = this->username + ".txt";
+    bool isOk = true;
+    std::cin.ignore();
+    do
+    {
+        isOk = true;
+
+        std::cout << "What do you want to be your new userName: ";
+
+        std::getline(std::cin, uN);
+        if (uN.empty())
+        {
+            isOk = false;
+            std::cout << "You didn't write any name!!!\nTry again\n\n";
+        }
+        else
+        {
+            std::ifstream inUser(uN + ".txt");
+            if (inUser.is_open())
+            {
+                isOk = false;
+                std::cout << "That username is busy!!!\nTry new one\n\n";
+            }
+            inUser.close();
+        }
+
+    } while (!isOk);
+    setUsername(uN);
+    std::ofstream usernameOut(uN + ".txt");
+    usernameOut << *this;
+    std::remove(oldUsername.c_str());
+    std::cout << "Your username had been changed with : " << uN << " ! :)\n\n";
+}
+void User::changePassword()
+{
+    std::string newPassword;
+    bool isOk = true;
+    do
+    {
+        isOk = true;
+        std::cout << "What do you want to be your new userName: ";
+        std::getline(std::cin, newPassword);
+        if (newPassword.empty())
+        {
+            isOk = false;
+            std::cout << "You didn't write any password!!!\nTry again\n\n";
+        }
+    } while (!isOk);
+    setPassword(newPassword);
+    std::ofstream output(this->username + ".txt");
+    output << *this;
+    std::cout << "Your password had been changed!!!\n\n";
+}
+void User::changeFullName()
+{
+    std::string newFullName;
+    bool isOk = true;
+    do
+    {
+        isOk = true;
+        std::cout << "What do you want to be your new userName: ";
+        std::getline(std::cin, newFullName);
+        if (newFullName.empty())
+        {
+            isOk = false;
+            std::cout << "You didn't write any password!!!\nTry again\n\n";
+        }
+    } while (!isOk);
+    setFullName(newFullName);
+    std::ofstream output(this->username + ".txt");
+    output << *this;
+    std::cout << "Your full name had been changed!!!\n\n";
+}
+void User::changeBornDate()
+{
+    std::cout << "You are changing your born date: \n";
+    this->born.read();
+    std::ofstream output(this->username + ".txt");
+    output << *this;
+    std::cout << "Your born date had been changed!!!\n\n";
+}
+void User::addGenre()
+{
+    bool isOk = true;
+    std::string genre;
+    do
+    {
+        std::cout << "Write your genre: ";
+        std::getline(std::cin, genre);
+        bool isRep = false;
+        for (auto &&element : genres)
+        {
+            if (element == genre)
+            {
+                isRep = true;
+                std::cout << "Your genre is in your favourites!\nTry again!!!\n";
+            }
+        }
+        if (isRep)
+        {
+            isOk = false;
+        }
+        else
+        {
+            addTypesOfMusic(genre);
+            std::cout << "Do you want more genre?(y)or(n): ";
+            char c;
+            std::cin >> c;
+            if (c == 'y')
+            {
+                isOk = false;
+            }
+            else if (c == 'n')
+            {
+                isOk = true;
+            }
+            else
+            {
+                std::cout << "Error symbol. No more adding genres!!!";
+            }
+        }
+
+    } while (isOk);
+    std::ofstream output(this->username + ".txt");
+    output << *this;
+    std::cout << "Your genres had been changed!!!\n\n";
+}
+void User::removeGenre()
+{
+    bool isOk = true;
+    std::string genre;
+    do
+    {
+        std::cout << "Write your genre: ";
+        std::getline(std::cin, genre);
+        bool isRep = false;
+        int pos;
+        for (int i = 0; i < genres.size(); ++i)
+        {
+            if (genres[i] == genre)
+            {
+                isRep = true;
+                pos = i;
+                std::cout << "Your genre is in your favourites!\nTry again!!!\n";
+            }
+        }
+        if (!isRep)
+        {
+            isOk = false;
+        }
+        else
+        {
+            genres.erase(genres.begin() + pos);
+            std::cout << "Do you want to remove more genres?(y)or(n): ";
+            char c;
+            std::cin >> c;
+            if (c == 'y')
+            {
+                isOk = false;
+            }
+            else if (c == 'n')
+            {
+                isOk = true;
+            }
+            else
+            {
+                std::cout << "Error symbol. No more removing genres!!!";
+            }
+        }
+
+    } while (isOk);
+    std::ofstream output(this->username + ".txt");
+    output << *this;
+    std::cout << "Your genres had been changed!!!\n\n";
 }

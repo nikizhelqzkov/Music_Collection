@@ -102,7 +102,7 @@ void start()
         do
         {
             repeat = false;
-            std::cout << "\n\nYour option:\n";
+            std::cout << "\n\nYour options:\n";
             std::cout << "1)Edit your profile\n";
             std::cout << "2)Add Song to the system\n";
             std::cout << "3)Generate new Playlist\n";
@@ -115,6 +115,56 @@ void start()
             std::cin >> c;
             if (c == 1)
             {
+                std::cout << "\n\nYou choose: Edit your profile!\nChoose one of the options:\n\n";
+                bool editRep = false;
+                do
+                {
+                    editRep = false;
+                    std::cout << "Your options:\n";
+                    std::cout << "1)Edit your username\n";
+                    std::cout << "2)Edit your password\n";
+                    std::cout << "3)Edit your full name\n";
+                    std::cout << "4)Edit your born date\n";
+                    std::cout << "5)Add more genres\n";
+                    std::cout << "6)Remove some genre\n";
+                    std::cout << "7)Remove playlist by name\n";
+                    std::cout << "8)Back\n";
+                    std::cout << "9)Exit the app\n\n";
+                    std::cout << "Choose number from 1 to 9 : ";
+                    int cEditProfile;
+                    std::cin >> cEditProfile;
+                    if (cEditProfile == 1)
+                    {
+                        u.changeUserName();
+                        editRep = true;
+                    }
+                    else if (cEditProfile == 2)
+                    {
+                        u.changePassword();
+                        editRep = true;
+                    }
+                    else if (cEditProfile == 3)
+                    {
+                        u.changeFullName();
+                        editRep = true;
+                    }
+                    else if (cEditProfile == 4)
+                    {
+                        u.changeBornDate();
+                        editRep = true;
+                    }
+                    else if (cEditProfile == 5)
+                    {
+                        u.addGenre();
+                        editRep = true;
+                    }
+                    else if (cEditProfile == 6)
+                    {
+                        u.removeGenre();
+                        editRep = true;
+                    }
+
+                } while (editRep);
             }
             else if (c == 2)
             {

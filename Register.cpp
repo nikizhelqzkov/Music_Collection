@@ -2,9 +2,21 @@
 
 bool Register::registrate()
 {
-    std::cout << "Write your username: ";
+
     std::string username;
-    std::cin >> username;
+    bool isBusyReg = false;
+    do
+    {
+        isBusyReg = false;
+        std::cout << "Write your username: ";
+        std::cin >> username;
+        std::ifstream in(username + ".txt");
+        if (in.is_open())
+        {
+            isBusyReg = true;
+            std::cout << "This username is busy\n\n";
+        }
+    } while (isBusyReg);
     std::cout << "\nWrite your password: ";
     std::string password;
     std::cin >> password;
@@ -65,11 +77,11 @@ bool Register::registrate()
         std::cout << "SUCCESSFUL REGISTRATION!!!\n";
         output.close();
         Register n;
-        setUsername( username);
+        setUsername(username);
         return true;
     }
 }
-std::string Register::getUsername()const
+std::string Register::getUsername() const
 {
     return userName;
 }

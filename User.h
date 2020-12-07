@@ -4,6 +4,7 @@
 #include <vector>
 #include "Date.h"
 #include "Playlist.h"
+#include <fstream>
 class User
 {
 private:
@@ -32,10 +33,16 @@ public:
     void setFullName(const std::string &);
     void setBornDate(const Date &);
     void setGenres(const std::vector<std::string> &);
-    void setPlaylist(const std::vector<Playlist>&);
+    void setPlaylist(const std::vector<Playlist> &);
     void addTypesOfMusic(const std::string &);
-    friend std::ostream &operator<<(std::ostream &, const User&);
-    int read(std::istream& in);
+    friend std::ostream &operator<<(std::ostream &, const User &);
+    int read(std::istream &in);
+    void changeUserName();
+    void changePassword();
+    void changeFullName();
+    void changeBornDate();
+    void addGenre();
+    void removeGenre();
 };
 
 #endif

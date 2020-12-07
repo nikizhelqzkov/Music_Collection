@@ -4,10 +4,11 @@
 // #include "Song.cpp"
 // #include<fstream>
 
+
 //  #include "User.h"
 // #include "Login.h"
 // #include "Register.h"
-#include "Ui.cpp"
+ #include "Ui.cpp"
 //g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp Login.cpp Register.cpp
 
 int main()
@@ -71,7 +72,6 @@ int main()
     // double sum = std::accumulate(sv.begin(), sv.end(), 0);
     // std::cout<<std::accumulate(sv.begin(), sv.end(), 0.0);
 
-    start();
-
+     start();
     return 0;
 }
