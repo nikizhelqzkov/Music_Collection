@@ -8,6 +8,7 @@ void start()
     char lOrR;
     bool login = false, reg = false;
     bool isOk = false;
+    std::string file;
     do
     {
         do
@@ -37,14 +38,6 @@ void start()
             if (log.userLogin())
             {
                 isOk = true;
-                std::vector<Song> songs;
-                //chetene na pesni
-                std::ifstream inSongs("Songs.txt");
-                //chetene operacii
-
-                inSongs.close();
-                std::string file;
-
                 file = log.getUsername() + ".txt";
             }
             else
@@ -59,20 +52,7 @@ void start()
             if (reg.registrate())
             {
                 isOk = true;
-                std::vector<Song> songs;
-                //chetene na pesni
-                std::ifstream inSongs("Songs.txt");
-                //chetene operacii
-                std::cout << "Openining song source!!!\n\n";
-                inSongs.close();
-                std::string file;
-
                 file = reg.getUsername() + ".txt";
-                std::cout << reg.getUsername();
-                std::ifstream inUser(file);
-                std::cout << "Openining User's data!!!\n\n";
-                User u;
-                u.read(inUser);
             }
             else
             {
@@ -80,4 +60,40 @@ void start()
             }
         }
     } while (!isOk);
+
+    if (isOk)
+    {
+        std::vector<Song> songs;
+
+        //chetene na pesni
+        std::ifstream inSongs("Songs.txt");
+        if (inSongs.is_open())
+        {
+            std::cout << "Openining song source!!!\n\n";
+        }
+        else
+        {
+            "Problem with songs source!!! :(\n\n";
+        }
+        int countS = 0;
+        std::string songS;
+        std::getline(inSongs, songS, ';');
+        countS += songS.size() + 1;
+        int sizeSongs = std::stoi(songS);
+        inSongs.seekg(countS);
+        for (int i = 0; i < sizeSongs; ++i)
+        {
+            Song s("", "", "", "", 0, 0);
+            countS = s.readHelper(inSongs, countS);
+            songs.push_back(s);
+        }
+
+        //chetene operacii
+
+        inSongs.close();
+        std::ifstream inUser(file);
+        std::cout << "Openining User's data!!!\n\n";
+        User u;
+        u.read(inUser);
+    }
 }
