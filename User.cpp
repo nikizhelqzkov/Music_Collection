@@ -83,15 +83,10 @@ std::ostream &operator<<(std::ostream &out, const User &user)
         out << element << ";";
     }
     out << user.playlists.size() << ";Playlists->";
-    // for (auto &&element : user.playlists)
-    // {
-    //     out<<element<<",";
-    // }
-    for (size_t i = 0; i < user.playlists.size() - 1; i++)
+    for (auto &&element : user.playlists)
     {
-        out << user.playlists[i];
+        out << element;
     }
-    out << user.playlists[user.playlists.size() - 1];
 
     return out;
 }
@@ -197,7 +192,7 @@ void User::changePassword()
     do
     {
         isOk = true;
-        std::cout << "What do you want to be your new userName: ";
+        std::cout << "What do you want to be your new password: ";
         std::getline(std::cin, newPassword);
         if (newPassword.empty())
         {
@@ -218,7 +213,7 @@ void User::changeFullName()
     do
     {
         isOk = true;
-        std::cout << "What do you want to be your new userName: ";
+        std::cout << "What do you want to be your new full name: ";
         std::getline(std::cin, newFullName);
         if (newFullName.empty())
         {

@@ -5,7 +5,7 @@
 void start()
 {
     std::cout << "WELCOME TO THE MUSIC COLLECTION :)\n";
-    char lOrR;
+    std::string lOrR;
     bool login = false, reg = false;
     bool isOk = false;
     std::string file;
@@ -17,11 +17,11 @@ void start()
             reg = false;
             std::cout << "Chooose Login(l) or Register(r)\n l or r: ";
             std::cin >> lOrR;
-            if (lOrR == 'l')
+            if (lOrR == "l")
             {
                 login = true;
             }
-            else if (lOrR == 'r')
+            else if (lOrR == "r")
             {
                 reg = true;
             }
