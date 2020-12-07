@@ -43,6 +43,7 @@ public:
     void changeBornDate();
     void addGenre();
     void removeGenre();
+    void removePlaylist();
 };
 
 #endif

@@ -192,6 +192,7 @@ void User::changeUserName()
 void User::changePassword()
 {
     std::string newPassword;
+    std::cin.ignore();
     bool isOk = true;
     do
     {
@@ -212,6 +213,7 @@ void User::changePassword()
 void User::changeFullName()
 {
     std::string newFullName;
+    std::cin.ignore();
     bool isOk = true;
     do
     {
@@ -241,8 +243,10 @@ void User::addGenre()
 {
     bool isOk = true;
     std::string genre;
+    std::cin.ignore();
     do
     {
+        isOk = true;
         std::cout << "Write your genre: ";
         std::getline(std::cin, genre);
         bool isRep = false;
@@ -261,34 +265,27 @@ void User::addGenre()
         else
         {
             addTypesOfMusic(genre);
-            std::cout << "Do you want more genre?(y)or(n): ";
-            char c;
-            std::cin >> c;
-            if (c == 'y')
-            {
-                isOk = false;
-            }
-            else if (c == 'n')
-            {
-                isOk = true;
-            }
-            else
-            {
-                std::cout << "Error symbol. No more adding genres!!!";
-            }
+            isOk = true;
         }
 
-    } while (isOk);
+    } while (!isOk);
     std::ofstream output(this->username + ".txt");
     output << *this;
     std::cout << "Your genres had been changed!!!\n\n";
 }
 void User::removeGenre()
 {
+    if (genres.size() < 1)
+    {
+        std::cout << "You don't have any genres\n";
+        return;
+    }
+    std::cin.ignore();
     bool isOk = true;
     std::string genre;
     do
     {
+        isOk = true;
         std::cout << "Write your genre: ";
         std::getline(std::cin, genre);
         bool isRep = false;
@@ -299,35 +296,78 @@ void User::removeGenre()
             {
                 isRep = true;
                 pos = i;
-                std::cout << "Your genre is in your favourites!\nTry again!!!\n";
             }
         }
         if (!isRep)
         {
             isOk = false;
-        }
-        else
-        {
-            genres.erase(genres.begin() + pos);
-            std::cout << "Do you want to remove more genres?(y)or(n): ";
+            std::cout << "Your genre is not exists!\nTry again!!!\n";
+
+            std::cout << "Do you want to leave this part? (y for YES  or any other symbol for NO): ";
             char c;
             std::cin >> c;
             if (c == 'y')
             {
-                isOk = false;
-            }
-            else if (c == 'n')
-            {
-                isOk = true;
-            }
-            else
-            {
-                std::cout << "Error symbol. No more removing genres!!!";
+                return;
             }
         }
+        else
+        {
+            genres.erase(genres.begin() + pos);
+            isOk = true;
+        }
 
-    } while (isOk);
+    } while (!isOk);
     std::ofstream output(this->username + ".txt");
     output << *this;
     std::cout << "Your genres had been changed!!!\n\n";
+}
+void User::removePlaylist()
+{
+    if (playlists.size() == 1 && playlists[0].getName().empty())
+    {
+        std::cout << "You don't have any playlists!!!\n";
+        return;
+    }
+    std::cin.ignore();
+    bool isOk = true;
+    std::string pl;
+    do
+    {
+        isOk = true;
+        std::cout << "Write your playlist name: ";
+        std::getline(std::cin, pl);
+        bool isRep = false;
+        int pos;
+        for (int i = 0; i < this->playlists.size(); ++i)
+        {
+            if (playlists[i].getName() == pl)
+            {
+                isRep = true;
+                pos = i;
+            }
+        }
+        if (!isRep)
+        {
+            isOk = false;
+            std::cout << "Your playlist name is not exists!\nTry again!!!\n";
+
+            std::cout << "Do you want to leave this part? (y for YES  or any other symbol for NO): ";
+            char c;
+            std::cin >> c;
+            if (c == 'y')
+            {
+                return;
+            }
+        }
+        else
+        {
+            playlists.erase(this->playlists.begin() + pos);
+            isOk = true;
+        }
+
+    } while (!isOk);
+    std::ofstream output(this->username + ".txt");
+    output << *this;
+    std::cout << "Your playlists had been changed!!!\n\n";
 }

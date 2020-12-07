@@ -163,6 +163,26 @@ void start()
                         u.removeGenre();
                         editRep = true;
                     }
+                    else if (cEditProfile == 7)
+                    {
+                        u.removePlaylist();
+                        editRep = true;
+                    }
+                    else if (cEditProfile == 8)
+                    {
+                        editRep = false;
+                        repeat = true;
+                    }
+                    else if (cEditProfile == 9)
+                    {
+                        std::cout << "\nYOU CHOOSE EXIT!\n\nHAVE A NICE DAY!!!!\n";
+                        return;
+                    }
+                    else
+                    {
+                        std::cout << "\nError number! Try again!!!\n\n";
+                        editRep = true;
+                    }
 
                 } while (editRep);
             }
@@ -183,7 +203,7 @@ void start()
             }
             else if (c == 7)
             {
-                std::cout << "\nYOU CHOOSE EXIT!\n\naddiHAVE A NICE DAY!!!!\n";
+                std::cout << "\nYOU CHOOSE EXIT!\n\nHAVE A NICE DAY!!!!\n";
                 return;
             }
             else

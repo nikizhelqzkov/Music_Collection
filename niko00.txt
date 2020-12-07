@@ -1,1 +1,1 @@
-Username->niko00;Password->nikisexa;FullName->Nikolay I SIsi;Born->25 06 2000;1;Genres->Pop;1;Playlists->
+Username->niko00;Password->nikiumnikazdr;FullName->Nikolay Zhelyazkov;Born->20 05 2001;2;Genres->chalga;pop;1;Playlists->
