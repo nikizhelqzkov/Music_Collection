@@ -95,5 +95,52 @@ void start()
         std::cout << "Openining User's data!!!\n\n";
         User u;
         u.read(inUser);
+
+        inUser.close();
+        std::cout << "SO, YOUR DATA IS FINE!!!\n\nWELCOME TO THE MENU!\nYOU CAN CHOOSE ONE OF THESE OPTION:\n\n";
+        bool repeat = false;
+        do
+        {
+            repeat = false;
+            std::cout << "\n\nYour option:\n";
+            std::cout << "1)Edit your profile\n";
+            std::cout << "2)Add Song to the system\n";
+            std::cout << "3)Generate new Playlist\n";
+            std::cout << "4)Load Playlist by name\n";
+            std::cout << "5)Songs info in your Playlist by name\n";
+            std::cout << "6)Set rating to some song\n";
+            std::cout << "7)Exit\n\n";
+            std::cout << "Choose number from 1 to 6 : ";
+            int c;
+            std::cin >> c;
+            if (c == 1)
+            {
+            }
+            else if (c == 2)
+            {
+            }
+            else if (c == 3)
+            {
+            }
+            else if (c == 4)
+            {
+            }
+            else if (c == 5)
+            {
+            }
+            else if (c == 6)
+            {
+            }
+            else if (c == 7)
+            {
+                std::cout << "\nYOU CHOOSE EXIT!\n\naddiHAVE A NICE DAY!!!!\n";
+                return;
+            }
+            else
+            {
+                std::cout << "\nError number! Try again!!!\n\n";
+                repeat = true;
+            }
+        } while (repeat);
     }
 }
