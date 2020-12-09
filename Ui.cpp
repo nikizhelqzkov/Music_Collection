@@ -2,6 +2,16 @@
 #include "Login.h"
 #include "Register.h"
 
+void printingSongs(const std::vector<Song> &sv)
+{
+    std::ofstream out("Songs.txt");
+    out << sv.size() << ";";
+    for (auto &&element : sv)
+    {
+        out << element;
+    }
+}
+
 void start()
 {
     std::cout << "WELCOME TO THE MUSIC COLLECTION :)\n";
@@ -83,11 +93,11 @@ void start()
         inSongs.seekg(countS);
         for (int i = 0; i < sizeSongs; ++i)
         {
-            Song s("", "", "", "", 0, 0);
+            Song s;//trqbva da pushvam i reitingite i bulevata
             countS = s.readHelper(inSongs, countS);
             songs.push_back(s);
         }
-
+       
         //chetene operacii
 
         inSongs.close();
@@ -110,7 +120,7 @@ void start()
             std::cout << "5)Songs info in your Playlist by name\n";
             std::cout << "6)Set rating to some song\n";
             std::cout << "7)Exit\n\n";
-            std::cout << "Choose number from 1 to 6 : ";
+            std::cout << "Choose number from 1 to 7 : ";
             int c;
             std::cin >> c;
             if (c == 1)
@@ -188,6 +198,13 @@ void start()
             }
             else if (c == 2)
             {
+                std::cout << "You chose to add new song to the system!!!\n\n";
+                Song s;
+                s.addingSongInfo();
+                songs.push_back(s);
+                printingSongs(songs);
+                std::cout << "Your song have been added to the system\n";
+                repeat = true;
             }
             else if (c == 3)
             {
@@ -200,6 +217,84 @@ void start()
             }
             else if (c == 6)
             {
+                std::cout << "You chose to set rating to some valid song!!!\n";
+
+                std::string nameToRate;
+                std::cin.ignore();
+                std::cout << "Write the name of the song: ";
+                std::getline(std::cin, nameToRate);
+                bool r = false;
+                int pos = -1;
+                do
+                {
+                    r = false;
+                    for (int i = 0; i < songs.size(); ++i)
+                    {
+                        if (songs[i].getTitle() == nameToRate)
+                        {
+                            bool isVoted = false;
+                            for (int j = 0; j < songs[i].getUserRateNames().size(); ++j)
+                            {
+                                if (u.getUsername() == songs[i].getUserRateNames()[j])
+                                {
+                                    isVoted = true;
+                                }
+                            }
+                            if (!isVoted)
+                            {
+                                r = true;
+                                pos = i;
+                            }
+                        }
+                    }
+                    if (!r)
+                    {
+                        std::cout << "This song doesn't exists or you have voted it before!!!\n";
+                        break;
+                    }
+
+                } while (!r);
+                if (!r)
+                {
+                    repeat = true;
+                }
+                else
+                {
+                    double ratingS;
+                    bool validR = false;
+                    do
+                    {
+                        validR = false;
+                        std::cout << "Rate this Song between 0.0 and 10.0: ";
+                        std::cin >> ratingS;
+                        if (ratingS < 0.0 && ratingS > 10.0)
+                        {
+                            std::cout << "Error rating!!! Try again? (y for yes and other symbol for no): ";
+                            std::string isAgain;
+                            std::getline(std::cin, isAgain);
+                            if (isAgain != "y")
+                            {
+                                std::cout << "Ok, exit the rating system!\n\n";
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            validR = true;
+                        }
+                    } while (!validR);
+                    if (!validR)
+                    {
+                        repeat = true;
+                    }
+                    else
+                    {
+                        songs[pos].setRating(ratingS);
+                        songs[pos].setUserRateName(u.getUsername());
+                        printingSongs(songs);
+                        repeat = true;
+                    }
+                }
             }
             else if (c == 7)
             {

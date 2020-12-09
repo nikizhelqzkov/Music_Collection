@@ -68,7 +68,7 @@ int Playlist::readHelper(std::istream &in, int count)
         for (int i = 0; i < size; ++i)
         {
            
-            Song temp("", "", "", "", 0, 0);
+            Song temp;
             count = temp.readHelper(in, count);
             v.push_back(temp);
         }

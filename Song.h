@@ -17,9 +17,10 @@ private:
     void copy(const Song &);
     bool isDefaultRating = true;
     std::vector<double> ratings;
+    std::vector<std::string> userRate;
 
 public:
-    Song() = delete;
+    Song() = default;
     Song(const std::string &title, const std::string &author, const std::string &genres, const std::string &album, unsigned int year, double rating);
     ~Song();
     void setTitle(const std::string &title);
@@ -27,7 +28,7 @@ public:
     void setGenres(const std::string &genres);
     void setAlbum(const std::string &album);
     void setYear(const unsigned int &year);
-    void setRating(const double &rating);
+    void setRating(double rating);
     void setAverageRating(const std::vector<double> &ratings);
     Song &operator=(const Song &);
     std::string getTitle() const;
@@ -39,6 +40,9 @@ public:
     friend std::ostream &operator<<(std::ostream &, const Song &);
     int read(std::istream &in);
     int readHelper(std::istream &in, int count);
+    void addingSongInfo();
+    void setUserRateName(const std::string &user);
+    std::vector<std::string> getUserRateNames() const;
 };
 
 #endif

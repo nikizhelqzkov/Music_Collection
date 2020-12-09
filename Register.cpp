@@ -73,6 +73,7 @@ bool Register::registrate()
     }
     else
     {
+        
         output << user;
         std::cout << "SUCCESSFUL REGISTRATION!!!\n";
         output.close();

@@ -44,6 +44,8 @@ std::vector<Playlist> User::getPlaylists() const
 {
     return this->playlists;
 }
+
+
 void User::setUsername(const std::string &_data)
 {
     this->username = _data;
@@ -72,8 +74,10 @@ void User::addTypesOfMusic(const std::string &type)
 {
     this->genres.push_back(type);
 }
+
 std::ostream &operator<<(std::ostream &out, const User &user)
 {
+
     out << "Username->" << user.username << ";Password->"
         << user.password << ";FullName->" << user.fullName
         << ";Born->" << user.born << ";" << user.genres.size()
@@ -92,8 +96,11 @@ std::ostream &operator<<(std::ostream &out, const User &user)
 }
 int User::read(std::istream &in)
 {
+
     int count = 10;
+
     in.seekg(count);
+
     std::string username, password, fullName, born;
     std::getline(in, username, ';');
     count += username.size() + 11;
@@ -299,9 +306,9 @@ void User::removeGenre()
             std::cout << "Your genre is not exists!\nTry again!!!\n";
 
             std::cout << "Do you want to leave this part? (y for YES  or any other symbol for NO): ";
-            char c;
-            std::cin >> c;
-            if (c == 'y')
+            std::string c;
+            std::getline(std::cin, c);
+            if (c == "y")
             {
                 return;
             }
@@ -348,9 +355,9 @@ void User::removePlaylist()
             std::cout << "Your playlist name is not exists!\nTry again!!!\n";
 
             std::cout << "Do you want to leave this part? (y for YES  or any other symbol for NO): ";
-            char c;
-            std::cin >> c;
-            if (c == 'y')
+            std::string c;
+            std::getline(std::cin, c);
+            if (c == "y")
             {
                 return;
             }

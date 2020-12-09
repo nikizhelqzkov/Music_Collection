@@ -3,12 +3,12 @@
 // #include "Playlist.cpp"
 // #include "Song.cpp"
 // #include<fstream>
-
-
+// #include "Login.cpp"
+// #include "Register.cpp"
 //  #include "User.h"
 // #include "Login.h"
 // #include "Register.h"
- #include "Ui.cpp"
+#include "Ui.cpp"
 //g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp Login.cpp Register.cpp
 
 int main()
@@ -37,7 +37,7 @@ int main()
     // in.close();
     // std::cout << newUser;
     // std::ifstream in("song.txt");
-    // Song s("", "", "", "", 0, 0);
+    // Song s;
     // std::cout << s.read(in)<<std::endl;
     // std::cout << s << std::endl;
 
@@ -61,6 +61,7 @@ int main()
     //     Song("Nova magistrala", "Iliyan ft Tedi Aleksandrova ft Amet", "chalga", "Love me crazy", 2019, 0),
     //     Song("Istreznqvash li", "Preslava", "chalga", "da gori v lubov", 2019, 0),
     //     Song("Vzimai zadalzhitelno", "Yanitsa", "chalga", "iskushenie", 2018, 0)};
+    // printingSongs(sv);
     // std::ofstream out("Songs.txt");
     // out << sv.size() << ";";
     // for (auto &&element : sv)
@@ -72,6 +73,6 @@ int main()
     // double sum = std::accumulate(sv.begin(), sv.end(), 0);
     // std::cout<<std::accumulate(sv.begin(), sv.end(), 0.0);
 
-     start();
+    start();
     return 0;
 }

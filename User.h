@@ -28,12 +28,14 @@ public:
     Date getBornDate() const;
     std::vector<std::string> getGenres() const;
     std::vector<Playlist> getPlaylists() const;
+    bool getRepVote() const;
     void setUsername(const std::string &);
     void setPassword(const std::string &);
     void setFullName(const std::string &);
     void setBornDate(const Date &);
     void setGenres(const std::vector<std::string> &);
     void setPlaylist(const std::vector<Playlist> &);
+    void setRepVote(const bool &);
     void addTypesOfMusic(const std::string &);
     friend std::ostream &operator<<(std::ostream &, const User &);
     int read(std::istream &in);
