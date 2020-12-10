@@ -11,7 +11,22 @@ void printingSongs(const std::vector<Song> &sv)
         out << element;
     }
 }
-
+bool getPlaylist(const User &u, std::string name, Playlist &pl)
+{
+    for (int i = 0; i < u.getPlaylists().size(); ++i)
+    {
+        if (u.getPlaylists()[i].getName() == name)
+        {
+            pl = u.getPlaylists()[i];
+            return true;
+        }
+    }
+    return false;
+}
+void printingOneSong(const Playlist &pl, int pos)
+{
+    std::cout << "Starting song number " << pos << " -> " << pl.getList()[pos - 1] << std::endl;
+}
 void printSongInfo(const User &u, std::string name)
 {
     Playlist current;
@@ -141,7 +156,7 @@ void start()
             std::cout << "1)Edit your profile\n";
             std::cout << "2)Add Song to the system\n";
             std::cout << "3)Generate new Playlist\n";
-            std::cout << "4)Load Playlist by name\n"; //moga da pitam koq pesen da trygne kato nomer ot 1 do size
+            std::cout << "4)Load Playlist by name\n"; 
             std::cout << "5)Songs info in your Playlist by name\n";
             std::cout << "6)Set rating to some song\n";
             std::cout << "7)Exit\n\n";
@@ -236,6 +251,62 @@ void start()
             }
             else if (c == 4)
             {
+                if (u.getPlaylists().size() < 1)
+                {
+                    std::cout << "YOU DON'T HAVE ANY PLAYLISTST!!!!\n";
+                }
+                else
+                {
+                    std::string name;
+                    std::cin.ignore();
+                    std::cout << "Write the name of the playlist: ";
+                    std::getline(std::cin, name);
+                    Playlist plR;
+                    bool isRead = getPlaylist(u, name, plR);
+                    if (!isRead)
+                    {
+                        std::cout << "That playlist is missing!!! Try again!!!\n";
+                    }
+
+                    else
+                    {
+                        bool moreStartingSong = false;
+                        std::string num;
+                        do
+                        {
+                            moreStartingSong = false;
+                            std::cout << "Write number of song between 1 and " << plR.getList().size()<<": ";
+                            std::getline(std::cin, num);
+                            int number = std::stoi(num);
+                            if (number < 1 || number > plR.getList().size())
+                            {
+                                std::cin.ignore();
+                                std::cout << "Error number of song! Try again? (y for yes and other word for no): ";
+                                std::string isAgain;
+                                std::getline(std::cin, isAgain);
+                                if (isAgain == "y")
+                                {
+                                    std::cout << "You will try again!!!\n";
+                                    moreStartingSong = true;
+                                }
+                            }
+                            else
+                            {
+                                printingOneSong(plR, number);
+                                std::cout << "Do you want to start other song from this playlist? (y for yes and other word for no): ";
+                                std::string isAgain;
+                                std::getline(std::cin, isAgain);
+                                if (isAgain == "y")
+                                {
+                                    std::cout << "You will start another song!!!\n";
+                                    moreStartingSong = true;
+                                }
+                            }
+
+                        } while (moreStartingSong);
+                    }
+                }
+                repeat = true;
             }
             else if (c == 5)
             {
