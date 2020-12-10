@@ -31,22 +31,26 @@ void Song::setYear(const unsigned int &year)
 void Song::setRating(double rating)
 {
     std::cout << "\n\nrating size: " << ratings.size() << " \n\n";
-    ratings.push_back(rating);
+
     std::cout << "\n\nrating size: " << ratings.size() << " \n\n";
+    // ratings.push_back(rating);
     if (this->ratings.size() <= 1)
     {
+
         this->rating = rating;
     }
-    else if (ratings.size() == 2 && isDefaultRating)
-    {
-        ratings.erase(ratings.begin());
-        isDefaultRating = false;
-    std::cout<<"Here 2\n";
-        this->rating = ratings[0];
-    }
+    // else if (ratings.size() == 2 && isDefaultRating)
+    // {
+    //     ratings.erase(ratings.begin());
+
+    //     isDefaultRating = false;
+    //     std::cout << "Here 2\n";
+    //     this->rating = ratings[0];
+    // }
     else
     {
-         std::cout<<"Here 3\n";
+        std::cout << "Here 3\n";
+
         this->rating = std::accumulate(ratings.begin(), ratings.end(), 0.0) / ratings.size();
     }
 }
@@ -91,9 +95,28 @@ double Song::getRating() const
 {
     return this->rating;
 }
+std::vector<double> Song::getRatings()
+{
+    return this->ratings;
+}
 std::ostream &operator<<(std::ostream &out, const Song &song)
 {
-    out << "Song->Title->" << song.title << ";Author->" << song.author << ";Genre->" << song.genres << ";Album->" << song.album << ";Year->" << song.year << ";Rating->" << song.rating << ";" << song.userRate.size() << ";vU->";
+    out << "Song->Title->" << song.title << ";Author->" << song.author << ";Genre->" << song.genres << ";Album->" << song.album << ";Year->"
+        << song.year << ";Rating->" << song.rating << ";"
+        << song.isDefaultRating << ";";
+    if (song.ratings.size() == 1 && song.isDefaultRating && song.ratings[0] == 0)
+    {
+        out << "0;r->;";
+    }
+    else
+    {
+        out << song.ratings.size() << ";r->";
+        for (auto &&element : song.ratings)
+        {
+            out << element << ";";
+        }
+    }
+    out << song.userRate.size() << ";vU->";
     for (auto &&element : song.userRate)
     {
         out << element << ";";
@@ -137,9 +160,46 @@ int Song::readHelper(std::istream &in, int count)
     this->setRating(std::atof(_rating.c_str()));
     count += _rating.size() + 1;
     in.seekg(count);
+    std::string isDef;
+    std::getline(in, isDef, ';');
+    isDefaultRating = isDef == "1";
+    count += isDef.size() + 1;
+    in.seekg(count);
+    int rSize;
+    std::string rateS;
+    std::getline(in, rateS, ';');
+    rSize = std::stoi(rateS);
+    if (rSize == 0)
+    {
+        count += rateS.size() + 5;
+    }
+    else
+    {
+        count += rateS.size() + 4;
+        for (int i = 0; i < rSize; ++i)
+        {
+            in.seekg(count);
+            std::string rate;
+            std::getline(in, rate, ';');
+            count += rate.size() + 1;
+            setAverageRating(std::atof(rate.c_str()));
+        }
+    }
+
+    //------------
+
+    in.seekg(count);
     std::string cV;
     std::getline(in, cV, ';');
-    int cS = std::stoi(cV);
+    int cS;
+    if (cV.empty())
+    {
+        cS = 0;
+    }
+    else
+    {
+        cS = std::stoi(cV);
+    }
     count += cV.size() + 5;
     for (size_t i = 0; i < cS; ++i)
     {
@@ -162,8 +222,9 @@ int Song::read(std::istream &in)
     return readHelper(in, 0);
 }
 
-void Song::setAverageRating(const std::vector<double> &ratings)
+void Song::setAverageRating(const double &rate)
 {
+    this->ratings.push_back(rate);
 }
 void Song::addingSongInfo()
 {

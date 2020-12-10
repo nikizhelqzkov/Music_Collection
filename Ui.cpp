@@ -93,11 +93,11 @@ void start()
         inSongs.seekg(countS);
         for (int i = 0; i < sizeSongs; ++i)
         {
-            Song s;//trqbva da pushvam i reitingite i bulevata
+            Song s; 
             countS = s.readHelper(inSongs, countS);
             songs.push_back(s);
         }
-       
+
         //chetene operacii
 
         inSongs.close();
@@ -116,7 +116,7 @@ void start()
             std::cout << "1)Edit your profile\n";
             std::cout << "2)Add Song to the system\n";
             std::cout << "3)Generate new Playlist\n";
-            std::cout << "4)Load Playlist by name\n";
+            std::cout << "4)Load Playlist by name\n"; //moga da pitam koq pesen da trygne kato nomer ot 1 do size
             std::cout << "5)Songs info in your Playlist by name\n";
             std::cout << "6)Set rating to some song\n";
             std::cout << "7)Exit\n\n";
@@ -289,6 +289,7 @@ void start()
                     }
                     else
                     {
+                        songs[pos].setAverageRating(ratingS);
                         songs[pos].setRating(ratingS);
                         songs[pos].setUserRateName(u.getUsername());
                         printingSongs(songs);

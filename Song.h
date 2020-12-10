@@ -29,13 +29,14 @@ public:
     void setAlbum(const std::string &album);
     void setYear(const unsigned int &year);
     void setRating(double rating);
-    void setAverageRating(const std::vector<double> &ratings);
+    void setAverageRating(const double&);
     Song &operator=(const Song &);
     std::string getTitle() const;
     std::string getAuthor() const;
     std::string getGenres() const;
     std::string getAlbum() const;
     unsigned int getYear() const;
+    std::vector<double>getRatings();
     double getRating() const;
     friend std::ostream &operator<<(std::ostream &, const Song &);
     int read(std::istream &in);
