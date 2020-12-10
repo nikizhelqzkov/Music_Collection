@@ -44,6 +44,7 @@ public:
     void addingSongInfo();
     void setUserRateName(const std::string &user);
     std::vector<std::string> getUserRateNames() const;
+    void printSongInfo()const;
 };
 
 #endif

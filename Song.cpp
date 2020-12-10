@@ -212,7 +212,7 @@ int Song::readHelper(std::istream &in, int count)
     if (cS == 0)
     {
         in.seekg(count);
-        count += 1;
+        //count += 1;
     }
 
     return count;
@@ -253,4 +253,12 @@ void Song::setUserRateName(const std::string &user)
 std::vector<std::string> Song::getUserRateNames() const
 {
     return this->userRate;
+}
+void Song::printSongInfo() const
+{
+    std::cout << "Title: " << title << " , "
+              << "Author: " << author << " , "
+              << "Genre: " << genres << " , "
+              << "Album: " << album << " , "
+              << "Year: " << year;
 }

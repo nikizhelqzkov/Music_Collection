@@ -11,7 +11,34 @@ void printingSongs(const std::vector<Song> &sv)
         out << element;
     }
 }
+void printSongInfo(const User& u, std::string name)
+{
+    Playlist current;
+    bool isHere = false;
+    for (auto &&element : u.getPlaylists())
+    {
+        if (element.getName() == name)
+        {
+            current = element;
+            isHere = true;
+        }
+    }
 
+    if (!isHere)
+    {
+        std::cout << "This playlist is missing! Try again!!!\n";
+    }
+    else
+    {
+        std::cout << "\nYou choose playlist: " << current.getName() << "\nThat is your playlists' songs information:\n";
+        for (int i = 1; i <= current.getList().size(); ++i)
+        {
+            std::cout << "Song " << i << " -> ";
+            current.getList()[i - 1].printSongInfo();
+            std::cout << std::endl;
+        }
+    }
+}
 void start()
 {
     std::cout << "WELCOME TO THE MUSIC COLLECTION :)\n";
@@ -93,7 +120,7 @@ void start()
         inSongs.seekg(countS);
         for (int i = 0; i < sizeSongs; ++i)
         {
-            Song s; 
+            Song s;
             countS = s.readHelper(inSongs, countS);
             songs.push_back(s);
         }
@@ -214,6 +241,19 @@ void start()
             }
             else if (c == 5)
             {
+                if (u.getPlaylists().size() < 1)
+                {
+                    std::cout << "YOU DON'T HAVE ANY PLAYLISTST!!!!\n";
+                }
+                else
+                {
+                    std::string name;
+                    std::cin.ignore();
+                    std::cout << "Write the name of the playlist: ";
+                    std::getline(std::cin, name);
+                    printSongInfo(u, name);
+                }
+                repeat = true;
             }
             else if (c == 6)
             {
