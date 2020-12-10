@@ -1,1 +1,1 @@
-Username->nikizhelqzkov;Password->nikiumnikazdr;FullName->Nikolay Zhelyazkov;Born->25 06 2000;2;Genres->chalga;folk;1;Playlists->
+Username->nikizhelqzkov;Password->nikiumnikazdr;FullName->Nikolay Zhelyazkov;Born->25 06 2000;2;Genres->chalga;folk;0;Playlists->

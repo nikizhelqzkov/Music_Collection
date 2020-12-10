@@ -1,0 +1,1 @@
+Username->ivan123;Password->ivan123;FullName->Ivan Ivanov;Born->20 12 1999;1;Genres->Folk;0;Playlists->

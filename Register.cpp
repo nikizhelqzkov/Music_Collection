@@ -58,8 +58,13 @@ bool Register::registrate()
             }
         } while (c != 'y' && c != 'n');
     } while (c == 'y');
-    Playlist p("", {});
-    User user(username, password, fullName, regDate, genres, {p});
+
+    User user;
+    user.setUsername(username);
+    user.setPassword(password);
+    user.setFullName(fullName);
+    user.setBornDate(regDate);
+    user.setGenres(genres);
     std::ofstream output(username + ".txt");
     if (!output.is_open())
     {

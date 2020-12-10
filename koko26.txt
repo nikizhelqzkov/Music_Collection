@@ -1,1 +1,1 @@
-Username->koko26;Password->koko12;FullName->kaloqn;Born->20 07 2000;1;Genres->Rap;1;Playlists->
+Username->koko26;Password->koko12;FullName->kaloqn;Born->20 07 2000;1;Genres->Rap;0;Playlists->

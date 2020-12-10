@@ -30,26 +30,14 @@ void Song::setYear(const unsigned int &year)
 }
 void Song::setRating(double rating)
 {
-    std::cout << "\n\nrating size: " << ratings.size() << " \n\n";
-
-    std::cout << "\n\nrating size: " << ratings.size() << " \n\n";
-    // ratings.push_back(rating);
     if (this->ratings.size() <= 1)
     {
 
         this->rating = rating;
     }
-    // else if (ratings.size() == 2 && isDefaultRating)
-    // {
-    //     ratings.erase(ratings.begin());
-
-    //     isDefaultRating = false;
-    //     std::cout << "Here 2\n";
-    //     this->rating = ratings[0];
-    // }
     else
     {
-        std::cout << "Here 3\n";
+    
 
         this->rating = std::accumulate(ratings.begin(), ratings.end(), 0.0) / ratings.size();
     }
@@ -126,8 +114,6 @@ std::ostream &operator<<(std::ostream &out, const Song &song)
 }
 int Song::readHelper(std::istream &in, int count)
 {
-    /*int res = 10 + username.size() + 11;
-    input.seekg(res);*/
     in.seekg(count + 13);
     std::string _title;
     std::getline(in, _title, ';');
@@ -186,8 +172,6 @@ int Song::readHelper(std::istream &in, int count)
         }
     }
 
-    //------------
-
     in.seekg(count);
     std::string cV;
     std::getline(in, cV, ';');
@@ -212,7 +196,6 @@ int Song::readHelper(std::istream &in, int count)
     if (cS == 0)
     {
         in.seekg(count);
-        //count += 1;
     }
 
     return count;

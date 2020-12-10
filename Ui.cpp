@@ -11,15 +11,17 @@ void printingSongs(const std::vector<Song> &sv)
         out << element;
     }
 }
-void printSongInfo(const User& u, std::string name)
+
+void printSongInfo(const User &u, std::string name)
 {
     Playlist current;
+    int pos = -1;
     bool isHere = false;
-    for (auto &&element : u.getPlaylists())
+    for (int i = 0; i < u.getPlaylists().size(); ++i)
     {
-        if (element.getName() == name)
+        if (u.getPlaylists()[i].getName() == name)
         {
-            current = element;
+            pos = i;
             isHere = true;
         }
     }
@@ -30,11 +32,11 @@ void printSongInfo(const User& u, std::string name)
     }
     else
     {
-        std::cout << "\nYou choose playlist: " << current.getName() << "\nThat is your playlists' songs information:\n";
-        for (int i = 1; i <= current.getList().size(); ++i)
+        std::cout << "\nYou choose playlist: " << u.getPlaylists()[pos].getName() << "\nThat is your playlists' songs information:\n";
+        for (int i = 1; i <= u.getPlaylists()[pos].getList().size(); ++i)
         {
             std::cout << "Song " << i << " -> ";
-            current.getList()[i - 1].printSongInfo();
+            u.getPlaylists()[pos].getList()[i - 1].printSongInfo();
             std::cout << std::endl;
         }
     }
@@ -101,8 +103,6 @@ void start()
     if (isOk)
     {
         std::vector<Song> songs;
-
-        //chetene na pesni
         std::ifstream inSongs("Songs.txt");
         if (inSongs.is_open())
         {
@@ -124,8 +124,6 @@ void start()
             countS = s.readHelper(inSongs, countS);
             songs.push_back(s);
         }
-
-        //chetene operacii
 
         inSongs.close();
         std::ifstream inUser(file);
