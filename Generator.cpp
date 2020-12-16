@@ -176,6 +176,82 @@ int secondCriterii(const std::vector<Song> &songs, const int &plSize, std::vecto
     }
     return plRes;
 }
+int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
+{
+    std::cin.ignore();
+    std::cout << "You have chosen critetia for year!";
+    std::string y;
+    int year;
+
+    bool okYear = false;
+    std::string bEA;
+    do
+    {
+        okYear = false;
+        std::cout << "Write before, equal or after: ";
+        std::getline(std::cin, bEA);
+        if (bEA == "before" || bEA == "equal" || bEA == "after")
+        {
+            okYear = true;
+        }
+        else
+        {
+            std::cout << "Error word!!! Try again!!!\n";
+        }
+    } while (okYear);
+    int plRes = plSize;
+    bool isOkYear = false;
+    std::string y;
+    do
+    {
+        isOkYear = false;
+        std::cout << "Write year: ";
+        std::getline(std::cin, y);
+        year = isNumber(y) ? std::stoi(y) : -1;
+        if (year >= 0)
+        {
+            isOkYear = true;
+        }
+        else
+        {
+            std::cout << "Error year!!! Try again!!!\n";
+        }
+
+    } while (!isOkYear);
+
+    for (auto &&s : songs)
+    {
+        if (plList.size() == plSize)
+        {
+            return 0;
+        }
+        if (bEA == "before")
+        {
+            if (s.getYear() < year)
+            {
+                plList.push_back(s);
+                --plRes;
+            }
+        }
+        else if (bEA == "equal")
+        {
+            if (s.getYear() == year)
+            {
+                plList.push_back(s);
+                --plRes;
+            }
+        }
+        else if (bEA == "after")
+        {
+            if (s.getYear() > year)
+            {
+                plList.push_back(s);
+                --plRes;
+            }
+        }
+    }
+    return plRes;
+}
 void generate(const std::vector<Song> &songs, const User &user)
 {
     std::cin.ignore();
@@ -350,4 +426,5 @@ void generate(const std::vector<Song> &songs, const User &user)
         // pravim 3 dvoiki i mezdu tqh log operaciq
         //izpulnqvame kato pri count - 2 i imame 30 26 24 20
     }
+    //append 2 vectors vector1.insert( vector1.end(), vector2.begin(), vector2.end() );
 }
