@@ -52,6 +52,8 @@
         "execution": "cpp",
         "mutex": "cpp",
         "ratio": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "map": "cpp",
+        "xtree": "cpp"
     }
 }
