@@ -17,7 +17,7 @@ bool isDoubleNumber(const std::string &s)
     return end != s.c_str() && *end == '\0';
 }
 
-int firstCriterii(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
+int firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
     std::cin.ignore();
     std::cout << "You have chosen critetia for rating!";
@@ -90,14 +90,14 @@ int pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::
     }
     return plRes;
 }
-int thirdCriterii(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, User &u)
+int thirdCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
 {
     std::cin.ignore();
     std::cout << "You have chosen critetia for only favourite genres!\n";
     int plRes = pushingViaGenres(songs, plSize, plList, u.getGenres());
     return plRes;
 }
-int secondCriterii(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
+int secondCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
     std::cin.ignore();
     std::cout << "You have chosen critetia for turn on or turn off some genres!";
@@ -198,10 +198,9 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
         {
             std::cout << "Error word!!! Try again!!!\n";
         }
-    } while (okYear);
+    } while (!okYear);
     int plRes = plSize;
     bool isOkYear = false;
-    std::string y;
     do
     {
         isOkYear = false;
@@ -400,9 +399,22 @@ void generate(const std::vector<Song> &songs, const User &user)
 
         if (cr == "1")
         {
-            resSize = firstCriterii(songs, resSize, sList);
+            resSize = firstCriteria(songs, resSize, sList);
+        }
+        else if (cr == "2")
+        {
+            resSize = secondCriteria(songs, resSize, sList);
+        }
+        else if (cr == "3")
+        {
+            resSize = thirdCriteria(songs, resSize, sList, user);
+        }
+        else if (cr == "4")
+        {
+            resSize = fourthCriteria(songs, resSize, sList);
         }
         instructions.pop();
+        std::cout << "\n\nSIze--> " << sList.size() << std::endl;
         //instructions.front() -> vzemane na preoritet , tip na preoritet
         //100% ot pesnite po tozi preoritet dokato ima takiva i posle drgite do size
         //instructions.pop();
