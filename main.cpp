@@ -75,6 +75,7 @@ int main()
     // std::cout<<std::accumulate(sv.begin(), sv.end(), 0.0);
 
     //start();
-    generate(sv, niki);
+    //generate(sv, niki);
+    std::cout<<isDoubleNumber("3.5");
     return 0;
 }
