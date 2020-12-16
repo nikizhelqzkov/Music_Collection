@@ -20,7 +20,7 @@ bool isDoubleNumber(const std::string &s)
 int firstCriterii(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
     std::cin.ignore();
-    std::cout << "You have chosen critetii for rating!";
+    std::cout << "You have chosen critetia for rating!";
     std::string r;
     double rating;
     bool ok = false;
@@ -73,11 +73,107 @@ int pushingViaGenres(const std::vector<Song> &songs, const int &plSize, std::vec
     }
     return plRes;
 }
+int pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
+{
+    int plRes = plSize;
+    for (auto &&s : songs)
+    {
+        if (plList.size() == plSize)
+        {
+            return 0;
+        }
+        if (!std::binary_search(genres.begin(), genres.end(), s.getGenres()))
+        {
+            plList.push_back(s);
+            --plRes;
+        }
+    }
+    return plRes;
+}
 int thirdCriterii(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, User &u)
 {
     std::cin.ignore();
-    std::cout << "You have chosen critetii for only favourite genres!";
+    std::cout << "You have chosen critetia for only favourite genres!\n";
     int plRes = pushingViaGenres(songs, plSize, plList, u.getGenres());
+    return plRes;
+}
+int secondCriterii(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
+{
+    std::cin.ignore();
+    std::cout << "You have chosen critetia for turn on or turn off some genres!";
+    bool okOnOrOff = false;
+    std::string onOrOff;
+    int plRes = plSize;
+    do
+    {
+        okOnOrOff = false;
+        std::cout << "Write turn on(on) or turn off(off): ";
+        std::getline(std::cin, onOrOff);
+        if (onOrOff == "on" || onOrOff == "off")
+        {
+            okOnOrOff = true;
+        }
+        else
+        {
+            std::cout << "Error text!!! Try again!!!\n";
+        }
+    } while (!okOnOrOff);
+    std::vector<std::string> genres;
+    if (onOrOff == "on")
+    {
+        bool on = false;
+
+        do
+        {
+            on = false;
+            std::cout << "Write genre to be used for priority song genres: ";
+            std::string temp;
+            std::getline(std::cin, temp);
+            if (temp.empty())
+            {
+                std::cout << "Empty text!!! Try again!!!\n";
+            }
+            else
+            {
+                genres.push_back(temp);
+                std::string yOrN;
+                std::cout << "More genres(y for yes and other for no): ";
+                std::getline(std::cin, yOrN);
+                if (yOrN != "y")
+                {
+                    on = true;
+                }
+            }
+        } while (!on);
+        plRes = pushingViaGenres(songs, plSize, plList, genres);
+    }
+    else if (onOrOff == "off")
+    {
+        bool off = false;
+        do
+        {
+            off = false;
+            std::cout << "Write genre to be not used for priority song genres: ";
+            std::string temp;
+            std::getline(std::cin, temp);
+            if (temp.empty())
+            {
+                std::cout << "Empty text!!! Try again!!!\n";
+            }
+            else
+            {
+                genres.push_back(temp);
+                std::string yOrN;
+                std::cout << "More genres(y for yes and other for no): ";
+                std::getline(std::cin, yOrN);
+                if (yOrN != "y")
+                {
+                    off = true;
+                }
+            }
+        } while (!off);
+        plRes = pushingNotViaGenres(songs, plSize, plList, genres);
+    }
     return plRes;
 }
 void generate(const std::vector<Song> &songs, const User &user)
