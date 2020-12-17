@@ -555,18 +555,150 @@ void generate(const std::vector<Song> &songs, const User &user)
             resSize -= (countB + countC + countA);
             std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
         }
-        std::cout << "More spaces: " << resSize << "\n";
+    }
+    else if (count - 1 == 4)
+    {
+        int countA = 0, countB = 0, countC = 0, countD = 0;
+        std::string pr = instructions.front();
+        instructions.pop();
+        std::string pr2 = instructions.front();
+        instructions.pop();
+        std::string pr3 = instructions.front();
+        instructions.pop();
+        std::string pr4 = instructions.front();
+        instructions.pop();
+        std::string op = logicOp.front();
+        logicOp.pop();
+        std::string op2 = logicOp.front();
+        logicOp.pop();
+        std::string op3 = logicOp.front();
+        logicOp.pop();
+
+        if (op == "&" && op2 == "&" && op3 == "&")
+        {
+            countA = tokenizator(pr, songs, (resSize * 30) / 100, sList, user);
+            countB = tokenizator(pr2, songs, (resSize * 26) / 100, sList, user);
+            countC = tokenizator(pr3, songs, (resSize * 24) / 100, sList, user);
+            countD = tokenizator(pr4, songs, (resSize * 20) / 100, sList, user);
+            resSize -= (countA + countB + countC + countD);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
+        }
+        else if (op == "&" && op2 == "&" && op3 == "|")
+        {
+            countA = tokenizator(pr, songs, (resSize * 35) / 100, sList, user);
+            countB = tokenizator(pr2, songs, (resSize * 33) / 100, sList, user);
+            countC = tokenizator(pr3, songs, (resSize * 32) / 100, sList, user);
+            if (countC == 0)
+            {
+                std::cout << "\nThird preority didn't find any songs for you!\n\n";
+                countD = tokenizator(pr4, songs, (resSize * 32) / 100, sList, user);
+            }
+            resSize -= (countA + countB + countC + countD);
+        }
+        else if (op == "&" && op2 == "|" && op3 == "&")
+        {
+            countA = tokenizator(pr, songs, (resSize * 35) / 100, sList, user);
+            countB = tokenizator(pr2, songs, (resSize * 33) / 100, sList, user);
+            if (countB == 0)
+            {
+                std::cout << "\nSecond preority didn't find any songs for you!\n\n";
+                countC = tokenizator(pr3, songs, (resSize * 33) / 100, sList, user);
+            }
+            countD = tokenizator(pr4, songs, (resSize * 32) / 100, sList, user);
+            resSize -= (countA + countB + countC + countD);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
+        }
+        else if (op == "&" && op2 == "|" && op3 == "|")
+        {
+            countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
+            countB = tokenizator(pr2, songs, (resSize * 40) / 100, sList, user);
+            if (countB == 0)
+            {
+                std::cout << "\nSecond preority didn't find any songs for you!\n\n";
+                countC = tokenizator(pr3, songs, (resSize * 40) / 100, sList, user);
+                if (countC == 0)
+                {
+                    std::cout << "\nThird preority didn't find any songs for you!\n\n";
+                    countD = tokenizator(pr4, songs, (resSize * 40) / 100, sList, user);
+                }
+            }
+            resSize -= (countA + countB + countC + countD);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
+        }
+        else if (op == "|" && op2 == "&" && op3 == "&")
+        {
+            countA = tokenizator(pr, songs, (resSize * 35) / 100, sList, user);
+            if (countA == 0)
+            {
+                std::cout << "\nFirst preority didn't find any songs for you!\n\n";
+                countB = tokenizator(pr2, songs, (resSize * 35) / 100, sList, user);
+            }
+            countC = tokenizator(pr3, songs, (resSize * 33) / 100, sList, user);
+            countD = tokenizator(pr4, songs, (resSize * 32) / 100, sList, user);
+            resSize -= (countA + countB + countC + countD);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
+        }
+        else if (op == "|" && op2 == "&" && op3 == "|")
+        {
+            countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
+            if (countA == 0)
+            {
+                std::cout << "\nFirst preority didn't find any songs for you!\n\n";
+                countB = tokenizator(pr2, songs, (resSize * 60) / 100, sList, user);
+            }
+            countC = tokenizator(pr3, songs, (resSize * 40) / 100, sList, user);
+            if (countC == 0)
+            {
+                std::cout << "\nThird preority didn't find any songs for you!\n\n";
+                countD = tokenizator(pr4, songs, (resSize * 40) / 100, sList, user);
+            }
+            resSize -= (countA + countB + countC + countD);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
+        }
+        else if (op == "|" && op2 == "|" && op3 == "&")
+        {
+            countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
+            if (countA == 0)
+            {
+                std::cout << "\nFirst preority didn't find any songs for you!\n\n";
+                countB = tokenizator(pr2, songs, (resSize * 60) / 100, sList, user);
+                if (countB == 0)
+                {
+                    std::cout << "\nSecond preority didn't find any songs for you!\n\n";
+                    countC = tokenizator(pr3, songs, (resSize * 60) / 100, sList, user);
+                }
+            }
+            countD = tokenizator(pr4, songs, (resSize * 40) / 100, sList, user);
+            resSize -= (countA + countB + countC + countD);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
+        }
+        else if (op == "|" && op2 == "|" && op3 == "|")
+        {
+            countA = tokenizator(pr, songs, resSize, sList, user);
+            if (countA == 0)
+            {
+                std::cout << "\nFirst preority didn't find any songs for you!\n\n";
+                countB = tokenizator(pr2, songs, resSize, sList, user);
+                if (countB == 0)
+                {
+                    std::cout << "\nSecond preority didn't find any songs for you!\n\n";
+                    countC = tokenizator(pr3, songs, resSize, sList, user);
+                    if (countC == 0)
+                    {
+                        std::cout << "\nThird preority didn't find any songs for you!\n\n";
+                        countD = tokenizator(pr4, songs, resSize, sList, user);
+                    }
+                }
+            }
+            resSize -= (countA + countB + countC + countD);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
+        }
         for (auto &&s : sList)
         {
             s.printSongInfo();
             std::cout << "\n";
         }
-    }
-    else if (count - 1 == 4)
-    {
-        //vzemame chetirite preoriteta chrez front i pop
-        // pravim 3 dvoiki i mezdu tqh log operaciq
-        //izpulnqvame kato pri count - 2 i imame 30 26 24 20
+         std::cout << "More spaces: " << resSize << "\n";   
     }
     //append 2 vectors vector1.insert( vector1.end(), vector2.begin(), vector2.end() );
 }
