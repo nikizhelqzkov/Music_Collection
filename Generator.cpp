@@ -15,6 +15,17 @@ bool isHasSong(const std::vector<Song> &songs, const std::string &name)
     }
     return false;
 }
+bool isHasGenres(const std::vector<std::string> &list, const std::string &name)
+{
+    for (auto &&s : list)
+    {
+        if (s == name)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 bool isNumber(const std::string &s)
 {
     return !s.empty() && std::find_if(s.begin(),
@@ -60,7 +71,7 @@ int firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector
         {
             return count;
         }
-        if (s.getRating() >= rating && !isHasSong(plList,s.getTitle()))
+        if (s.getRating() >= rating && !isHasSong(plList, s.getTitle()))
         {
             plList.push_back(s);
             ++count;
@@ -79,7 +90,8 @@ int pushingViaGenres(const std::vector<Song> &songs, const int &plSize, std::vec
         {
             return count;
         }
-        if (std::binary_search(genres.begin(), genres.end(), s.getGenres()) && !isHasSong(plList,s.getTitle()))
+
+        if (isHasGenres(genres, s.getGenres()) && !isHasSong(plList, s.getTitle()))
         {
             plList.push_back(s);
             --plRes;
@@ -98,7 +110,8 @@ int pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::
         {
             return count;
         }
-        if (!std::binary_search(genres.begin(), genres.end(), s.getGenres()) && !isHasSong(plList,s.getTitle()))
+
+        if (!isHasGenres(genres, s.getGenres()) && !isHasSong(plList, s.getTitle()))
         {
             plList.push_back(s);
             --plRes;
@@ -245,7 +258,7 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
         }
         if (bEA == "before")
         {
-            if (s.getYear() < year && !isHasSong(plList,s.getTitle()))
+            if (s.getYear() < year && !isHasSong(plList, s.getTitle()))
             {
                 plList.push_back(s);
                 --plRes;
@@ -254,7 +267,7 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
         }
         else if (bEA == "equal")
         {
-            if (s.getYear() == year && !isHasSong(plList,s.getTitle()))
+            if (s.getYear() == year && !isHasSong(plList, s.getTitle()))
             {
                 plList.push_back(s);
                 --plRes;
@@ -263,7 +276,7 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
         }
         else if (bEA == "after")
         {
-            if (s.getYear() > year && !isHasSong(plList,s.getTitle()))
+            if (s.getYear() > year && !isHasSong(plList, s.getTitle()))
             {
                 plList.push_back(s);
                 --plRes;
@@ -451,7 +464,7 @@ void generate(const std::vector<Song> &songs, const User &user)
     }
     else if (count - 1 == 2)
     {
-        int countA, countB;
+        int countA = 0, countB = 0;
         std::string pr = instructions.front();
         instructions.pop();
         std::string pr2 = instructions.front();
@@ -474,29 +487,80 @@ void generate(const std::vector<Song> &songs, const User &user)
             {
                 std::cout << "\nFirst preority didn't find any songs for you!\n\n";
                 countB = tokenizator(pr2, songs, resSize, sList, user);
-                resSize -= countB;
             }
-            else
+            resSize -= (countB + countA);
+        }
+    }
+    else if (count - 1 == 3)
+    {
+        int countA = 0, countB = 0, countC = 0;
+        std::string pr = instructions.front();
+        instructions.pop();
+        std::string pr2 = instructions.front();
+        instructions.pop();
+        std::string pr3 = instructions.front();
+        instructions.pop();
+        std::string op = logicOp.front();
+        logicOp.pop();
+        std::string op2 = logicOp.front();
+        logicOp.pop();
+
+        if (op == "&" && op2 == "&")
+        {
+            countA = tokenizator(pr, songs, (resSize * 35) / 100, sList, user);
+            countB = tokenizator(pr2, songs, (resSize * 33) / 100, sList, user);
+            countC = tokenizator(pr3, songs, (resSize * 32) / 100, sList, user);
+            resSize -= (countA + countB + countC);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
+        }
+        else if (op == "&" && op2 == "|")
+        {
+            countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
+            countB = tokenizator(pr2, songs, (resSize * 40) / 100, sList, user);
+            if (countB == 0)
             {
-                resSize -= countA;
+                std::cout << "\nSecond preority didn't find any songs for you!\n\n";
+                countC = tokenizator(pr3, songs, (resSize * 40) / 100, sList, user);
             }
+            resSize -= (countA + countB + countC);
+
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
+        }
+        else if (op == "|" && op2 == "&")
+        {
+            countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
+            if (countA == 0)
+            {
+                std::cout << "\nFirst preority didn't find any songs for you!\n\n";
+                countB = tokenizator(pr2, songs, (resSize * 60) / 100, sList, user);
+                countC = tokenizator(pr3, songs, (resSize * 40) / 100, sList, user);
+            }
+
+            resSize -= (countB + countC + countA);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
+        }
+        else if (op == "|" && op2 == "|")
+        {
+            countA = tokenizator(pr, songs, resSize, sList, user);
+            if (countA == 0)
+            {
+                std::cout << "\nFirst preority didn't find any songs for you!\n\n";
+                countB = tokenizator(pr2, songs, resSize, sList, user);
+                if (countB == 0)
+                {
+                    std::cout << "\nSecond preority didn't find any songs for you!\n\n";
+                    countC = tokenizator(pr3, songs, resSize, sList, user);
+                }
+            }
+            resSize -= (countB + countC + countA);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
         }
         std::cout << "More spaces: " << resSize << "\n";
         for (auto &&s : sList)
         {
-            std::cout << s << std::endl;
+            s.printSongInfo();
+            std::cout << "\n";
         }
-
-        //vzemame 2 preoriteta chrez front i pop
-        //vzemame front na log op
-        //ako e | -> 1 preoritet e s predimstvo , no ako nqma pesen za nego raboti vtoriq
-        // ako e && -> 50% za vseki preoritet pochvaiki ot purviq i ako ima mqsto shte se dobavqt oshte ot purviq
-    }
-    else if (count - 1 == 3)
-    {
-        //vzemame trite preoriteta chrez front i pop
-        //vzemame 2 dvoiki i mezdu tqh log operaciq
-        //izpulnqvame sushtoto kato pri count - 2 i imame 35% 33% 32%
     }
     else if (count - 1 == 4)
     {

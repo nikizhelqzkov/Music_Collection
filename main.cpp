@@ -64,7 +64,7 @@ int main()
         Song("Nova magistrala", "Iliyan ft Tedi Aleksandrova ft Amet", "chalga", "Love me crazy", 2019, 0),
         Song("Istreznqvash li", "Preslava", "chalga", "da gori v lubov", 2019, 0),
         Song("Vzimai zadalzhitelno", "Yanitsa", "chalga", "iskushenie", 2018, 0)};
-    std::sort(sv.begin(), sv.end());
+    //std::sort(sv.begin(), sv.end());
     // printingSongs(sv);
     // std::ofstream out("Songs.txt");
     // out << sv.size() << ";";
