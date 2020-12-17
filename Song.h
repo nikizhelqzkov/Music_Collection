@@ -31,6 +31,12 @@ public:
     void setRating(double rating);
     void setAverageRating(const double&);
     Song &operator=(const Song &);
+    bool operator<(const Song&)const;
+    bool operator>(const Song&)const;
+    bool operator==(const Song&)const;
+    bool operator!=(const Song&)const;
+    bool operator>=(const Song&)const;
+    bool operator<=(const Song&)const;
     std::string getTitle() const;
     std::string getAuthor() const;
     std::string getGenres() const;

@@ -37,7 +37,6 @@ void Song::setRating(double rating)
     }
     else
     {
-    
 
         this->rating = std::accumulate(ratings.begin(), ratings.end(), 0.0) / ratings.size();
     }
@@ -244,4 +243,28 @@ void Song::printSongInfo() const
               << "Genre: " << genres << " , "
               << "Album: " << album << " , "
               << "Year: " << year;
+}
+bool Song::operator<(const Song &other) const
+{
+    return this->title < other.title;
+}
+bool Song::operator>(const Song &other) const
+{
+    return this->title > other.title;
+}
+bool Song::operator==(const Song &other) const
+{
+    return this->title == other.title;
+}
+bool Song::operator!=(const Song &other) const
+{
+    return this->title != other.title;
+}
+bool Song::operator<=(const Song &other) const
+{
+    return this->title <= other.title;
+}
+bool Song::operator>=(const Song &other) const
+{
+    return this->title >= other.title;
 }

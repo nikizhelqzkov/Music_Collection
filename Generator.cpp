@@ -3,6 +3,7 @@
 #include <queue>
 #include <string>
 #include <algorithm>
+#include <functional>
 
 bool isNumber(const std::string &s)
 {
@@ -19,10 +20,11 @@ bool isDoubleNumber(const std::string &s)
 
 int firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
-    std::cin.ignore();
+    // std::cin.ignore();
     std::cout << "You have chosen critetia for rating!";
     std::string r;
     double rating;
+    int count = 0;
     bool ok = false;
     do
     {
@@ -44,66 +46,72 @@ int firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector
     int plRes = plSize;
     for (auto &&s : songs)
     {
-        if (plList.size() == plSize)
+        if (count == plSize)
         {
-            return 0;
+            return count;
         }
-        if (s.getRating() >= rating)
+        if (s.getRating() >= rating && !std::binary_search(plList.begin(), plList.end(), s))
         {
             plList.push_back(s);
+            ++count;
             --plRes;
         }
     }
-    return plRes;
+    return count;
 }
 int pushingViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
 {
     int plRes = plSize;
+    int count = 0;
     for (auto &&s : songs)
     {
-        if (plList.size() == plSize)
+        if (count == plSize)
         {
-            return 0;
+            return count;
         }
-        if (std::binary_search(genres.begin(), genres.end(), s.getGenres()))
+        if (std::binary_search(genres.begin(), genres.end(), s.getGenres()) && !std::binary_search(plList.begin(), plList.end(), s))
         {
             plList.push_back(s);
             --plRes;
+            ++count;
         }
     }
-    return plRes;
+    return count;
 }
 int pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
 {
     int plRes = plSize;
+    int count = 0;
     for (auto &&s : songs)
     {
-        if (plList.size() == plSize)
+        if (count == plSize)
         {
-            return 0;
+            return count;
         }
-        if (!std::binary_search(genres.begin(), genres.end(), s.getGenres()))
+        if (!std::binary_search(genres.begin(), genres.end(), s.getGenres()) && !std::binary_search(plList.begin(), plList.end(), s))
         {
             plList.push_back(s);
             --plRes;
+            ++count;
         }
     }
-    return plRes;
+    return count;
 }
 int thirdCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
 {
-    std::cin.ignore();
+    //std::cin.ignore();
     std::cout << "You have chosen critetia for only favourite genres!\n";
-    int plRes = pushingViaGenres(songs, plSize, plList, u.getGenres());
-    return plRes;
+    int count = pushingViaGenres(songs, plSize, plList, u.getGenres());
+    return count;
 }
 int secondCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
-    std::cin.ignore();
+    //std::cin.ignore();
     std::cout << "You have chosen critetia for turn on or turn off some genres!";
     bool okOnOrOff = false;
     std::string onOrOff;
     int plRes = plSize;
+    int count = 0;
     do
     {
         okOnOrOff = false;
@@ -145,7 +153,7 @@ int secondCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
                 }
             }
         } while (!on);
-        plRes = pushingViaGenres(songs, plSize, plList, genres);
+        count = pushingViaGenres(songs, plSize, plList, genres);
     }
     else if (onOrOff == "off")
     {
@@ -172,13 +180,13 @@ int secondCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
                 }
             }
         } while (!off);
-        plRes = pushingNotViaGenres(songs, plSize, plList, genres);
+        count = pushingNotViaGenres(songs, plSize, plList, genres);
     }
-    return plRes;
+    return count;
 }
 int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
-    std::cin.ignore();
+    //std::cin.ignore();
     std::cout << "You have chosen critetia for year!";
     std::string y;
     int year;
@@ -200,6 +208,7 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
         }
     } while (!okYear);
     int plRes = plSize;
+    int count = 0;
     bool isOkYear = false;
     do
     {
@@ -220,36 +229,61 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
 
     for (auto &&s : songs)
     {
-        if (plList.size() == plSize)
+        if (count == plSize)
         {
-            return 0;
+            return count;
         }
         if (bEA == "before")
         {
-            if (s.getYear() < year)
+            if (s.getYear() < year && !std::binary_search(plList.begin(), plList.end(), s))
             {
                 plList.push_back(s);
                 --plRes;
+                ++count;
             }
         }
         else if (bEA == "equal")
         {
-            if (s.getYear() == year)
+            if (s.getYear() == year && !std::binary_search(plList.begin(), plList.end(), s))
             {
                 plList.push_back(s);
                 --plRes;
+                ++count;
             }
         }
         else if (bEA == "after")
         {
-            if (s.getYear() > year)
+            if (s.getYear() > year && !std::binary_search(plList.begin(), plList.end(), s))
             {
                 plList.push_back(s);
                 --plRes;
+                ++count;
             }
         }
     }
-    return plRes;
+    return count;
+}
+int tokenizator(const std::string &input, const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
+{
+    //plRes,sList,user
+    if (input == "1")
+    {
+        return firstCriteria(songs, plSize, plList);
+    }
+    else if (input == "2")
+    {
+        return secondCriteria(songs, plSize, plList);
+    }
+    else if (input == "3")
+    {
+        return thirdCriteria(songs, plSize, plList, u);
+    }
+    else if (input == "4")
+    {
+        return fourthCriteria(songs, plSize, plList);
+    }
+    std::invalid_argument("Error input");
+    return -1;
 }
 void generate(const std::vector<Song> &songs, const User &user)
 {
@@ -269,7 +303,7 @@ void generate(const std::vector<Song> &songs, const User &user)
         isOkSize = false;
         std::cout << "Write the size of the new playlist(between 1 and 20): ";
         std::getline(std::cin, sizeOfP);
-        size = std::stoi(sizeOfP);
+        size = !sizeOfP.empty() ? std::stoi(sizeOfP) : -1;
         if (isNumber(sizeOfP) && (size > 0 && size <= 20))
         {
             isOkSize = true;
@@ -289,7 +323,7 @@ void generate(const std::vector<Song> &songs, const User &user)
         isOkCriteria = false;
         std::cout << "Write how many criteria do u want(between 0 and 4): ";
         std::getline(std::cin, sCr);
-        criteria = std::stoi(sCr);
+        criteria = !sCr.empty() ? std::stoi(sCr) : -1;
         if (isNumber(sCr) && (criteria >= 0 && criteria <= 4))
         {
             isOkCriteria = true;
@@ -376,6 +410,7 @@ void generate(const std::vector<Song> &songs, const User &user)
     Playlist pl;
     std::vector<Song> sList;
     int resSize = size;
+
     if ((count - 1) == 0)
     {
         //pushkane na size pesni v pleilistata
@@ -396,31 +431,48 @@ void generate(const std::vector<Song> &songs, const User &user)
     else if (count - 1 == 1)
     {
         std::string cr = instructions.front();
-
-        if (cr == "1")
-        {
-            resSize = firstCriteria(songs, resSize, sList);
-        }
-        else if (cr == "2")
-        {
-            resSize = secondCriteria(songs, resSize, sList);
-        }
-        else if (cr == "3")
-        {
-            resSize = thirdCriteria(songs, resSize, sList, user);
-        }
-        else if (cr == "4")
-        {
-            resSize = fourthCriteria(songs, resSize, sList);
-        }
+        int countSongs = tokenizator(cr, songs, resSize, sList, user);
         instructions.pop();
-        std::cout << "\n\nSIze--> " << sList.size() << std::endl;
+        std::cout << "\n\nSIze--> " << sList.size() << "  =  " << count << std::endl;
         //instructions.front() -> vzemane na preoritet , tip na preoritet
         //100% ot pesnite po tozi preoritet dokato ima takiva i posle drgite do size
         //instructions.pop();
+        resSize -= countSongs;
     }
     else if (count - 1 == 2)
     {
+        int countA, countB;
+        std::string pr = instructions.front();
+        instructions.pop();
+        std::string pr2 = instructions.front();
+        instructions.pop();
+        std::string op = logicOp.front();
+        logicOp.pop();
+        if (op == "&")
+        {
+
+            // std::cout << "Size-> " << resSize << " , " << (resSize * 60) / 100 << " , " << res40 << "\n";
+            countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
+            countB = tokenizator(pr2, songs, (resSize * 40) / 100, sList, user);
+            resSize -= (countA + countB);
+            std::cout << "Sizes: A-> " << countA << " B-> " << countB << "\n";
+        }
+        else if (op == "|")
+        {
+            countA = tokenizator(pr, songs, resSize, sList, user);
+            if (countA == 0)
+            {
+                std::cout << "\nFirst preority didn't find any songs for you!\n\n";
+                countB = tokenizator(pr2, songs, resSize, sList, user);
+                resSize -= countB;
+            }
+            else
+            {
+                resSize -= countA;
+            }
+        }
+        std::cout << "More spaces: " << resSize << "\n";
+
         //vzemame 2 preoriteta chrez front i pop
         //vzemame front na log op
         //ako e | -> 1 preoritet e s predimstvo , no ako nqma pesen za nego raboti vtoriq
