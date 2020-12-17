@@ -10,6 +10,8 @@
 // #include "Register.h"
 //#include "Ui.cpp"
 #include "Generator.cpp"
+
+#include <algorithm>
 //g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp Login.cpp Register.cpp
 
 int main()
@@ -62,6 +64,7 @@ int main()
         Song("Nova magistrala", "Iliyan ft Tedi Aleksandrova ft Amet", "chalga", "Love me crazy", 2019, 0),
         Song("Istreznqvash li", "Preslava", "chalga", "da gori v lubov", 2019, 0),
         Song("Vzimai zadalzhitelno", "Yanitsa", "chalga", "iskushenie", 2018, 0)};
+    std::sort(sv.begin(), sv.end());
     // printingSongs(sv);
     // std::ofstream out("Songs.txt");
     // out << sv.size() << ";";
@@ -73,9 +76,10 @@ int main()
     // std::vector<double> sv {1.5,3.3};
     // double sum = std::accumulate(sv.begin(), sv.end(), 0);
     // std::cout<<std::accumulate(sv.begin(), sv.end(), 0.0);
+    //std::vector<std::string> str{"hello", "world", "nz", "1", "2", "845"};
 
     //start();
-    generate(sv, niki);
+     generate(sv, niki);
     //std::cout<<isDoubleNumber("3.5");
     return 0;
 }

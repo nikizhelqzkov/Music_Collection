@@ -4,7 +4,17 @@
 #include <string>
 #include <algorithm>
 #include <functional>
-
+bool isHasSong(const std::vector<Song> &songs, const std::string &name)
+{
+    for (auto &&s : songs)
+    {
+        if (s.getTitle() == name)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 bool isNumber(const std::string &s)
 {
     return !s.empty() && std::find_if(s.begin(),
@@ -50,7 +60,7 @@ int firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector
         {
             return count;
         }
-        if (s.getRating() >= rating && !std::binary_search(plList.begin(), plList.end(), s))
+        if (s.getRating() >= rating && !isHasSong(plList,s.getTitle()))
         {
             plList.push_back(s);
             ++count;
@@ -69,7 +79,7 @@ int pushingViaGenres(const std::vector<Song> &songs, const int &plSize, std::vec
         {
             return count;
         }
-        if (std::binary_search(genres.begin(), genres.end(), s.getGenres()) && !std::binary_search(plList.begin(), plList.end(), s))
+        if (std::binary_search(genres.begin(), genres.end(), s.getGenres()) && !isHasSong(plList,s.getTitle()))
         {
             plList.push_back(s);
             --plRes;
@@ -88,7 +98,7 @@ int pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::
         {
             return count;
         }
-        if (!std::binary_search(genres.begin(), genres.end(), s.getGenres()) && !std::binary_search(plList.begin(), plList.end(), s))
+        if (!std::binary_search(genres.begin(), genres.end(), s.getGenres()) && !isHasSong(plList,s.getTitle()))
         {
             plList.push_back(s);
             --plRes;
@@ -235,7 +245,7 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
         }
         if (bEA == "before")
         {
-            if (s.getYear() < year && !std::binary_search(plList.begin(), plList.end(), s))
+            if (s.getYear() < year && !isHasSong(plList,s.getTitle()))
             {
                 plList.push_back(s);
                 --plRes;
@@ -244,7 +254,7 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
         }
         else if (bEA == "equal")
         {
-            if (s.getYear() == year && !std::binary_search(plList.begin(), plList.end(), s))
+            if (s.getYear() == year && !isHasSong(plList,s.getTitle()))
             {
                 plList.push_back(s);
                 --plRes;
@@ -253,7 +263,7 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
         }
         else if (bEA == "after")
         {
-            if (s.getYear() > year && !std::binary_search(plList.begin(), plList.end(), s))
+            if (s.getYear() > year && !isHasSong(plList,s.getTitle()))
             {
                 plList.push_back(s);
                 --plRes;
@@ -472,6 +482,10 @@ void generate(const std::vector<Song> &songs, const User &user)
             }
         }
         std::cout << "More spaces: " << resSize << "\n";
+        for (auto &&s : sList)
+        {
+            std::cout << s << std::endl;
+        }
 
         //vzemame 2 preoriteta chrez front i pop
         //vzemame front na log op
