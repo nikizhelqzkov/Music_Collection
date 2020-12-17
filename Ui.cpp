@@ -1,6 +1,5 @@
 //  #include "User.h"
-#include "Login.h"
-#include "Register.h"
+#include "Generator.cpp"
 
 void printingSongs(const std::vector<Song> &sv)
 {
@@ -156,7 +155,7 @@ void start()
             std::cout << "1)Edit your profile\n";
             std::cout << "2)Add Song to the system\n";
             std::cout << "3)Generate new Playlist\n";
-            std::cout << "4)Load Playlist by name\n"; 
+            std::cout << "4)Load Playlist by name\n";
             std::cout << "5)Songs info in your Playlist by name\n";
             std::cout << "6)Set rating to some song\n";
             std::cout << "7)Exit\n\n";
@@ -248,7 +247,12 @@ void start()
             }
             else if (c == 3)
             {
-                
+                std::cout << "You chose to add new Playlist to the system!!!\n\n";
+                generate(songs, u);
+                std::ofstream output(u.getUsername() + ".txt");
+                output << u;
+                output.close();
+                repeat = true;
             }
             else if (c == 4)
             {
@@ -276,7 +280,7 @@ void start()
                         do
                         {
                             moreStartingSong = false;
-                            std::cout << "Write number of song between 1 and " << plR.getList().size()<<": ";
+                            std::cout << "Write number of song between 1 and " << plR.getList().size() << ": ";
                             std::getline(std::cin, num);
                             int number = std::stoi(num);
                             if (number < 1 || number > plR.getList().size())

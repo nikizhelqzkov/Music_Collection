@@ -45,7 +45,6 @@ std::vector<Playlist> User::getPlaylists() const
     return this->playlists;
 }
 
-
 void User::setUsername(const std::string &_data)
 {
     this->username = _data;
@@ -372,4 +371,8 @@ void User::removePlaylist()
     std::ofstream output(this->username + ".txt");
     output << *this;
     std::cout << "Your playlists had been changed!!!\n\n";
+}
+void User::addPlaylist(const Playlist &p)
+{
+    playlists.push_back(p);
 }

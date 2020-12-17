@@ -1,14 +1,20 @@
-#include <map>
-#include "Ui.cpp"
-#include <queue>
-#include <string>
-#include <algorithm>
-#include <functional>
+#include "boot.h"
 bool isHasSong(const std::vector<Song> &songs, const std::string &name)
 {
     for (auto &&s : songs)
     {
         if (s.getTitle() == name)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+bool isSameNamePl(User &user, std::string name)
+{
+    for (auto &&element : user.getPlaylists())
+    {
+        if (element.getName() == name)
         {
             return true;
         }
@@ -38,10 +44,35 @@ bool isDoubleNumber(const std::string &s)
     strtod(s.c_str(), &end); //funkciq koqto promenq end pointera s \0, ako e uzspeshen casta!!!
     return end != s.c_str() && *end == '\0';
 }
-
+void pushingToEnd(const std::vector<Song> &songs, std::vector<Song> &plList, const int &plRes)
+{
+    int count = 0;
+    std::vector<Song> temp;
+    for (auto &&s : songs)
+    {
+        if (count == plRes)
+        {
+            std::sort(temp.begin(), temp.end());
+            plList.insert(plList.end(), temp.begin(), temp.end());
+            return;
+        }
+        if (!isHasSong(plList, s.getTitle()))
+        {
+            temp.push_back(s);
+            ++count;
+        }
+    }
+    if (count < plRes)
+    {
+        std::sort(temp.begin(), temp.end());
+        plList.insert(plList.end(), temp.begin(), temp.end());
+        std::cout << "We don't have enough songs for your playlist!\n";
+        std::cout << "Your playlist will have " << plList.size() << " songs\n";
+    }
+}
 int firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
-    // std::cin.ignore();
+  
     std::cout << "You have chosen critetia for rating!";
     std::string r;
     double rating;
@@ -284,6 +315,7 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
             }
         }
     }
+
     return count;
 }
 int tokenizator(const std::string &input, const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
@@ -308,7 +340,7 @@ int tokenizator(const std::string &input, const std::vector<Song> &songs, const 
     std::invalid_argument("Error input");
     return -1;
 }
-void generate(const std::vector<Song> &songs, const User &user)
+void generate(const std::vector<Song> &songs, User &user)
 {
     std::cin.ignore();
     std::queue<std::string> instructions;
@@ -581,7 +613,6 @@ void generate(const std::vector<Song> &songs, const User &user)
             countC = tokenizator(pr3, songs, (resSize * 24) / 100, sList, user);
             countD = tokenizator(pr4, songs, (resSize * 20) / 100, sList, user);
             resSize -= (countA + countB + countC + countD);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
         }
         else if (op == "&" && op2 == "&" && op3 == "|")
         {
@@ -606,7 +637,6 @@ void generate(const std::vector<Song> &songs, const User &user)
             }
             countD = tokenizator(pr4, songs, (resSize * 32) / 100, sList, user);
             resSize -= (countA + countB + countC + countD);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
         }
         else if (op == "&" && op2 == "|" && op3 == "|")
         {
@@ -623,7 +653,6 @@ void generate(const std::vector<Song> &songs, const User &user)
                 }
             }
             resSize -= (countA + countB + countC + countD);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
         }
         else if (op == "|" && op2 == "&" && op3 == "&")
         {
@@ -636,7 +665,6 @@ void generate(const std::vector<Song> &songs, const User &user)
             countC = tokenizator(pr3, songs, (resSize * 33) / 100, sList, user);
             countD = tokenizator(pr4, songs, (resSize * 32) / 100, sList, user);
             resSize -= (countA + countB + countC + countD);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
         }
         else if (op == "|" && op2 == "&" && op3 == "|")
         {
@@ -653,7 +681,6 @@ void generate(const std::vector<Song> &songs, const User &user)
                 countD = tokenizator(pr4, songs, (resSize * 40) / 100, sList, user);
             }
             resSize -= (countA + countB + countC + countD);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
         }
         else if (op == "|" && op2 == "|" && op3 == "&")
         {
@@ -670,7 +697,6 @@ void generate(const std::vector<Song> &songs, const User &user)
             }
             countD = tokenizator(pr4, songs, (resSize * 40) / 100, sList, user);
             resSize -= (countA + countB + countC + countD);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
         }
         else if (op == "|" && op2 == "|" && op3 == "|")
         {
@@ -691,14 +717,28 @@ void generate(const std::vector<Song> &songs, const User &user)
                 }
             }
             resSize -= (countA + countB + countC + countD);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << " D-> " << countD << "\n";
         }
-        for (auto &&s : sList)
-        {
-            s.printSongInfo();
-            std::cout << "\n";
-        }
-         std::cout << "More spaces: " << resSize << "\n";   
     }
-    //append 2 vectors vector1.insert( vector1.end(), vector2.begin(), vector2.end() );
+    pushingToEnd(songs, sList, resSize);
+    pl.setList(sList);
+    bool nPl = false;
+    std::string nameOfPlaylist;
+    do
+    {
+        nPl = false;
+        std::cout << "Write name for the newest playlist: ";
+        std::getline(std::cin, nameOfPlaylist);
+        if (nameOfPlaylist.empty())
+        {
+            std::cout << "Empty name!! Try again!!!\n";
+        }
+        else
+        {
+            nPl = true;
+        }
+
+    } while (!nPl);
+    pl.setName(nameOfPlaylist);
+    std::cout << "Your new playlist is called: " << nameOfPlaylist << " and has " << sList.size() << " songs!!!\n\n";
+    user.addPlaylist(pl);
 }

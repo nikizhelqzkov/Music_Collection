@@ -8,11 +8,10 @@
 //  #include "User.h"
 // #include "Login.h"
 // #include "Register.h"
-//#include "Ui.cpp"
-#include "Generator.cpp"
+#include "Ui.cpp"
+//#include "Generator.cpp"
 
-#include <algorithm>
-//g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp Login.cpp Register.cpp
+//g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp Login.cpp Register.cpp Generator.cpp
 
 int main()
 {
@@ -66,7 +65,7 @@ int main()
         Song("Vzimai zadalzhitelno", "Yanitsa", "chalga", "iskushenie", 2018, 0)};
     //std::sort(sv.begin(), sv.end());
     // printingSongs(sv);
-    // std::ofstream out("Songs.txt");
+    //std::ofstream out("Songs.txt");
     // out << sv.size() << ";";
     // for (auto &&element : sv)
     // {
@@ -78,8 +77,8 @@ int main()
     // std::cout<<std::accumulate(sv.begin(), sv.end(), 0.0);
     //std::vector<std::string> str{"hello", "world", "nz", "1", "2", "845"};
 
-    //start();
-     generate(sv, niki);
+    start();
+    //generate(sv, niki);
     //std::cout<<isDoubleNumber("3.5");
     return 0;
 }
