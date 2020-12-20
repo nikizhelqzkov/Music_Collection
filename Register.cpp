@@ -2,6 +2,7 @@
 
 bool Register::registrate()
 {
+    std::cin.ignore();
 
     std::string username;
     bool isBusyReg = false;
@@ -9,7 +10,7 @@ bool Register::registrate()
     {
         isBusyReg = false;
         std::cout << "Write your username: ";
-        std::cin >> username;
+        std::getline(std::cin, username);
         std::ifstream in(username + ".txt");
         if (in.is_open())
         {
@@ -19,8 +20,7 @@ bool Register::registrate()
     } while (isBusyReg);
     std::cout << "\nWrite your password: ";
     std::string password;
-    std::cin >> password;
-    std::cin.ignore();
+    std::getline(std::cin, password);
     std::cout << "Write your full name: ";
     std::string fullName;
     std::getline(std::cin, fullName, '\n');
@@ -78,7 +78,7 @@ bool Register::registrate()
     }
     else
     {
-        
+
         output << user;
         std::cout << "SUCCESSFUL REGISTRATION!!!\n";
         output.close();

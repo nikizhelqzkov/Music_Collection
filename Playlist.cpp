@@ -64,10 +64,10 @@ int Playlist::readHelper(std::istream &in, int count)
         int size = std::stoi(s);
         count += s.size() + 11;
         in.seekg(count);
-        std::vector<Song>v;
+        std::vector<Song> v;
         for (int i = 0; i < size; ++i)
         {
-           
+
             Song temp;
             count = temp.readHelper(in, count);
             v.push_back(temp);
@@ -81,4 +81,16 @@ int Playlist::readHelper(std::istream &in, int count)
 int Playlist::read(std::istream &in)
 {
     return readHelper(in, 0);
+}
+void Playlist::printSongs() const
+{
+    int count = 1;
+    for (auto &&s : list)
+    {
+        std::cout << count << " song-> ";
+        ++count;
+        s.printSongInfo();
+        std::cout << "\n";
+    }
+    std::cout<<"\n";
 }

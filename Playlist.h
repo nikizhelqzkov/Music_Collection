@@ -21,6 +21,7 @@ public:
     friend std::ostream &operator<<(std::ostream &, const Playlist &);
     int readHelper(std::istream& in, int count);
     int read(std::istream& in);
+    void printSongs()const;
 };
 
 #endif

@@ -8,10 +8,10 @@
 //  #include "User.h"
 // #include "Login.h"
 // #include "Register.h"
-#include "Ui.cpp"
+#include "Ui.h"
 //#include "Generator.cpp"
 
-//g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp Login.cpp Register.cpp Generator.cpp
+//g++ main.cpp User.cpp Date.cpp Playlist.cpp Song.cpp Login.cpp Register.cpp Generator.cpp Ui.cpp
 
 int main()
 {
@@ -76,8 +76,8 @@ int main()
     // double sum = std::accumulate(sv.begin(), sv.end(), 0);
     // std::cout<<std::accumulate(sv.begin(), sv.end(), 0.0);
     //std::vector<std::string> str{"hello", "world", "nz", "1", "2", "845"};
-
-    start();
+    UI ui;
+    ui.start();
     //generate(sv, niki);
     //std::cout<<isDoubleNumber("3.5");
     return 0;

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include "Date.h"
-
+#include <string>
 Date::Date() : day(1), month(1), year(1)
 {
 }
@@ -31,16 +31,35 @@ Date::Date(const Date &other)
 }
 void Date::read()
 {
-    unsigned short day, month, year;
+    int day, month, year;
+    std::string d, m, y;
+    bool isOk = false;
     do
     {
+        isOk = false;
         std::cout << "Day: ";
-        std::cin >> day;
+        std::getline(std::cin, d);
         std::cout << "Month: ";
-        std::cin >> month;
+        std::getline(std::cin, m);
         std::cout << "Year: ";
-        std::cin >> year;
-    } while (!isValidDate(day, month, year));
+        std::getline(std::cin, y);
+        day = !d.empty() ? std::stoi(d) : -1;
+        month = !m.empty() ? std::stoi(m) : -1;
+        year = !y.empty() ? std::stoi(y) : -1;
+        if (day == -1 || month == -1 || year == -1)
+        {
+            std::cout << "Wrong numbers\n";
+        }
+        else if (!isValidDate(day, month, year))
+        {
+            std::cout << "Invalid date!!!\n";
+        }
+        else
+        {
+            isOk = true;
+        }
+
+    } while (!isOk);
 
     this->day = day;
     this->month = month;

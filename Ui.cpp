@@ -1,7 +1,6 @@
-//  #include "User.h"
-#include "Generator.cpp"
+#include "Ui.h"
 
-void printingSongs(const std::vector<Song> &sv)
+void UI::printingSongs(const std::vector<Song> &sv) const
 {
     std::ofstream out("Songs.txt");
     out << sv.size() << ";";
@@ -10,7 +9,8 @@ void printingSongs(const std::vector<Song> &sv)
         out << element;
     }
 }
-bool getPlaylist(const User &u, std::string name, Playlist &pl)
+
+bool UI::getPlaylist(const User &u, std::string name, Playlist &pl) const
 {
     for (int i = 0; i < u.getPlaylists().size(); ++i)
     {
@@ -22,11 +22,13 @@ bool getPlaylist(const User &u, std::string name, Playlist &pl)
     }
     return false;
 }
-void printingOneSong(const Playlist &pl, int pos)
+void UI::printingOneSong(const Playlist &pl, int pos) const
 {
-    std::cout << "Starting song number " << pos << " -> " << pl.getList()[pos - 1] << std::endl;
+    std::cout << "Starting song number " << pos << " -> ";
+    pl.getList()[pos - 1].printSongInfo();
+    std::cout << std::endl;
 }
-void printSongInfo(const User &u, std::string name)
+void UI::printSongInfo(const User &u, std::string name) const
 {
     Playlist current;
     int pos = -1;
@@ -55,7 +57,12 @@ void printSongInfo(const User &u, std::string name)
         }
     }
 }
-void start()
+bool UI::isNumber(const std::string &s) const
+{
+    return !s.empty() && std::find_if(s.begin(),
+                                      s.end(), [](unsigned char c) { return !std::isdigit(c); }) == s.end();
+}
+void UI::start()
 {
     std::cout << "WELCOME TO THE MUSIC COLLECTION :)\n";
     std::string lOrR;
@@ -148,6 +155,9 @@ void start()
         inUser.close();
         std::cout << "SO, YOUR DATA IS FINE!!!\n\nWELCOME TO THE MENU!\nYOU CAN CHOOSE ONE OF THESE OPTION:\n\n";
         bool repeat = false;
+        std::string systemV;
+        int c;
+
         do
         {
             repeat = false;
@@ -160,12 +170,23 @@ void start()
             std::cout << "6)Set rating to some song\n";
             std::cout << "7)Exit\n\n";
             std::cout << "Choose number from 1 to 7 : ";
-            int c;
-            std::cin >> c;
+            std::getline(std::cin, systemV);
+
+            if (!systemV.empty() && isNumber(systemV))
+            {
+                c = std::stoi(systemV);
+            }
+            else
+            {
+                c = -1;
+            }
+
+            //std::cin >> c;
             if (c == 1)
             {
                 std::cout << "\n\nYou choose: Edit your profile!\nChoose one of the options:\n\n";
                 bool editRep = false;
+                std::string systemF;
                 do
                 {
                     editRep = false;
@@ -181,7 +202,16 @@ void start()
                     std::cout << "9)Exit the app\n\n";
                     std::cout << "Choose number from 1 to 9 : ";
                     int cEditProfile;
-                    std::cin >> cEditProfile;
+                    std::getline(std::cin, systemF);
+                    if (!systemF.empty() && isNumber(systemF))
+                    {
+                        cEditProfile = std::stoi(systemF);
+                    }
+                    else
+                    {
+                        cEditProfile = -1;
+                    }
+                    //  std::cin >> cEditProfile;
                     if (cEditProfile == 1)
                     {
                         u.changeUserName();
@@ -237,6 +267,7 @@ void start()
             }
             else if (c == 2)
             {
+
                 std::cout << "You chose to add new song to the system!!!\n\n";
                 Song s;
                 s.addingSongInfo();
@@ -248,7 +279,13 @@ void start()
             else if (c == 3)
             {
                 std::cout << "You chose to add new Playlist to the system!!!\n\n";
-                generate(songs, u);
+                std::cout << "YOUR VALID CRITERIA ARE:\n";
+                std::cout << "1)Getting songs higher than your rating (0-10)\n";
+                std::cout << "2)Turning on/off some genres to be add in the playlist\n";
+                std::cout << "3)Adding songs with your favourtie genre\n";
+                std::cout << "4)Getting songs later/equal/before some year\n\n";
+                Generator g;
+                g.generate(songs, u);
                 std::ofstream output(u.getUsername() + ".txt");
                 output << u;
                 output.close();
@@ -262,8 +299,9 @@ void start()
                 }
                 else
                 {
+                    u.allPlaylistsNames();
                     std::string name;
-                    std::cin.ignore();
+
                     std::cout << "Write the name of the playlist: ";
                     std::getline(std::cin, name);
                     Playlist plR;
@@ -277,12 +315,14 @@ void start()
                     {
                         bool moreStartingSong = false;
                         std::string num;
+                        std::cout << "Your songs from the playlist: \n";
+                        plR.printSongs();
                         do
                         {
                             moreStartingSong = false;
                             std::cout << "Write number of song between 1 and " << plR.getList().size() << ": ";
                             std::getline(std::cin, num);
-                            int number = std::stoi(num);
+                            int number = !num.empty() ? std::stoi(num) : -1;
                             if (number < 1 || number > plR.getList().size())
                             {
                                 std::cin.ignore();
@@ -321,8 +361,9 @@ void start()
                 }
                 else
                 {
+                    u.allPlaylistsNames();
                     std::string name;
-                    std::cin.ignore();
+
                     std::cout << "Write the name of the playlist: ";
                     std::getline(std::cin, name);
                     printSongInfo(u, name);
@@ -334,7 +375,7 @@ void start()
                 std::cout << "You chose to set rating to some valid song!!!\n";
 
                 std::string nameToRate;
-                std::cin.ignore();
+
                 std::cout << "Write the name of the song: ";
                 std::getline(std::cin, nameToRate);
                 bool r = false;
@@ -408,6 +449,7 @@ void start()
                         songs[pos].setUserRateName(u.getUsername());
                         printingSongs(songs);
                         repeat = true;
+                        std::cin.ignore();
                     }
                 }
             }

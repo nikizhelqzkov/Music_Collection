@@ -159,7 +159,7 @@ void User::changeUserName()
     std::string uN;
     std::string oldUsername = this->username + ".txt";
     bool isOk = true;
-    std::cin.ignore();
+    // std::cin.ignore();
     do
     {
         isOk = true;
@@ -193,7 +193,7 @@ void User::changeUserName()
 void User::changePassword()
 {
     std::string newPassword;
-    std::cin.ignore();
+    // std::cin.ignore();
     bool isOk = true;
     do
     {
@@ -214,7 +214,7 @@ void User::changePassword()
 void User::changeFullName()
 {
     std::string newFullName;
-    std::cin.ignore();
+    //std::cin.ignore();
     bool isOk = true;
     do
     {
@@ -235,7 +235,7 @@ void User::changeFullName()
 void User::changeBornDate()
 {
     std::cout << "You are changing your born date: \n";
-    this->born.read();
+    born.read();
     std::ofstream output(this->username + ".txt");
     output << *this;
     std::cout << "Your born date had been changed!!!\n\n";
@@ -244,7 +244,7 @@ void User::addGenre()
 {
     bool isOk = true;
     std::string genre;
-    std::cin.ignore();
+    // std::cin.ignore();
     do
     {
         isOk = true;
@@ -281,7 +281,7 @@ void User::removeGenre()
         std::cout << "You don't have any genres\n";
         return;
     }
-    std::cin.ignore();
+    // std::cin.ignore();
     bool isOk = true;
     std::string genre;
     do
@@ -330,7 +330,7 @@ void User::removePlaylist()
         std::cout << "You don't have any playlists!!!\n";
         return;
     }
-    std::cin.ignore();
+    // std::cin.ignore();
     bool isOk = true;
     std::string pl;
     do
@@ -375,4 +375,14 @@ void User::removePlaylist()
 void User::addPlaylist(const Playlist &p)
 {
     playlists.push_back(p);
+}
+void User::allPlaylistsNames() const
+{
+    std::cout << "Your playlist names are:\n";
+    int count = 1;
+    for (auto &&pl : playlists)
+    {
+        std::cout << "Playlist " << count << " -> " << pl.getName() << "\n";
+        ++count;
+    }
 }

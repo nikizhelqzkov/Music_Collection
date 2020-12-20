@@ -211,7 +211,7 @@ void Song::setAverageRating(const double &rate)
 void Song::addingSongInfo()
 {
     std::string songName, author, genre, album, year;
-    std::cin.ignore();
+    //std::cin.ignore();
     std::cout << "Write the name of the song: ";
     std::getline(std::cin, songName);
     std::cout << "\nWrite the author of the song: ";

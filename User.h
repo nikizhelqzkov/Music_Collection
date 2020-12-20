@@ -47,6 +47,7 @@ public:
     void removeGenre();
     void removePlaylist();
     void addPlaylist(const Playlist&);
+    void allPlaylistsNames()const;
 };
 
 #endif

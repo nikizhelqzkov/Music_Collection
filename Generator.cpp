@@ -1,5 +1,5 @@
-#include "boot.h"
-bool isHasSong(const std::vector<Song> &songs, const std::string &name)
+#include "Generator.h"
+bool Generator::isHasSong(const std::vector<Song> &songs, const std::string &name) const
 {
     for (auto &&s : songs)
     {
@@ -10,7 +10,7 @@ bool isHasSong(const std::vector<Song> &songs, const std::string &name)
     }
     return false;
 }
-bool isSameNamePl(User &user, std::string name)
+bool Generator::isSameNamePl(User &user, std::string name) const
 {
     for (auto &&element : user.getPlaylists())
     {
@@ -21,7 +21,7 @@ bool isSameNamePl(User &user, std::string name)
     }
     return false;
 }
-bool isHasGenres(const std::vector<std::string> &list, const std::string &name)
+bool Generator::isHasGenres(const std::vector<std::string> &list, const std::string &name) const
 {
     for (auto &&s : list)
     {
@@ -32,19 +32,19 @@ bool isHasGenres(const std::vector<std::string> &list, const std::string &name)
     }
     return false;
 }
-bool isNumber(const std::string &s)
+bool Generator::isNumber(const std::string &s) const
 {
     return !s.empty() && std::find_if(s.begin(),
                                       s.end(), [](unsigned char c) { return !std::isdigit(c); }) == s.end();
 }
 
-bool isDoubleNumber(const std::string &s)
+bool Generator::isDoubleNumber(const std::string &s) const
 {
     char *end = nullptr;
     strtod(s.c_str(), &end); //funkciq koqto promenq end pointera s \0, ako e uzspeshen casta!!!
     return end != s.c_str() && *end == '\0';
 }
-void pushingToEnd(const std::vector<Song> &songs, std::vector<Song> &plList, const int &plRes)
+void Generator::pushingToEnd(const std::vector<Song> &songs, std::vector<Song> &plList, const int &plRes)
 {
     int count = 0;
     std::vector<Song> temp;
@@ -70,9 +70,9 @@ void pushingToEnd(const std::vector<Song> &songs, std::vector<Song> &plList, con
         std::cout << "Your playlist will have " << plList.size() << " songs\n";
     }
 }
-int firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
+int Generator::firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
-  
+
     std::cout << "You have chosen critetia for rating!";
     std::string r;
     double rating;
@@ -111,7 +111,7 @@ int firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector
     }
     return count;
 }
-int pushingViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
+int Generator::pushingViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
 {
     int plRes = plSize;
     int count = 0;
@@ -131,7 +131,7 @@ int pushingViaGenres(const std::vector<Song> &songs, const int &plSize, std::vec
     }
     return count;
 }
-int pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
+int Generator::pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
 {
     int plRes = plSize;
     int count = 0;
@@ -151,16 +151,14 @@ int pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::
     }
     return count;
 }
-int thirdCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
+int Generator::thirdCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
 {
-    //std::cin.ignore();
     std::cout << "You have chosen critetia for only favourite genres!\n";
     int count = pushingViaGenres(songs, plSize, plList, u.getGenres());
     return count;
 }
-int secondCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
+int Generator::secondCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
-    //std::cin.ignore();
     std::cout << "You have chosen critetia for turn on or turn off some genres!";
     bool okOnOrOff = false;
     std::string onOrOff;
@@ -238,9 +236,8 @@ int secondCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
     }
     return count;
 }
-int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
+int Generator::fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
-    //std::cin.ignore();
     std::cout << "You have chosen critetia for year!";
     std::string y;
     int year;
@@ -318,9 +315,9 @@ int fourthCriteria(const std::vector<Song> &songs, const int &plSize, std::vecto
 
     return count;
 }
-int tokenizator(const std::string &input, const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
+int Generator::tokenizator(const std::string &input, const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
 {
-    //plRes,sList,user
+
     if (input == "1")
     {
         return firstCriteria(songs, plSize, plList);
@@ -340,9 +337,9 @@ int tokenizator(const std::string &input, const std::vector<Song> &songs, const 
     std::invalid_argument("Error input");
     return -1;
 }
-void generate(const std::vector<Song> &songs, User &user)
+void Generator::generate(const std::vector<Song> &songs, User &user)
 {
-    std::cin.ignore();
+   
     std::queue<std::string> instructions;
     std::map<std::string, int> instr;
     instr["1"] = 0;
@@ -488,10 +485,6 @@ void generate(const std::vector<Song> &songs, User &user)
         std::string cr = instructions.front();
         int countSongs = tokenizator(cr, songs, resSize, sList, user);
         instructions.pop();
-        std::cout << "\n\nSIze--> " << sList.size() << "  =  " << count << std::endl;
-        //instructions.front() -> vzemane na preoritet , tip na preoritet
-        //100% ot pesnite po tozi preoritet dokato ima takiva i posle drgite do size
-        //instructions.pop();
         resSize -= countSongs;
     }
     else if (count - 1 == 2)
@@ -505,12 +498,9 @@ void generate(const std::vector<Song> &songs, User &user)
         logicOp.pop();
         if (op == "&")
         {
-
-            // std::cout << "Size-> " << resSize << " , " << (resSize * 60) / 100 << " , " << res40 << "\n";
             countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
             countB = tokenizator(pr2, songs, (resSize * 40) / 100, sList, user);
             resSize -= (countA + countB);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << "\n";
         }
         else if (op == "|")
         {
@@ -543,7 +533,6 @@ void generate(const std::vector<Song> &songs, User &user)
             countB = tokenizator(pr2, songs, (resSize * 33) / 100, sList, user);
             countC = tokenizator(pr3, songs, (resSize * 32) / 100, sList, user);
             resSize -= (countA + countB + countC);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
         }
         else if (op == "&" && op2 == "|")
         {
@@ -555,8 +544,6 @@ void generate(const std::vector<Song> &songs, User &user)
                 countC = tokenizator(pr3, songs, (resSize * 40) / 100, sList, user);
             }
             resSize -= (countA + countB + countC);
-
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
         }
         else if (op == "|" && op2 == "&")
         {
@@ -569,7 +556,7 @@ void generate(const std::vector<Song> &songs, User &user)
             }
 
             resSize -= (countB + countC + countA);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
+        
         }
         else if (op == "|" && op2 == "|")
         {
@@ -585,7 +572,6 @@ void generate(const std::vector<Song> &songs, User &user)
                 }
             }
             resSize -= (countB + countC + countA);
-            std::cout << "Sizes: A-> " << countA << " B-> " << countB << " C-> " << countC << "\n";
         }
     }
     else if (count - 1 == 4)

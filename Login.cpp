@@ -16,12 +16,13 @@ bool Login::login(std::string username, std::string password)
 bool Login::userLogin()
 {
     std::cout << "WRITE YOUR USERNAME AND PASSWORD \n";
+    std::cin.ignore();
     std::string username;
     std::string password;
     std::cout << "username: ";
-    std::cin >> username;
+    std::getline(std::cin,username);
     std::cout << "\npassword: ";
-    std::cin >> password;
+    std::getline(std::cin,password);
     std::cout << std::endl;
 
     if (login(username, password))
