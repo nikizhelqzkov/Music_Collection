@@ -15,13 +15,13 @@
 
 int main()
 {
-    Date fDate(25, 6, 2000);
-    std::vector<std::string> v = {"chalga", "rap"};
-    Song s1("Kavala Kuchek", "Krisko", "Chalga", "Krisko", 2020, 9.5);
-    Song s2("Nartsis", "Tsvetina ft. Toni", "Chalga", "Tsvetina Collection", 2020, 9);
-    Playlist p1("mazno", {s1, s2});
-    Playlist p2("mazno2", {s1, s2});
-    User niki("nikizhelqzkov2", "nikiumnikazdr", "Nikolay Zhelyazkov", fDate, v, {p1, p2});
+    // Date fDate(25, 6, 2000);
+    // std::vector<std::string> v = {"chalga", "rap"};
+    // Song s1("Kavala Kuchek", "Krisko", "Chalga", "Krisko", 2020, 9.5);
+    // Song s2("Nartsis", "Tsvetina ft. Toni", "Chalga", "Tsvetina Collection", 2020, 9);
+    // Playlist p1("mazno", {s1, s2});
+    // Playlist p2("mazno2", {s1, s2});
+    // User niki("nikizhelqzkov2", "nikiumnikazdr", "Nikolay Zhelyazkov", fDate, v, {p1, p2});
     // // User niki("nikizhelqzkov", "nikiumnikazdr", "Nikolay Zhelyazkov", Date(25, 6, 2000), v, p1);
     // // niki.setBornDate(Date(25, 7, 2001));
     // // niki.addTypesOfMusic("Pop");
@@ -47,22 +47,22 @@ int main()
     // Playlist p3("", {});
     // std::cout << p3.read(in)<<std::endl;
     // std::cout << p3;
-    std::vector<Song> sv{
-        Song("Kavala Kuchek", "Krisko", "Chalga", "Krisko", 2020, 0),
-        Song("Nartsis", "Tsvetina ft. Toni", "Chalga", "Tsvetina Collection", 2020, 0),
-        Song("Mutsuna", "Djordan", "chalga", "payner hit", 2018, 0),
-        Song("S teb ili nikoi", "Fiki ft Preslava", "chalga", "IS THIS LOVE", 2015, 0),
-        Song("Dve, tri, chetiri", "Toni Storaro", "chalga", "Best vol.1", 2007, 0),
-        Song("Davai na Dj", "Tedi Aleksandrova ft Iliqn", "chalga", "payner hits", 2019, 0),
-        Song("Piyan", "Preslava", "chalga", "da govori v lubov", 2019, 0),
-        Song("boje moi", "Desite ft Lidya", "chalga", "payner hits", 2019, 0),
-        Song("Predatel", "Emanuela", "chalga", "notorialno zaveren", 2019, 0),
-        Song("Balkan Trap-Live", "Edvin Eddy ft Sali Okka", "chalga", "Top Hits 2018", 2019, 0),
-        Song("Za patrona", "Vanya ft Anelia", "chalga", "payner hits", 2017, 0),
-        Song("Blokiran", "Fiki ft Azis", "chalga", "is this love", 2015, 0),
-        Song("Nova magistrala", "Iliyan ft Tedi Aleksandrova ft Amet", "chalga", "Love me crazy", 2019, 0),
-        Song("Istreznqvash li", "Preslava", "chalga", "da gori v lubov", 2019, 0),
-        Song("Vzimai zadalzhitelno", "Yanitsa", "chalga", "iskushenie", 2018, 0)};
+    // std::vector<Song> sv{
+    //     Song("Kavala Kuchek", "Krisko", "Chalga", "Krisko", 2020, 0),
+    //     Song("Nartsis", "Tsvetina ft. Toni", "Chalga", "Tsvetina Collection", 2020, 0),
+    //     Song("Mutsuna", "Djordan", "chalga", "payner hit", 2018, 0),
+    //     Song("S teb ili nikoi", "Fiki ft Preslava", "chalga", "IS THIS LOVE", 2015, 0),
+    //     Song("Dve, tri, chetiri", "Toni Storaro", "chalga", "Best vol.1", 2007, 0),
+    //     Song("Davai na Dj", "Tedi Aleksandrova ft Iliqn", "chalga", "payner hits", 2019, 0),
+    //     Song("Piyan", "Preslava", "chalga", "da govori v lubov", 2019, 0),
+    //     Song("boje moi", "Desite ft Lidya", "chalga", "payner hits", 2019, 0),
+    //     Song("Predatel", "Emanuela", "chalga", "notorialno zaveren", 2019, 0),
+    //     Song("Balkan Trap-Live", "Edvin Eddy ft Sali Okka", "chalga", "Top Hits 2018", 2019, 0),
+    //     Song("Za patrona", "Vanya ft Anelia", "chalga", "payner hits", 2017, 0),
+    //     Song("Blokiran", "Fiki ft Azis", "chalga", "is this love", 2015, 0),
+    //     Song("Nova magistrala", "Iliyan ft Tedi Aleksandrova ft Amet", "chalga", "Love me crazy", 2019, 0),
+    //     Song("Istreznqvash li", "Preslava", "chalga", "da gori v lubov", 2019, 0),
+    //     Song("Vzimai zadalzhitelno", "Yanitsa", "chalga", "iskushenie", 2018, 0)};
     //std::sort(sv.begin(), sv.end());
     // printingSongs(sv);
     //std::ofstream out("Songs.txt");

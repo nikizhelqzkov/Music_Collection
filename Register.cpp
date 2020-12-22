@@ -29,11 +29,10 @@ bool Register::registrate()
     regDate.read();
     std::cout << "Enter your favourite genre:\n";
     std::vector<std::string> genres;
-    char c;
+    std::string c;
 
     do
     {
-        std::cin.ignore();
         std::string genre;
         std::cout << "Genre: ";
         std::getline(std::cin, genre, '\n');
@@ -42,22 +41,34 @@ bool Register::registrate()
 
         do
         {
-            std::cin >> c;
 
-            switch (c)
+            std::getline(std::cin, c);
+            if (c == "y")
             {
-            case 'y':
                 std::cout << "Ok :)\n";
-                break;
-            case 'n':
-                std::cout << "Ok :(\n";
-                break;
-            default:
-                std::cout << "Error symbol! Try again!!!\n";
-                break;
             }
-        } while (c != 'y' && c != 'n');
-    } while (c == 'y');
+            else if (c == "n")
+            {
+                std::cout << "Ok :(\n";
+            }
+            else
+            {
+                std::cout << "Error symbol! Try again!!!\n";
+            }
+            // switch (c)
+            // {
+            // case 'y':
+            //     std::cout << "Ok :)\n";
+            //     break;
+            // case 'n':
+            //     std::cout << "Ok :(\n";
+            //     break;
+            // default:
+            //     std::cout << "Error symbol! Try again!!!\n";
+            //     break;
+            // }
+        } while (c != "y" && c != "n");
+    } while (c == "y");
 
     User user;
     user.setUsername(username);
