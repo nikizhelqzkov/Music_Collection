@@ -44,37 +44,12 @@ bool Generator::isDoubleNumber(const std::string &s) const
     strtod(s.c_str(), &end); //funkciq koqto promenq end pointera s \0, ako e uzspeshen casta!!!
     return end != s.c_str() && *end == '\0';
 }
-void Generator::pushingToEnd(const std::vector<Song> &songs, std::vector<Song> &plList, const int &plRes)
-{
-    int count = 0;
-    std::vector<Song> temp;
-    for (auto &&s : songs)
-    {
-        if (count == plRes)
-        {
-            std::sort(temp.begin(), temp.end());
-            plList.insert(plList.end(), temp.begin(), temp.end());
-            return;
-        }
-        if (!isHasSong(plList, s.getTitle()))
-        {
-            temp.push_back(s);
-            ++count;
-        }
-    }
-    if (count < plRes)
-    {
-        std::sort(temp.begin(), temp.end());
-        plList.insert(plList.end(), temp.begin(), temp.end());
-        std::cout << "We don't have enough songs for your playlist!\n";
-        std::cout << "Your playlist will have " << plList.size() << " songs\n";
-    }
-}
 int Generator::firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
 
     std::cout << "You have chosen critetia for rating!";
     std::string r;
+    std::vector<Song> temp;
     double rating;
     int count = 0;
     bool ok = false;
@@ -100,55 +75,70 @@ int Generator::firstCriteria(const std::vector<Song> &songs, const int &plSize, 
     {
         if (count == plSize)
         {
+            std::sort(temp.begin(), temp.end());
+            plList.insert(plList.end(), temp.begin(), temp.end());
             return count;
         }
         if (s.getRating() >= rating && !isHasSong(plList, s.getTitle()))
         {
-            plList.push_back(s);
+
+            temp.push_back(s);
             ++count;
             --plRes;
         }
     }
+    std::sort(temp.begin(), temp.end());
+    plList.insert(plList.end(), temp.begin(), temp.end());
     return count;
 }
 int Generator::pushingViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
 {
     int plRes = plSize;
     int count = 0;
+    std::vector<Song> temp;
     for (auto &&s : songs)
     {
         if (count == plSize)
         {
+            std::sort(temp.begin(), temp.end());
+            plList.insert(plList.end(), temp.begin(), temp.end());
             return count;
         }
 
         if (isHasGenres(genres, s.getGenres()) && !isHasSong(plList, s.getTitle()))
         {
-            plList.push_back(s);
+            temp.push_back(s);
             --plRes;
             ++count;
         }
     }
+    std::sort(temp.begin(), temp.end());
+    plList.insert(plList.end(), temp.begin(), temp.end());
     return count;
 }
 int Generator::pushingNotViaGenres(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const std::vector<std::string> &genres)
 {
     int plRes = plSize;
     int count = 0;
+    std::vector<Song> temp;
     for (auto &&s : songs)
     {
         if (count == plSize)
         {
+            std::sort(temp.begin(), temp.end());
+            plList.insert(plList.end(), temp.begin(), temp.end());
             return count;
         }
 
         if (!isHasGenres(genres, s.getGenres()) && !isHasSong(plList, s.getTitle()))
         {
-            plList.push_back(s);
+            temp.push_back(s);
             --plRes;
             ++count;
         }
     }
+    std::sort(temp.begin(), temp.end());
+    plList.insert(plList.end(), temp.begin(), temp.end());
     return count;
 }
 int Generator::thirdCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
@@ -240,6 +230,7 @@ int Generator::fourthCriteria(const std::vector<Song> &songs, const int &plSize,
 {
     std::cout << "You have chosen critetia for year!";
     std::string y;
+    std::vector<Song> temp;
     int year;
 
     bool okYear = false;
@@ -282,13 +273,15 @@ int Generator::fourthCriteria(const std::vector<Song> &songs, const int &plSize,
     {
         if (count == plSize)
         {
+            std::sort(temp.begin(), temp.end());
+            plList.insert(plList.end(), temp.begin(), temp.end());
             return count;
         }
         if (bEA == "before")
         {
             if (s.getYear() < year && !isHasSong(plList, s.getTitle()))
             {
-                plList.push_back(s);
+                temp.push_back(s);
                 --plRes;
                 ++count;
             }
@@ -297,7 +290,7 @@ int Generator::fourthCriteria(const std::vector<Song> &songs, const int &plSize,
         {
             if (s.getYear() == year && !isHasSong(plList, s.getTitle()))
             {
-                plList.push_back(s);
+                temp.push_back(s);
                 --plRes;
                 ++count;
             }
@@ -306,18 +299,18 @@ int Generator::fourthCriteria(const std::vector<Song> &songs, const int &plSize,
         {
             if (s.getYear() > year && !isHasSong(plList, s.getTitle()))
             {
-                plList.push_back(s);
+                temp.push_back(s);
                 --plRes;
                 ++count;
             }
         }
     }
-
+    std::sort(temp.begin(), temp.end());
+    plList.insert(plList.end(), temp.begin(), temp.end());
     return count;
 }
 int Generator::tokenizator(const std::string &input, const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
 {
-
     if (input == "1")
     {
         return firstCriteria(songs, plSize, plList);
@@ -330,16 +323,11 @@ int Generator::tokenizator(const std::string &input, const std::vector<Song> &so
     {
         return thirdCriteria(songs, plSize, plList, u);
     }
-    else if (input == "4")
-    {
-        return fourthCriteria(songs, plSize, plList);
-    }
-    std::invalid_argument("Error input");
-    return -1;
+    return fourthCriteria(songs, plSize, plList);
 }
 void Generator::generate(const std::vector<Song> &songs, User &user)
 {
-   
+
     std::queue<std::string> instructions;
     std::map<std::string, int> instr;
     instr["1"] = 0;
@@ -469,6 +457,9 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
         if (size > songs.size())
         {
             sList = songs;
+            std::cout << "Your playlist size is bigger than our song collection\n";
+            std::cout << "Your playlist size is " << sList.size() << " songs!!!\n";
+            std::sort(sList.begin(), sList.end());
             pl.setList(sList);
         }
         else
@@ -477,6 +468,9 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
             {
                 sList.push_back(songs[i]);
             }
+            std::sort(sList.begin(), sList.end());
+            std::cout << "You do not have any criteria, so we added random songs for you!!!\n";
+            std::cout << "Your playlist size is " << sList.size() << " songs!!!\n";
             pl.setList(sList);
         }
     }
@@ -484,6 +478,13 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
     {
         std::string cr = instructions.front();
         int countSongs = tokenizator(cr, songs, resSize, sList, user);
+        std::cout << "You chose one criterion!\n";
+        if (countSongs == 0)
+        {
+            std::cout << "We do not have any good songs for you :(\n\n";
+            return;
+        }
+        std::cout << "We added " << countSongs << " songs for you\n";
         instructions.pop();
         resSize -= countSongs;
     }
@@ -500,7 +501,15 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
         {
             countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
             countB = tokenizator(pr2, songs, (resSize * 40) / 100, sList, user);
+            std::cout << "From the first criteria you have " << countA << " songs!\n";
+            std::cout << "From the second criteria you have " << countB << " songs!\n";
+            if ((countA + countB) == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
             resSize -= (countA + countB);
+            std::cout << "Your playlist will be with " << (countA + countB) << " songs\n";
         }
         else if (op == "|")
         {
@@ -509,6 +518,19 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
             {
                 std::cout << "\nFirst preority didn't find any songs for you!\n\n";
                 countB = tokenizator(pr2, songs, resSize, sList, user);
+            }
+            else
+            {
+                std::cout << "From the first criteria you have " << countA << " songs!\n";
+            }
+            if (countB + countA == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            else
+            {
+                std::cout << "Your playlist will be with " << (countA + countB) << " songs\n";
             }
             resSize -= (countB + countA);
         }
@@ -532,17 +554,38 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
             countA = tokenizator(pr, songs, (resSize * 35) / 100, sList, user);
             countB = tokenizator(pr2, songs, (resSize * 33) / 100, sList, user);
             countC = tokenizator(pr3, songs, (resSize * 32) / 100, sList, user);
+            if (countB + countA + countC == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "From the first criteria you have " << countA << " songs!\n";
+            std::cout << "From the second criteria you have " << countB << " songs!\n";
+            std::cout << "From the third criteria you have " << countC << " songs!\n";
+            std::cout << "Your playlist will be with " << (countA + countB + countC) << " songs\n";
             resSize -= (countA + countB + countC);
         }
         else if (op == "&" && op2 == "|")
         {
             countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
+            std::cout << "From the first criteria you have " << countA << " songs!\n";
             countB = tokenizator(pr2, songs, (resSize * 40) / 100, sList, user);
             if (countB == 0)
             {
                 std::cout << "\nSecond preority didn't find any songs for you!\n\n";
                 countC = tokenizator(pr3, songs, (resSize * 40) / 100, sList, user);
+                std::cout << "From the third criteria you have " << countC << " songs!\n";
             }
+            else
+            {
+                std::cout << "From the second criteria you have " << countB << " songs!\n";
+            }
+            if (countB + countA + countC == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC) << " songs\n";
             resSize -= (countA + countB + countC);
         }
         else if (op == "|" && op2 == "&")
@@ -554,9 +597,20 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
                 countB = tokenizator(pr2, songs, (resSize * 60) / 100, sList, user);
                 countC = tokenizator(pr3, songs, (resSize * 40) / 100, sList, user);
             }
+            else
+            {
+                std::cout << "From the first criteria you have " << countA << " songs!\n";
+            }
+            if (countA + countB + countC == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "From the second criteria you have " << countB << " songs!\n";
+            std::cout << "From the third criteria you have " << countC << " songs!\n";
+            std::cout << "Your playlist will be with " << (countA + countB + countC) << " songs\n";
 
             resSize -= (countB + countC + countA);
-        
         }
         else if (op == "|" && op2 == "|")
         {
@@ -569,8 +623,24 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
                 {
                     std::cout << "\nSecond preority didn't find any songs for you!\n\n";
                     countC = tokenizator(pr3, songs, resSize, sList, user);
+                    if (countC == 0)
+                    {
+                        std::cout << "We do not have any good songs for you :(\n\n";
+                        return;
+                    }
                 }
+                else
+                {
+                    std::cout << "From the second criteria you have " << countB << " songs!\n";
+                }
+
+                std::cout << "From the third criteria you have " << countC << " songs!\n";
             }
+            else
+            {
+                std::cout << "From the first criteria you have " << countA << " songs!\n";
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC) << " songs\n";
             resSize -= (countB + countC + countA);
         }
     }
@@ -598,35 +668,74 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
             countB = tokenizator(pr2, songs, (resSize * 26) / 100, sList, user);
             countC = tokenizator(pr3, songs, (resSize * 24) / 100, sList, user);
             countD = tokenizator(pr4, songs, (resSize * 20) / 100, sList, user);
+
+            if (countB + countA + countC + countD == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "From the first criteria you have " << countA << " songs!\n";
+            std::cout << "From the second criteria you have " << countB << " songs!\n";
+            std::cout << "From the third criteria you have " << countC << " songs!\n";
+            std::cout << "From the fourth criteria you have " << countD << " songs!\n";
+            std::cout << "Your playlist will be with " << (countA + countB + countC + countD) << " songs";
             resSize -= (countA + countB + countC + countD);
         }
         else if (op == "&" && op2 == "&" && op3 == "|")
         {
             countA = tokenizator(pr, songs, (resSize * 35) / 100, sList, user);
             countB = tokenizator(pr2, songs, (resSize * 33) / 100, sList, user);
+            std::cout << "From the first criteria you have " << countA << " songs!\n";
+            std::cout << "From the second criteria you have " << countB << " songs!\n";
             countC = tokenizator(pr3, songs, (resSize * 32) / 100, sList, user);
             if (countC == 0)
             {
                 std::cout << "\nThird preority didn't find any songs for you!\n\n";
                 countD = tokenizator(pr4, songs, (resSize * 32) / 100, sList, user);
+                std::cout << "From the fourth criteria you have " << countD << " songs!\n";
             }
+            else
+            {
+                std::cout << "From the third criteria you have " << countC << " songs!\n";
+            }
+            if (countB + countA + countC + countD == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC + countD) << " songs\n";
             resSize -= (countA + countB + countC + countD);
         }
         else if (op == "&" && op2 == "|" && op3 == "&")
         {
             countA = tokenizator(pr, songs, (resSize * 35) / 100, sList, user);
+            std::cout << "From the first criteria you have " << countA << " songs!\n";
             countB = tokenizator(pr2, songs, (resSize * 33) / 100, sList, user);
             if (countB == 0)
             {
                 std::cout << "\nSecond preority didn't find any songs for you!\n\n";
                 countC = tokenizator(pr3, songs, (resSize * 33) / 100, sList, user);
+                std::cout << "From the third criteria you have " << countC << " songs!\n";
             }
+            else
+            {
+                std::cout << "From the second criteria you have " << countB << " songs!\n";
+            }
+
             countD = tokenizator(pr4, songs, (resSize * 32) / 100, sList, user);
+            std::cout << "From the fourth criteria you have " << countD << " songs!\n";
+            if (countB + countA + countC + countD == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC + countD) << " songs\n";
             resSize -= (countA + countB + countC + countD);
         }
         else if (op == "&" && op2 == "|" && op3 == "|")
         {
             countA = tokenizator(pr, songs, (resSize * 60) / 100, sList, user);
+            std::cout << "From the first criteria you have " << countA << " songs!\n";
             countB = tokenizator(pr2, songs, (resSize * 40) / 100, sList, user);
             if (countB == 0)
             {
@@ -637,7 +746,21 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
                     std::cout << "\nThird preority didn't find any songs for you!\n\n";
                     countD = tokenizator(pr4, songs, (resSize * 40) / 100, sList, user);
                 }
+                else
+                {
+                    std::cout << "From the third criteria you have " << countC << " songs!\n";
+                }
             }
+            else
+            {
+                std::cout << "From the second criteria you have " << countB << " songs!\n";
+            }
+            if (countB + countA + countC + countD == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC + countD) << " songs\n";
             resSize -= (countA + countB + countC + countD);
         }
         else if (op == "|" && op2 == "&" && op3 == "&")
@@ -647,9 +770,23 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
             {
                 std::cout << "\nFirst preority didn't find any songs for you!\n\n";
                 countB = tokenizator(pr2, songs, (resSize * 35) / 100, sList, user);
+                std::cout << "From the second criteria you have " << countB << " songs!\n";
             }
+            else
+            {
+                std::cout << "From the first criteria you have " << countA << " songs!\n";
+            }
+
             countC = tokenizator(pr3, songs, (resSize * 33) / 100, sList, user);
+            std::cout << "From the third criteria you have " << countC << " songs!\n";
             countD = tokenizator(pr4, songs, (resSize * 32) / 100, sList, user);
+            std::cout << "From the fourth criteria you have " << countD << " songs!\n";
+            if (countB + countA + countC + countD == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC + countD) << " songs\n";
             resSize -= (countA + countB + countC + countD);
         }
         else if (op == "|" && op2 == "&" && op3 == "|")
@@ -659,13 +796,32 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
             {
                 std::cout << "\nFirst preority didn't find any songs for you!\n\n";
                 countB = tokenizator(pr2, songs, (resSize * 60) / 100, sList, user);
+                std::cout << "From the second criteria you have " << countB << " songs!\n";
             }
+            else
+            {
+                std::cout << "From the first criteria you have " << countA << " songs!\n";
+            }
+
             countC = tokenizator(pr3, songs, (resSize * 40) / 100, sList, user);
             if (countC == 0)
             {
                 std::cout << "\nThird preority didn't find any songs for you!\n\n";
                 countD = tokenizator(pr4, songs, (resSize * 40) / 100, sList, user);
+                std::cout << "From the fourth criteria you have " << countD << " songs!\n";
             }
+            else
+            {
+                std::cout << "From the third criteria you have " << countC << " songs!\n";
+            }
+
+            if (countB + countA + countC + countD == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC + countD) << " songs\n";
+
             resSize -= (countA + countB + countC + countD);
         }
         else if (op == "|" && op2 == "|" && op3 == "&")
@@ -679,9 +835,27 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
                 {
                     std::cout << "\nSecond preority didn't find any songs for you!\n\n";
                     countC = tokenizator(pr3, songs, (resSize * 60) / 100, sList, user);
+                    std::cout << "From the third criteria you have " << countC << " songs!\n";
+                }
+                else
+                {
+                    std::cout << "From the second criteria you have " << countB << " songs!\n";
                 }
             }
+            else
+            {
+                std::cout << "From the first criteria you have " << countA << " songs!\n";
+            }
+
             countD = tokenizator(pr4, songs, (resSize * 40) / 100, sList, user);
+            std::cout << "From the fourth criteria you have " << countD << " songs!\n";
+            if (countB + countA + countC + countD == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC + countD) << " songs\n";
+
             resSize -= (countA + countB + countC + countD);
         }
         else if (op == "|" && op2 == "|" && op3 == "|")
@@ -699,13 +873,31 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
                     {
                         std::cout << "\nThird preority didn't find any songs for you!\n\n";
                         countD = tokenizator(pr4, songs, resSize, sList, user);
+                        std::cout << "From the fourth criteria you have " << countD << " songs!\n";
+                    }
+                    else
+                    {
+                        std::cout << "From the third criteria you have " << countC << " songs!\n";
                     }
                 }
+                else
+                {
+                    std::cout << "From the second criteria you have " << countB << " songs!\n";
+                }
             }
+            else
+            {
+                std::cout << "From the first criteria you have " << countA << " songs!\n";
+            }
+            if (countB + countA + countC + countD == 0)
+            {
+                std::cout << "We do not have any good songs for you :(\n\n";
+                return;
+            }
+            std::cout << "Your playlist will be with " << (countA + countB + countC + countD) << " songs\n";
             resSize -= (countA + countB + countC + countD);
         }
     }
-    pushingToEnd(songs, sList, resSize);
     pl.setList(sList);
     bool nPl = false;
     std::string nameOfPlaylist;
