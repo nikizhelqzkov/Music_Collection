@@ -76,8 +76,8 @@ int main()
     // double sum = std::accumulate(sv.begin(), sv.end(), 0);
     // std::cout<<std::accumulate(sv.begin(), sv.end(), 0.0);
     //std::vector<std::string> str{"hello", "world", "nz", "1", "2", "845"};
-    UI ui;
-    ui.start();
+
+    UI::start();
     //generate(sv, niki);
     //std::cout<<isDoubleNumber("3.5");
     return 0;
