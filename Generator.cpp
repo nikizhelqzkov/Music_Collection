@@ -1,49 +1,4 @@
 #include "Generator.h"
-bool Generator::isHasSong(const std::vector<Song> &songs, const std::string &name) const
-{
-    for (auto &&s : songs)
-    {
-        if (s.getTitle() == name)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-bool Generator::isSameNamePl(User &user, std::string name) const
-{
-    for (auto &&element : user.getPlaylists())
-    {
-        if (element.getName() == name)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-bool Generator::isHasGenres(const std::vector<std::string> &list, const std::string &name) const
-{
-    for (auto &&s : list)
-    {
-        if (s == name)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-bool Generator::isNumber(const std::string &s) const
-{
-    return !s.empty() && std::find_if(s.begin(),
-                                      s.end(), [](unsigned char c) { return !std::isdigit(c); }) == s.end();
-}
-
-bool Generator::isDoubleNumber(const std::string &s) const
-{
-    char *end = nullptr;
-    strtod(s.c_str(), &end); //funkciq koqto promenq end pointera s \0, ako e uzspeshen casta!!!
-    return end != s.c_str() && *end == '\0';
-}
 int Generator::firstCriteria(const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList)
 {
 
