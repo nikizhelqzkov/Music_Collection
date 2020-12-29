@@ -1,0 +1,13 @@
+<map id="Playlist::readHelper" name="Playlist::readHelper">
+<area shape="rect" id="node1" title="функция за четене на данни за плейлиста от поток" alt="" coords="5,208,140,235"/>
+<area shape="rect" id="node2" href="$class_song.html#ab40e1eb93bd2a6b8899ca5750ca03de7" title="Функция, която чете от поток данните за песента и ги добавя в класа" alt="" coords="189,157,312,184"/>
+<area shape="rect" id="node10" href="$class_playlist.html#a084c7e16d0d11abbc0f020475fde56d1" title="Мутатор с аргумент, който се вкарва в член&#45;данната list." alt="" coords="195,208,307,235"/>
+<area shape="rect" id="node11" href="$class_playlist.html#a40cbb4ad8d4d839e7e1e9b22159e103d" title="Мутатор с аргумент, който се вкарва в член&#45;данната name." alt="" coords="188,259,313,285"/>
+<area shape="rect" id="node3" href="$class_song.html#adc9d5aa0dabf0ab206d13d5cb7b7085b" title="Мутатор с аргумент, който се вкарва в член&#45;данната album." alt="" coords="385,5,499,32"/>
+<area shape="rect" id="node4" href="$class_song.html#a18d3322ded0471ae9b29207f9f8747ea" title="Мутатор с аргумент, който се вкарва в член&#45;данната author." alt="" coords="384,56,500,83"/>
+<area shape="rect" id="node5" href="$class_song.html#a33e441cc86ee6f09a0718537fb9b37bd" title="Функция, която добавя рейтинг от текущия потребител" alt="" coords="361,107,523,133"/>
+<area shape="rect" id="node6" href="$class_song.html#af005e3dd2957da73e964f53294b5eb03" title="Мутатор с аргумент, който се вкарва в член&#45;данната genres." alt="" coords="382,157,502,184"/>
+<area shape="rect" id="node7" href="$class_song.html#a4abac7c13f8b49ca3d6038018404282f" title="Функция, която изчислява средния рейтинг на гласувалите" alt="" coords="385,208,499,235"/>
+<area shape="rect" id="node8" href="$class_song.html#a85cb00358b139b444372078303eb8735" title="Мутатор с аргумент, който се вкарва в член&#45;данната title." alt="" coords="391,259,493,285"/>
+<area shape="rect" id="node9" href="$class_song.html#a3d15c400e3e25e438ca703c7235cbbc7" title="Мутатор с аргумент, който се вкарва в член&#45;данната year." alt="" coords="389,309,495,336"/>
+</map>

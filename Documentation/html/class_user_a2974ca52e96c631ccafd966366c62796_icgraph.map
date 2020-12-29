@@ -1,0 +1,8 @@
+<map id="User::getPlaylists" name="User::getPlaylists">
+<area shape="rect" id="node1" title="Мутатор извеждащ стойността на член&#45;данната playlists." alt="" coords="411,81,536,108"/>
+<area shape="rect" id="node2" href="$namespaceoutput.html#abde6735738eca9964ee6fdc2e3042c27" title="Мутатор, който намира дадената плейлиста" alt="" coords="228,5,355,32"/>
+<area shape="rect" id="node3" href="$namespace_u_i.html#a6dceb4c77315203f2cd106723d67e26d" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="104,56,172,83"/>
+<area shape="rect" id="node5" href="$namespacetext.html#a2e42f12b3e6e8e4e09fed6610bc6aeaa" title="Функция, която проверява дали името съвпада с плейлистата" alt="" coords="220,107,363,133"/>
+<area shape="rect" id="node6" href="$namespaceoutput.html#aceacede8fd665195746821cb1b2ee216" title="Функция, която печата на екрана информация за всичките песни, които има потребителя" alt="" coords="221,157,362,184"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Стартиращия файл на програмата" alt="" coords="5,56,56,83"/>
+</map>

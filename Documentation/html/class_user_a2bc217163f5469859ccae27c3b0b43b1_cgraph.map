@@ -1,0 +1,4 @@
+<map id="User::addGenre" name="User::addGenre">
+<area shape="rect" id="node1" title="Функция, която добавя жанр в класа" alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node2" href="$class_user.html#a80f33b52001de177f24b3e62ddc78b01" title="Мутатор с аргумент, който се вкарва в член&#45;данната genres." alt="" coords="167,5,328,32"/>
+</map>

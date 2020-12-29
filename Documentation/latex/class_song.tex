@@ -1,0 +1,792 @@
+\hypertarget{class_song}{}\doxysection{Song Class Reference}
+\label{class_song}\index{Song@{Song}}
+
+
+Клас съдържащ данните за Една песен  
+
+
+
+
+{\ttfamily \#include $<$Song.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_song_a3569836d097567384cab201b06dc2739}{Song}} ()=default
+\item 
+\mbox{\hyperlink{class_song_af3bb3cf53e7b6fccd8f497df34124593}{Song}} (const std\+::string \&title, const std\+::string \&author, const std\+::string \&genres, const std\+::string \&album, unsigned int year, double rating)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_song}{Song}}\+:\+: \mbox{\hyperlink{class_song}{Song}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_song_a120545fb4fc56f3cf615504f03cdb13b}{$\sim$\+Song}} ()=default
+\item 
+void \mbox{\hyperlink{class_song_a85cb00358b139b444372078303eb8735}{set\+Title}} (const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната title. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_a18d3322ded0471ae9b29207f9f8747ea}{set\+Author}} (const std\+::string \&author)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната author. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_af005e3dd2957da73e964f53294b5eb03}{set\+Genres}} (const std\+::string \&genres)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната genres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_adc9d5aa0dabf0ab206d13d5cb7b7085b}{set\+Album}} (const std\+::string \&album)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната album. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_a3d15c400e3e25e438ca703c7235cbbc7}{set\+Year}} (const unsigned int \&year)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната year. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_a4abac7c13f8b49ca3d6038018404282f}{set\+Rating}} (double rating)
+\begin{DoxyCompactList}\small\item\em Функция, която изчислява средния рейтинг на гласувалите \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_a33e441cc86ee6f09a0718537fb9b37bd}{set\+Average\+Rating}} (const double \&)
+\begin{DoxyCompactList}\small\item\em Функция, която добавя рейтинг от текущия потребител \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_song}{Song}} \& \mbox{\hyperlink{class_song_a467495f02416f9072ee5845086ed2bb8}{operator=}} (const \mbox{\hyperlink{class_song}{Song}} \&)
+\begin{DoxyCompactList}\small\item\em Оператор за присвояване от една песен на друга \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_song_a52ae823a9c21c319015681541b7833e6}{operator$<$}} (const \mbox{\hyperlink{class_song}{Song}} \&) const
+\begin{DoxyCompactList}\small\item\em Оператор за сравнение на 2 песни по заглавие \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_song_a91d8055d30d8c1ca608b136a374c5cab}{operator$>$}} (const \mbox{\hyperlink{class_song}{Song}} \&) const
+\begin{DoxyCompactList}\small\item\em Оператор за сравнение на 2 песни по заглавие \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_song_a8002fcd0273fe9c7dbfe9da88a3debab}{operator==}} (const \mbox{\hyperlink{class_song}{Song}} \&) const
+\begin{DoxyCompactList}\small\item\em Оператор за сравнение на 2 песни по заглавие \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_song_a64ffafed0f4c85b9284af0b73c13a758}{operator!=}} (const \mbox{\hyperlink{class_song}{Song}} \&) const
+\begin{DoxyCompactList}\small\item\em Оператор за сравнение на 2 песни по заглавие \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_song_a057e70dbe6d97862fac59db8cbc75e7e}{operator$>$=}} (const \mbox{\hyperlink{class_song}{Song}} \&) const
+\begin{DoxyCompactList}\small\item\em Оператор за сравнение на 2 песни по заглавие \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_song_ad13757bd00bad9efe8bc3844f50118b3}{operator$<$=}} (const \mbox{\hyperlink{class_song}{Song}} \&) const
+\begin{DoxyCompactList}\small\item\em Оператор за сравнение на 2 песни по заглавие \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_song_ab7d1e83dd86f4220183d92149b108c0a}{get\+Title}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната title;. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_song_a997b0806e30b743088afef6afdac9f77}{get\+Author}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната authors;. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_song_a7de7886b4650786937ed4afa1334aed8}{get\+Genres}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната genres;. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_song_ab79ee4719b4b0041d9b64823ede0f3c5}{get\+Album}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната album;. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_song_ae9acab19703d879315fbc9a14df0609e}{get\+Year}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната year;. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_song_a178e0c39fc2b1b77e9f308f464e80a23}{get\+Ratings}} ()
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната ratings;. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_song_aa8b1a6c9751b55a7bf02ed6a721992d8}{get\+Rating}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната rating;. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_song_aecbb9f7753eca2e71b186e32c94cb889}{read}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em функция четяща от поток \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_song_ab40e1eb93bd2a6b8899ca5750ca03de7}{read\+Helper}} (std\+::istream \&in, int count)
+\begin{DoxyCompactList}\small\item\em Функция, която чете от поток данните за песента и ги добавя в класа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_af0e69b0828a8fd4e2a6b18dfd8e098a8}{adding\+Song\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Добавяне на информация за песента от конзолата \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_aec9b87cc2d895bf855a070ad3605b4b6}{set\+User\+Rate\+Name}} (const std\+::string \&user)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната user\+Rate. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_song_af5d675104781572e097b5e5fc03f3a56}{get\+User\+Rate\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната user\+Rate;. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_song_a7df87ffeb7b3b642d4963bb18b077486}{print\+Song\+Info}} () const
+\begin{DoxyCompactList}\small\item\em Функция която принтира в конзолата информция за песента \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_song_a530bf141f119656828a9cbeb4edc7b17}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_song}{Song}} \&)
+\begin{DoxyCompactList}\small\item\em Оператор за печатане на Песен в поток \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Клас съдържащ данните за Една песен 
+
+
+
+Definition at line 12 of file Song.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_song_a3569836d097567384cab201b06dc2739}\label{class_song_a3569836d097567384cab201b06dc2739}} 
+\index{Song@{Song}!Song@{Song}}
+\index{Song@{Song}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{Song()}{Song()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Song\+::\+Song (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_song_af3bb3cf53e7b6fccd8f497df34124593}\label{class_song_af3bb3cf53e7b6fccd8f497df34124593}} 
+\index{Song@{Song}!Song@{Song}}
+\index{Song@{Song}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{Song()}{Song()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Song\+::\+Song (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+title,  }\item[{const std\+::string \&}]{\+\_\+author,  }\item[{const std\+::string \&}]{\+\_\+genres,  }\item[{const std\+::string \&}]{\+\_\+album,  }\item[{unsigned int}]{\+\_\+year,  }\item[{double}]{\+\_\+rating }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_song}{Song}}\+:\+: \mbox{\hyperlink{class_song}{Song}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+title} & \\
+\hline
+{\em \+\_\+author} & \\
+\hline
+{\em \+\_\+genres} & \\
+\hline
+{\em \+\_\+album} & \\
+\hline
+{\em \+\_\+year} & \\
+\hline
+{\em \+\_\+rating} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a120545fb4fc56f3cf615504f03cdb13b}\label{class_song_a120545fb4fc56f3cf615504f03cdb13b}} 
+\index{Song@{Song}!````~Song@{$\sim$Song}}
+\index{````~Song@{$\sim$Song}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{$\sim$Song()}{~Song()}}
+{\footnotesize\ttfamily Song\+::$\sim$\+Song (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_song_af0e69b0828a8fd4e2a6b18dfd8e098a8}\label{class_song_af0e69b0828a8fd4e2a6b18dfd8e098a8}} 
+\index{Song@{Song}!addingSongInfo@{addingSongInfo}}
+\index{addingSongInfo@{addingSongInfo}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{addingSongInfo()}{addingSongInfo()}}
+{\footnotesize\ttfamily void Song\+::adding\+Song\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Добавяне на информация за песента от конзолата 
+
+
+
+Definition at line 320 of file Song.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_song_af0e69b0828a8fd4e2a6b18dfd8e098a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_af0e69b0828a8fd4e2a6b18dfd8e098a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_ab79ee4719b4b0041d9b64823ede0f3c5}\label{class_song_ab79ee4719b4b0041d9b64823ede0f3c5}} 
+\index{Song@{Song}!getAlbum@{getAlbum}}
+\index{getAlbum@{getAlbum}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getAlbum()}{getAlbum()}}
+{\footnotesize\ttfamily std\+::string Song\+::get\+Album (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната album;. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 139 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a997b0806e30b743088afef6afdac9f77}\label{class_song_a997b0806e30b743088afef6afdac9f77}} 
+\index{Song@{Song}!getAuthor@{getAuthor}}
+\index{getAuthor@{getAuthor}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getAuthor()}{getAuthor()}}
+{\footnotesize\ttfamily std\+::string Song\+::get\+Author (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната authors;. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a7de7886b4650786937ed4afa1334aed8}\label{class_song_a7de7886b4650786937ed4afa1334aed8}} 
+\index{Song@{Song}!getGenres@{getGenres}}
+\index{getGenres@{getGenres}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getGenres()}{getGenres()}}
+{\footnotesize\ttfamily std\+::string Song\+::get\+Genres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната genres;. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 130 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_aa8b1a6c9751b55a7bf02ed6a721992d8}\label{class_song_aa8b1a6c9751b55a7bf02ed6a721992d8}} 
+\index{Song@{Song}!getRating@{getRating}}
+\index{getRating@{getRating}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getRating()}{getRating()}}
+{\footnotesize\ttfamily double Song\+::get\+Rating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната rating;. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Definition at line 157 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a178e0c39fc2b1b77e9f308f464e80a23}\label{class_song_a178e0c39fc2b1b77e9f308f464e80a23}} 
+\index{Song@{Song}!getRatings@{getRatings}}
+\index{getRatings@{getRatings}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getRatings()}{getRatings()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Song\+::get\+Ratings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Мутатор извеждащ стойността на член-\/данната ratings;. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$double$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_ab7d1e83dd86f4220183d92149b108c0a}\label{class_song_ab7d1e83dd86f4220183d92149b108c0a}} 
+\index{Song@{Song}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily std\+::string Song\+::get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната title;. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_af5d675104781572e097b5e5fc03f3a56}\label{class_song_af5d675104781572e097b5e5fc03f3a56}} 
+\index{Song@{Song}!getUserRateNames@{getUserRateNames}}
+\index{getUserRateNames@{getUserRateNames}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getUserRateNames()}{getUserRateNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Song\+::get\+User\+Rate\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната user\+Rate;. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 353 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_ae9acab19703d879315fbc9a14df0609e}\label{class_song_ae9acab19703d879315fbc9a14df0609e}} 
+\index{Song@{Song}!getYear@{getYear}}
+\index{getYear@{getYear}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily unsigned int Song\+::get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната year;. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int 
+\end{DoxyReturn}
+
+
+Definition at line 148 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a64ffafed0f4c85b9284af0b73c13a758}\label{class_song_a64ffafed0f4c85b9284af0b73c13a758}} 
+\index{Song@{Song}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Song\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_song}{Song}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Оператор за сравнение на 2 песни по заглавие 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 409 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a52ae823a9c21c319015681541b7833e6}\label{class_song_a52ae823a9c21c319015681541b7833e6}} 
+\index{Song@{Song}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Song\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_song}{Song}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Оператор за сравнение на 2 песни по заглавие 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 376 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_ad13757bd00bad9efe8bc3844f50118b3}\label{class_song_ad13757bd00bad9efe8bc3844f50118b3}} 
+\index{Song@{Song}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Song\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_song}{Song}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Оператор за сравнение на 2 песни по заглавие 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 420 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a467495f02416f9072ee5845086ed2bb8}\label{class_song_a467495f02416f9072ee5845086ed2bb8}} 
+\index{Song@{Song}!operator=@{operator=}}
+\index{operator=@{operator=}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_song}{Song}} \& Song\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_song}{Song}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Оператор за присвояване от една песен на друга 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_song}{Song}}\& 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a8002fcd0273fe9c7dbfe9da88a3debab}\label{class_song_a8002fcd0273fe9c7dbfe9da88a3debab}} 
+\index{Song@{Song}!operator==@{operator==}}
+\index{operator==@{operator==}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Song\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_song}{Song}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Оператор за сравнение на 2 песни по заглавие 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 398 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a91d8055d30d8c1ca608b136a374c5cab}\label{class_song_a91d8055d30d8c1ca608b136a374c5cab}} 
+\index{Song@{Song}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Song\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_song}{Song}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Оператор за сравнение на 2 песни по заглавие 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 387 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a057e70dbe6d97862fac59db8cbc75e7e}\label{class_song_a057e70dbe6d97862fac59db8cbc75e7e}} 
+\index{Song@{Song}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool Song\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_song}{Song}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Оператор за сравнение на 2 песни по заглавие 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 431 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a7df87ffeb7b3b642d4963bb18b077486}\label{class_song_a7df87ffeb7b3b642d4963bb18b077486}} 
+\index{Song@{Song}!printSongInfo@{printSongInfo}}
+\index{printSongInfo@{printSongInfo}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{printSongInfo()}{printSongInfo()}}
+{\footnotesize\ttfamily void Song\+::print\+Song\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Функция която принтира в конзолата информция за песента 
+
+
+
+Definition at line 361 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_aecbb9f7753eca2e71b186e32c94cb889}\label{class_song_aecbb9f7753eca2e71b186e32c94cb889}} 
+\index{Song@{Song}!read@{read}}
+\index{read@{read}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int Song\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
+
+
+
+функция четяща от поток 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file Song.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_aecbb9f7753eca2e71b186e32c94cb889_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_ab40e1eb93bd2a6b8899ca5750ca03de7}\label{class_song_ab40e1eb93bd2a6b8899ca5750ca03de7}} 
+\index{Song@{Song}!readHelper@{readHelper}}
+\index{readHelper@{readHelper}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{readHelper()}{readHelper()}}
+{\footnotesize\ttfamily int Song\+::read\+Helper (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Функция, която чете от поток данните за песента и ги добавя в класа 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 209 of file Song.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_song_ab40e1eb93bd2a6b8899ca5750ca03de7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_ab40e1eb93bd2a6b8899ca5750ca03de7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_adc9d5aa0dabf0ab206d13d5cb7b7085b}\label{class_song_adc9d5aa0dabf0ab206d13d5cb7b7085b}} 
+\index{Song@{Song}!setAlbum@{setAlbum}}
+\index{setAlbum@{setAlbum}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setAlbum()}{setAlbum()}}
+{\footnotesize\ttfamily void Song\+::set\+Album (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{album }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната album. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em album} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file Song.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_adc9d5aa0dabf0ab206d13d5cb7b7085b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_a18d3322ded0471ae9b29207f9f8747ea}\label{class_song_a18d3322ded0471ae9b29207f9f8747ea}} 
+\index{Song@{Song}!setAuthor@{setAuthor}}
+\index{setAuthor@{setAuthor}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setAuthor()}{setAuthor()}}
+{\footnotesize\ttfamily void Song\+::set\+Author (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{author }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната author. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em author} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Song.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_a18d3322ded0471ae9b29207f9f8747ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_a33e441cc86ee6f09a0718537fb9b37bd}\label{class_song_a33e441cc86ee6f09a0718537fb9b37bd}} 
+\index{Song@{Song}!setAverageRating@{setAverageRating}}
+\index{setAverageRating@{setAverageRating}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setAverageRating()}{setAverageRating()}}
+{\footnotesize\ttfamily void Song\+::set\+Average\+Rating (\begin{DoxyParamCaption}\item[{const double \&}]{rate }\end{DoxyParamCaption})}
+
+
+
+Функция, която добавя рейтинг от текущия потребител 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 312 of file Song.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_a33e441cc86ee6f09a0718537fb9b37bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_af005e3dd2957da73e964f53294b5eb03}\label{class_song_af005e3dd2957da73e964f53294b5eb03}} 
+\index{Song@{Song}!setGenres@{setGenres}}
+\index{setGenres@{setGenres}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setGenres()}{setGenres()}}
+{\footnotesize\ttfamily void Song\+::set\+Genres (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{genres }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната genres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em genres} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Song.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_af005e3dd2957da73e964f53294b5eb03_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_a4abac7c13f8b49ca3d6038018404282f}\label{class_song_a4abac7c13f8b49ca3d6038018404282f}} 
+\index{Song@{Song}!setRating@{setRating}}
+\index{setRating@{setRating}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setRating()}{setRating()}}
+{\footnotesize\ttfamily void Song\+::set\+Rating (\begin{DoxyParamCaption}\item[{double}]{rating }\end{DoxyParamCaption})}
+
+
+
+Функция, която изчислява средния рейтинг на гласувалите 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rating} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file Song.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_a4abac7c13f8b49ca3d6038018404282f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_a85cb00358b139b444372078303eb8735}\label{class_song_a85cb00358b139b444372078303eb8735}} 
+\index{Song@{Song}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setTitle()}{setTitle()}}
+{\footnotesize\ttfamily void Song\+::set\+Title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната title. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file Song.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_a85cb00358b139b444372078303eb8735_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_song_aec9b87cc2d895bf855a070ad3605b4b6}\label{class_song_aec9b87cc2d895bf855a070ad3605b4b6}} 
+\index{Song@{Song}!setUserRateName@{setUserRateName}}
+\index{setUserRateName@{setUserRateName}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setUserRateName()}{setUserRateName()}}
+{\footnotesize\ttfamily void Song\+::set\+User\+Rate\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{user }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната user\+Rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 344 of file Song.\+cpp.
+
+\mbox{\Hypertarget{class_song_a3d15c400e3e25e438ca703c7235cbbc7}\label{class_song_a3d15c400e3e25e438ca703c7235cbbc7}} 
+\index{Song@{Song}!setYear@{setYear}}
+\index{setYear@{setYear}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{setYear()}{setYear()}}
+{\footnotesize\ttfamily void Song\+::set\+Year (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{year }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната year. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file Song.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_song_a3d15c400e3e25e438ca703c7235cbbc7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_song_a530bf141f119656828a9cbeb4edc7b17}\label{class_song_a530bf141f119656828a9cbeb4edc7b17}} 
+\index{Song@{Song}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Song@{Song}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_song}{Song}} \&}]{song }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Оператор за печатане на Песен в поток 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em song} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+Definition at line 177 of file Song.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/\mbox{\hyperlink{_song_8h}{Song.\+h}}\item 
+App/\mbox{\hyperlink{_song_8cpp}{Song.\+cpp}}\end{DoxyCompactItemize}

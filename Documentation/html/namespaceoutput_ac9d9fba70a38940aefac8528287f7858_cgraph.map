@@ -1,0 +1,4 @@
+<map id="output::printingOneSong" name="output::printingOneSong">
+<area shape="rect" id="node1" title="Функция, която печата на екрана информация за една песен на дадена позиция от плейлистата" alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$class_playlist.html#aeaf9ef6c496d0fd3d1283e2e7062dd5c" title="Мутатор извеждащ стойността на член&#45;данната list." alt="" coords="216,5,328,32"/>
+</map>

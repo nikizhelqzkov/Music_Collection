@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['generate_266',['generate',['../class_generator.html#a4747e1d2848624319ca20e0b03fccc75',1,'Generator']]],
+  ['generator_267',['Generator',['../class_generator.html#aae25f1e872541b353e40fb0e4ee0dd45',1,'Generator']]],
+  ['getalbum_268',['getAlbum',['../class_song.html#ab79ee4719b4b0041d9b64823ede0f3c5',1,'Song']]],
+  ['getauthor_269',['getAuthor',['../class_song.html#a997b0806e30b743088afef6afdac9f77',1,'Song']]],
+  ['getborndate_270',['getBornDate',['../class_user.html#a7c37822ee1bf01ba510e80132cc34caa',1,'User']]],
+  ['getday_271',['getDay',['../class_date.html#a4dedf1cbd19ff221fc1f70895ba560e7',1,'Date']]],
+  ['getfullname_272',['getFullName',['../class_user.html#a41aaa8d1f105ff225353dfe895306fde',1,'User']]],
+  ['getgenres_273',['getGenres',['../class_song.html#a7de7886b4650786937ed4afa1334aed8',1,'Song::getGenres()'],['../class_user.html#a3eb610704d117f2fbd6517be44997d6a',1,'User::getGenres()']]],
+  ['getlist_274',['getList',['../class_playlist.html#aeaf9ef6c496d0fd3d1283e2e7062dd5c',1,'Playlist']]],
+  ['getmonth_275',['getMonth',['../class_date.html#ab337ee138bda0f304b6646bd15fba90a',1,'Date']]],
+  ['getname_276',['getName',['../class_playlist.html#a4981487dfa6dc5a64c9bfc2075b735b3',1,'Playlist']]],
+  ['getpassword_277',['getPassword',['../class_user.html#a180e5acdc4b150463652d90d54caa8fc',1,'User']]],
+  ['getplaylist_278',['getPlaylist',['../namespaceoutput.html#abde6735738eca9964ee6fdc2e3042c27',1,'output']]],
+  ['getplaylists_279',['getPlaylists',['../class_user.html#a2974ca52e96c631ccafd966366c62796',1,'User']]],
+  ['getrating_280',['getRating',['../class_song.html#aa8b1a6c9751b55a7bf02ed6a721992d8',1,'Song']]],
+  ['getratings_281',['getRatings',['../class_song.html#a178e0c39fc2b1b77e9f308f464e80a23',1,'Song']]],
+  ['getrepvote_282',['getRepVote',['../class_user.html#a4b76284d9c968c04218d2d7d12eaef02',1,'User']]],
+  ['gettitle_283',['getTitle',['../class_song.html#ab7d1e83dd86f4220183d92149b108c0a',1,'Song']]],
+  ['getusername_284',['getUsername',['../class_login.html#aa8edf199b624e24f9d39346ed274839e',1,'Login::getUsername()'],['../class_register.html#a7a25d9b4c0522856eac31a5e9e0981fe',1,'Register::getUsername()'],['../class_user.html#a7079d6aefd9d1b930d837039c1b3e7df',1,'User::getUsername()']]],
+  ['getuserratenames_285',['getUserRateNames',['../class_song.html#af5d675104781572e097b5e5fc03f3a56',1,'Song']]],
+  ['getyear_286',['getYear',['../class_date.html#aa1e4066bffc24af79f604dabce27e3cc',1,'Date::getYear()'],['../class_song.html#ae9acab19703d879315fbc9a14df0609e',1,'Song::getYear()']]]
+];

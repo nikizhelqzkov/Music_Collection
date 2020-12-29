@@ -1,0 +1,49 @@
+<map id="UI::start" name="UI::start">
+<area shape="rect" id="node1" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="5,613,73,640"/>
+<area shape="rect" id="node2" href="$class_user.html#a2bc217163f5469859ccae27c3b0b43b1" title="Функция, която добавя жанр в класа" alt="" coords="146,5,259,32"/>
+<area shape="rect" id="node4" href="$class_song.html#af0e69b0828a8fd4e2a6b18dfd8e098a8" title="Добавяне на информация за песента от конзолата" alt="" coords="541,765,689,792"/>
+<area shape="rect" id="node10" href="$class_user.html#ac369c46c3dd29f2412ff0f45d49b54b5" title="Функция, която извежда на екрана всички имена на плейлисти от класа" alt="" coords="122,107,283,133"/>
+<area shape="rect" id="node11" href="$class_user.html#ac4f64881802146c3286abc0c7b0075e1" title="Функция, която сменя Рождената дата" alt="" coords="126,512,279,539"/>
+<area shape="rect" id="node13" href="$class_user.html#a677ab150551a2cc92f4bb833c1ff9e17" title="Функция, която сменя Пълното име" alt="" coords="125,1019,280,1045"/>
+<area shape="rect" id="node15" href="$class_user.html#a51a98d3fdfb03383f6d91ed2fc683a68" title="Функция, която сменя паролата" alt="" coords="125,563,281,589"/>
+<area shape="rect" id="node17" href="$class_user.html#a048a1b5d18948a6058beea9dc586209f" title="Функция, която сменя потребителското име" alt="" coords="123,765,283,792"/>
+<area shape="rect" id="node19" href="$class_generator.html#a4747e1d2848624319ca20e0b03fccc75" title="Функция която върши основната работа по генериране на плейлиста." alt="" coords="134,208,271,235"/>
+<area shape="rect" id="node21" href="$namespacenumber.html#a285c1d944a19a362d5e78d644a276dc1" title="Функция, която проверява дали дадения стринг е целочислено число" alt="" coords="349,157,477,184"/>
+<area shape="rect" id="node24" href="$class_playlist.html#aeaf9ef6c496d0fd3d1283e2e7062dd5c" title="Мутатор извеждащ стойността на член&#45;данната list." alt="" coords="357,436,469,463"/>
+<area shape="rect" id="node25" href="$namespaceoutput.html#abde6735738eca9964ee6fdc2e3042c27" title="Мутатор, който намира дадената плейлиста" alt="" coords="139,259,266,285"/>
+<area shape="rect" id="node26" href="$class_user.html#a2974ca52e96c631ccafd966366c62796" title="Мутатор извеждащ стойността на член&#45;данната playlists." alt="" coords="350,360,475,387"/>
+<area shape="rect" id="node27" href="$class_register.html#a7a25d9b4c0522856eac31a5e9e0981fe" title="Мутатор извеждащ стойността на член&#45;данната userName;." alt="" coords="125,613,280,640"/>
+<area shape="rect" id="node28" href="$class_login.html#aa8edf199b624e24f9d39346ed274839e" title="Мутатор извеждащ стойността на член&#45;данната userName;." alt="" coords="133,664,272,691"/>
+<area shape="rect" id="node29" href="$class_user.html#a7079d6aefd9d1b930d837039c1b3e7df" title="Мутатор извеждащ стойността на член&#45;данната username." alt="" coords="135,715,270,741"/>
+<area shape="rect" id="node30" href="$namespaceoutput.html#ac9d9fba70a38940aefac8528287f7858" title="Функция, която печата на екрана информация за една песен на дадена позиция от плейлистата" alt="" coords="121,461,284,488"/>
+<area shape="rect" id="node31" href="$namespaceoutput.html#a8262d2e6cd21c138f1b7448828eb8803" title="Функция, която печата песни в файла с песните на системата" alt="" coords="130,816,275,843"/>
+<area shape="rect" id="node32" href="$namespaceoutput.html#aceacede8fd665195746821cb1b2ee216" title="Функция, която печата на екрана информация за всичките песни, които има потребителя" alt="" coords="132,360,273,387"/>
+<area shape="rect" id="node33" href="$class_playlist.html#aa504b0e9155937e1ac832be744dd44ac" title="Функция, която принтира информация за песните в плейлистата" alt="" coords="135,917,270,944"/>
+<area shape="rect" id="node34" href="$class_user.html#a1f263f6b8cf2f84c6f35d9872753710c" title="Функция, която чете от поток данните за Юзъра и ги добавя в класа" alt="" coords="161,968,244,995"/>
+<area shape="rect" id="node36" href="$class_song.html#ab40e1eb93bd2a6b8899ca5750ca03de7" title="Функция, която чете от поток данните за песента и ги добавя в класа" alt="" coords="554,917,677,944"/>
+<area shape="rect" id="node42" href="$class_register.html#a3d15ab707f3c4fb2a63445cf94d2f771" title="Функция, която създава нов профил на потребителя" alt="" coords="137,867,269,893"/>
+<area shape="rect" id="node44" href="$class_user.html#a883629c67df240aa50bfb7d4a6232468" title="Функция, която маха жанр от класа" alt="" coords="136,1120,269,1147"/>
+<area shape="rect" id="node45" href="$class_user.html#acabeec1cc2767b7c87590d4a075b7e6c" title="Функция, която маха плейлист от класа" alt="" coords="132,1171,273,1197"/>
+<area shape="rect" id="node46" href="$class_login.html#a0b294d9d1ddd309d3d22bdc328dc3cd2" title="UI за логин на потребител и връща отговор дали е логнат успешно или не" alt="" coords="144,1221,261,1248"/>
+<area shape="rect" id="node3" href="$class_user.html#a80f33b52001de177f24b3e62ddc78b01" title="Мутатор с аргумент, който се вкарва в член&#45;данната genres." alt="" coords="332,5,493,32"/>
+<area shape="rect" id="node5" href="$class_song.html#adc9d5aa0dabf0ab206d13d5cb7b7085b" title="Мутатор с аргумент, който се вкарва в член&#45;данната album." alt="" coords="761,867,875,893"/>
+<area shape="rect" id="node6" href="$class_song.html#a18d3322ded0471ae9b29207f9f8747ea" title="Мутатор с аргумент, който се вкарва в член&#45;данната author." alt="" coords="760,917,876,944"/>
+<area shape="rect" id="node7" href="$class_song.html#af005e3dd2957da73e964f53294b5eb03" title="Мутатор с аргумент, който се вкарва в член&#45;данната genres." alt="" coords="758,715,878,741"/>
+<area shape="rect" id="node8" href="$class_song.html#a85cb00358b139b444372078303eb8735" title="Мутатор с аргумент, който се вкарва в член&#45;данната title." alt="" coords="767,765,869,792"/>
+<area shape="rect" id="node9" href="$class_song.html#a3d15c400e3e25e438ca703c7235cbbc7" title="Мутатор с аргумент, който се вкарва в член&#45;данната year." alt="" coords="765,816,871,843"/>
+<area shape="rect" id="node12" href="$class_date.html#a8aab9042d942addfd16f3a7e40813fa8" title="Четене от конзола на дата докато тя не е валидна според условията за валидност" alt="" coords="371,563,454,589"/>
+<area shape="rect" id="node14" href="$class_user.html#ad51056e4d3d1913965466774d9a3dcab" title="Мутатор с аргумент, който се вкарва в член&#45;данната fullName." alt="" coords="347,968,478,995"/>
+<area shape="rect" id="node16" href="$class_user.html#adf01f1d4afe61625701b70f2ac7cfec7" title="Мутатор с аргумент, който се вкарва в член&#45;данната password." alt="" coords="347,715,479,741"/>
+<area shape="rect" id="node18" href="$class_user.html#a66e2d4e7b083d5833acbce6ccfee5923" title="Мутатор с аргумент, който се вкарва в член&#45;данната username." alt="" coords="345,765,480,792"/>
+<area shape="rect" id="node20" href="$class_user.html#a2fcf8858fe56db8f16addeb96e51a282" title="Функция, която добавя плейлиста към списъка от плейлисти на класа" alt="" coords="352,259,473,285"/>
+<area shape="rect" id="node22" href="$class_playlist.html#a084c7e16d0d11abbc0f020475fde56d1" title="Мутатор с аргумент, който се вкарва в член&#45;данната list." alt="" coords="559,867,671,893"/>
+<area shape="rect" id="node23" href="$class_playlist.html#a40cbb4ad8d4d839e7e1e9b22159e103d" title="Мутатор с аргумент, който се вкарва в член&#45;данната name." alt="" coords="553,816,678,843"/>
+<area shape="rect" id="node35" href="$class_playlist.html#a744c2fc9db4e04344ecaebc41544dcd1" title="функция за четене на данни за плейлиста от поток" alt="" coords="345,917,480,944"/>
+<area shape="rect" id="node39" href="$class_user.html#ae4f3480527679d5dea87bad2178559d6" title="Мутатор с аргумент, който се вкарва в член&#45;данната born." alt="" coords="348,867,477,893"/>
+<area shape="rect" id="node40" href="$class_user.html#a9c1dd78965d2c3ecafe73d12d14af0d2" title="Мутатор с аргумент, който се вкарва в член&#45;данната genres." alt="" coords="354,816,471,843"/>
+<area shape="rect" id="node41" href="$class_user.html#a68cb89e71ef98f3dbbb4c1dca52b7397" title="Мутатор с аргумент, който се вкарва в член&#45;данната playlists." alt="" coords="353,1019,472,1045"/>
+<area shape="rect" id="node37" href="$class_song.html#a33e441cc86ee6f09a0718537fb9b37bd" title="Функция, която добавя рейтинг от текущия потребител" alt="" coords="737,1019,899,1045"/>
+<area shape="rect" id="node38" href="$class_song.html#a4abac7c13f8b49ca3d6038018404282f" title="Функция, която изчислява средния рейтинг на гласувалите" alt="" coords="761,968,875,995"/>
+<area shape="rect" id="node43" href="$class_register.html#ab642b194e332bde9ca59b0434e2ee14a" title="Мутатор с аргумент, който се вкарва в член&#45;данната userName." alt="" coords="335,664,490,691"/>
+<area shape="rect" id="node47" href="$class_login.html#a9baef6430c6f3db83ede1ddb1379b422" title="Мутатор с аргумент, който се вкарва в член&#45;данната userName." alt="" coords="343,1221,482,1248"/>
+</map>

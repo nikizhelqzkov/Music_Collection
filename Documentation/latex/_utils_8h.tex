@@ -1,0 +1,79 @@
+\hypertarget{_utils_8h}{}\doxysection{App/\+Utils.h File Reference}
+\label{_utils_8h}\index{App/Utils.h@{App/Utils.h}}
+{\ttfamily \#include \char`\"{}boot.\+h\char`\"{}}\newline
+Include dependency graph for Utils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{_utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacenumber}{number}}
+\begin{DoxyCompactList}\small\item\em Namespace, който има функции за неща с числа \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespacetext}{text}}
+\begin{DoxyCompactList}\small\item\em Namespace, който има функции за работа с текст \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceoutput}{output}}
+\begin{DoxyCompactList}\small\item\em Namespace, който има функции за печатане на данни \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_utils_8h_a9609dab60740f203939379480bd8164b}{T\+E\+X\+T\+\_\+I}}
+\item 
+\#define \mbox{\hyperlink{_utils_8h_a7c66f83cae3b0c6c814058a1e9de70c7}{O\+U\+T\+P\+U\+T\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacenumber_a285c1d944a19a362d5e78d644a276dc1}{number\+::is\+Number}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Функция, която проверява дали дадения стринг е целочислено число \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacenumber_ab80612949738644e18572ca224de3ad2}{number\+::is\+Double\+Number}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Функция, която проверява дали дадения стринг е дробно число \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetext_a05cc6d0706940e37951db27cb6342731}{text\+::is\+Has\+Song}} (const std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \&songs, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Булева функция, която проверява дали има песен с даденото име \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetext_a2e42f12b3e6e8e4e09fed6610bc6aeaa}{text\+::is\+Same\+Name\+Pl}} (\mbox{\hyperlink{class_user}{User}} \&user, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Функция, която проверява дали името съвпада с плейлистата \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacetext_a5ce77362a85e39d929db83d8467e7ba5}{text\+::is\+Has\+Genres}} (const std\+::vector$<$ std\+::string $>$ \&list, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Функция, която проверява дали съществува дадения жанр \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceoutput_a8262d2e6cd21c138f1b7448828eb8803}{output\+::printing\+Songs}} (const std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \&sv)
+\begin{DoxyCompactList}\small\item\em Функция, която печата песни в файла с песните на системата \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceoutput_abde6735738eca9964ee6fdc2e3042c27}{output\+::get\+Playlist}} (const \mbox{\hyperlink{class_user}{User}} \&u, std\+::string name, \mbox{\hyperlink{class_playlist}{Playlist}} \&pl)
+\begin{DoxyCompactList}\small\item\em Мутатор, който намира дадената плейлиста \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceoutput_ac9d9fba70a38940aefac8528287f7858}{output\+::printing\+One\+Song}} (const \mbox{\hyperlink{class_playlist}{Playlist}} \&pl, int pos)
+\begin{DoxyCompactList}\small\item\em Функция, която печата на екрана информация за една песен на дадена позиция от плейлистата \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceoutput_aceacede8fd665195746821cb1b2ee216}{output\+::print\+Song\+Info}} (const \mbox{\hyperlink{class_user}{User}} \&u, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Функция, която печата на екрана информация за всичките песни, които има потребителя \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_utils_8h_a7c66f83cae3b0c6c814058a1e9de70c7}\label{_utils_8h_a7c66f83cae3b0c6c814058a1e9de70c7}} 
+\index{Utils.h@{Utils.h}!OUTPUT\_H@{OUTPUT\_H}}
+\index{OUTPUT\_H@{OUTPUT\_H}!Utils.h@{Utils.h}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_H}{OUTPUT\_H}}
+{\footnotesize\ttfamily \#define O\+U\+T\+P\+U\+T\+\_\+H}
+
+
+
+Definition at line 30 of file Utils.\+h.
+
+\mbox{\Hypertarget{_utils_8h_a9609dab60740f203939379480bd8164b}\label{_utils_8h_a9609dab60740f203939379480bd8164b}} 
+\index{Utils.h@{Utils.h}!TEXT\_I@{TEXT\_I}}
+\index{TEXT\_I@{TEXT\_I}!Utils.h@{Utils.h}}
+\doxysubsubsection{\texorpdfstring{TEXT\_I}{TEXT\_I}}
+{\footnotesize\ttfamily \#define T\+E\+X\+T\+\_\+I}
+
+
+
+Definition at line 17 of file Utils.\+h.
+

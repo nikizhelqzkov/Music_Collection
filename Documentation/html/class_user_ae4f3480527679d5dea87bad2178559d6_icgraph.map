@@ -1,0 +1,7 @@
+<map id="User::setBornDate" name="User::setBornDate">
+<area shape="rect" id="node1" title="Мутатор с аргумент, който се вкарва в член&#45;данната born." alt="" coords="400,31,529,57"/>
+<area shape="rect" id="node2" href="$class_user.html#a1f263f6b8cf2f84c6f35d9872753710c" title="Функция, която чете от поток данните за Юзъра и ги добавя в класа" alt="" coords="245,5,327,32"/>
+<area shape="rect" id="node5" href="$class_register.html#a3d15ab707f3c4fb2a63445cf94d2f771" title="Функция, която създава нов профил на потребителя" alt="" coords="220,56,352,83"/>
+<area shape="rect" id="node3" href="$namespace_u_i.html#a6dceb4c77315203f2cd106723d67e26d" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="104,31,172,57"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Стартиращия файл на програмата" alt="" coords="5,31,56,57"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Generator::generate" name="Generator::generate">
+<area shape="rect" id="node1" title="Функция която върши основната работа по генериране на плейлиста." alt="" coords="5,81,143,108"/>
+<area shape="rect" id="node2" href="$class_user.html#a2fcf8858fe56db8f16addeb96e51a282" title="Функция, която добавя плейлиста към списъка от плейлисти на класа" alt="" coords="194,5,315,32"/>
+<area shape="rect" id="node3" href="$namespacenumber.html#a285c1d944a19a362d5e78d644a276dc1" title="Функция, която проверява дали дадения стринг е целочислено число" alt="" coords="191,56,319,83"/>
+<area shape="rect" id="node4" href="$class_playlist.html#a084c7e16d0d11abbc0f020475fde56d1" title="Мутатор с аргумент, който се вкарва в член&#45;данната list." alt="" coords="199,107,311,133"/>
+<area shape="rect" id="node5" href="$class_playlist.html#a40cbb4ad8d4d839e7e1e9b22159e103d" title="Мутатор с аргумент, който се вкарва в член&#45;данната name." alt="" coords="192,157,317,184"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="User::setUsername" name="User::setUsername">
+<area shape="rect" id="node1" title="Мутатор с аргумент, който се вкарва в член&#45;данната username." alt="" coords="428,56,563,83"/>
+<area shape="rect" id="node2" href="$class_user.html#a048a1b5d18948a6058beea9dc586209f" title="Функция, която сменя потребителското име" alt="" coords="220,5,380,32"/>
+<area shape="rect" id="node5" href="$class_user.html#a1f263f6b8cf2f84c6f35d9872753710c" title="Функция, която чете от поток данните за Юзъра и ги добавя в класа" alt="" coords="259,56,341,83"/>
+<area shape="rect" id="node6" href="$class_register.html#a3d15ab707f3c4fb2a63445cf94d2f771" title="Функция, която създава нов профил на потребителя" alt="" coords="234,107,366,133"/>
+<area shape="rect" id="node3" href="$namespace_u_i.html#a6dceb4c77315203f2cd106723d67e26d" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="104,56,172,83"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Стартиращия файл на програмата" alt="" coords="5,56,56,83"/>
+</map>

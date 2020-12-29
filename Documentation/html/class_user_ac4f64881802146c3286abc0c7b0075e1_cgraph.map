@@ -1,0 +1,4 @@
+<map id="User::changeBornDate" name="User::changeBornDate">
+<area shape="rect" id="node1" title="Функция, която сменя Рождената дата" alt="" coords="5,5,159,32"/>
+<area shape="rect" id="node2" href="$class_date.html#a8aab9042d942addfd16f3a7e40813fa8" title="Четене от конзола на дата докато тя не е валидна според условията за валидност" alt="" coords="207,5,289,32"/>
+</map>

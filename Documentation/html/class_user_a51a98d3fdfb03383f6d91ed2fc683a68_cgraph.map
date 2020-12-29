@@ -1,0 +1,4 @@
+<map id="User::changePassword" name="User::changePassword">
+<area shape="rect" id="node1" title="Функция, която сменя паролата" alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$class_user.html#adf01f1d4afe61625701b70f2ac7cfec7" title="Мутатор с аргумент, който се вкарва в член&#45;данната password." alt="" coords="209,5,341,32"/>
+</map>

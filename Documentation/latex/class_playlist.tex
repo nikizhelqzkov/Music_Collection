@@ -1,0 +1,332 @@
+\hypertarget{class_playlist}{}\doxysection{Playlist Class Reference}
+\label{class_playlist}\index{Playlist@{Playlist}}
+
+
+Клас пазещ данните за една плейлиста  
+
+
+
+
+{\ttfamily \#include $<$Playlist.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_playlist_a64d09aff3b8b802d1af9a709ec363c28}{Playlist}} ()=default
+\item 
+\mbox{\hyperlink{class_playlist_ae06845df7dd8444fe7809c7fb8593a30}{Playlist}} (const std\+::string \&name, const std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \&list)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_playlist}{Playlist}}\+:\+: \mbox{\hyperlink{class_playlist}{Playlist}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_playlist_a1af47d8e646267b138ea2a2c61a8bff9}{$\sim$\+Playlist}} ()=default
+\item 
+\mbox{\hyperlink{class_playlist}{Playlist}} \& \mbox{\hyperlink{class_playlist_a8b379fd05e068fc91346814edaa0d109}{operator=}} (const \mbox{\hyperlink{class_playlist}{Playlist}} \&other)
+\begin{DoxyCompactList}\small\item\em Оператор, който присвоява от една плейлиста към класа Плейлиста \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_playlist_a40cbb4ad8d4d839e7e1e9b22159e103d}{set\+Name}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_playlist_a084c7e16d0d11abbc0f020475fde56d1}{set\+List}} (const std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \&list)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната list. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_playlist_a4981487dfa6dc5a64c9bfc2075b735b3}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната name. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \mbox{\hyperlink{class_playlist_aeaf9ef6c496d0fd3d1283e2e7062dd5c}{get\+List}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_playlist_a744c2fc9db4e04344ecaebc41544dcd1}{read\+Helper}} (std\+::istream \&in, int count)
+\begin{DoxyCompactList}\small\item\em функция за четене на данни за плейлиста от поток \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_playlist_a40ed0cff3193e578a9519e3745dead8d}{read}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Функция която чете вика хелпъра \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_playlist_aa504b0e9155937e1ac832be744dd44ac}{print\+Songs}} () const
+\begin{DoxyCompactList}\small\item\em Функция, която принтира информация за песните в плейлистата \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_playlist_aaa69cdde80b5a3fa4f3f03fb272e037f}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_playlist}{Playlist}} \&)
+\begin{DoxyCompactList}\small\item\em Оператор за печатане на плейлиста в поток \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Клас пазещ данните за една плейлиста 
+
+
+
+Definition at line 9 of file Playlist.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_playlist_a64d09aff3b8b802d1af9a709ec363c28}\label{class_playlist_a64d09aff3b8b802d1af9a709ec363c28}} 
+\index{Playlist@{Playlist}!Playlist@{Playlist}}
+\index{Playlist@{Playlist}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{Playlist()}{Playlist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Playlist\+::\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_playlist_ae06845df7dd8444fe7809c7fb8593a30}\label{class_playlist_ae06845df7dd8444fe7809c7fb8593a30}} 
+\index{Playlist@{Playlist}!Playlist@{Playlist}}
+\index{Playlist@{Playlist}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{Playlist()}{Playlist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Playlist\+::\+Playlist (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+name,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \&}]{\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_playlist}{Playlist}}\+:\+: \mbox{\hyperlink{class_playlist}{Playlist}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+name} & \\
+\hline
+{\em \+\_\+list} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file Playlist.\+cpp.
+
+\mbox{\Hypertarget{class_playlist_a1af47d8e646267b138ea2a2c61a8bff9}\label{class_playlist_a1af47d8e646267b138ea2a2c61a8bff9}} 
+\index{Playlist@{Playlist}!````~Playlist@{$\sim$Playlist}}
+\index{````~Playlist@{$\sim$Playlist}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{$\sim$Playlist()}{~Playlist()}}
+{\footnotesize\ttfamily Playlist\+::$\sim$\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_playlist_aeaf9ef6c496d0fd3d1283e2e7062dd5c}\label{class_playlist_aeaf9ef6c496d0fd3d1283e2e7062dd5c}} 
+\index{Playlist@{Playlist}!getList@{getList}}
+\index{getList@{getList}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{getList()}{getList()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ Playlist\+::get\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната list. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Song$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file Playlist.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_playlist_aeaf9ef6c496d0fd3d1283e2e7062dd5c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_playlist_a4981487dfa6dc5a64c9bfc2075b735b3}\label{class_playlist_a4981487dfa6dc5a64c9bfc2075b735b3}} 
+\index{Playlist@{Playlist}!getName@{getName}}
+\index{getName@{getName}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Playlist\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната name. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file Playlist.\+cpp.
+
+\mbox{\Hypertarget{class_playlist_a8b379fd05e068fc91346814edaa0d109}\label{class_playlist_a8b379fd05e068fc91346814edaa0d109}} 
+\index{Playlist@{Playlist}!operator=@{operator=}}
+\index{operator=@{operator=}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_playlist}{Playlist}} \& Playlist\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_playlist}{Playlist}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Оператор, който присвоява от една плейлиста към класа Плейлиста 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_playlist}{Playlist}}\& 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file Playlist.\+cpp.
+
+\mbox{\Hypertarget{class_playlist_aa504b0e9155937e1ac832be744dd44ac}\label{class_playlist_aa504b0e9155937e1ac832be744dd44ac}} 
+\index{Playlist@{Playlist}!printSongs@{printSongs}}
+\index{printSongs@{printSongs}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{printSongs()}{printSongs()}}
+{\footnotesize\ttfamily void Playlist\+::print\+Songs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Функция, която принтира информация за песните в плейлистата 
+
+
+
+Definition at line 141 of file Playlist.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_playlist_aa504b0e9155937e1ac832be744dd44ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_playlist_a40ed0cff3193e578a9519e3745dead8d}\label{class_playlist_a40ed0cff3193e578a9519e3745dead8d}} 
+\index{Playlist@{Playlist}!read@{read}}
+\index{read@{read}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int Playlist\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Функция която чете вика хелпъра 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 133 of file Playlist.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_playlist_a40ed0cff3193e578a9519e3745dead8d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_playlist_a744c2fc9db4e04344ecaebc41544dcd1}\label{class_playlist_a744c2fc9db4e04344ecaebc41544dcd1}} 
+\index{Playlist@{Playlist}!readHelper@{readHelper}}
+\index{readHelper@{readHelper}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{readHelper()}{readHelper()}}
+{\footnotesize\ttfamily int Playlist\+::read\+Helper (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+функция за четене на данни за плейлиста от поток 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file Playlist.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_playlist_a744c2fc9db4e04344ecaebc41544dcd1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_playlist_a744c2fc9db4e04344ecaebc41544dcd1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_playlist_a084c7e16d0d11abbc0f020475fde56d1}\label{class_playlist_a084c7e16d0d11abbc0f020475fde56d1}} 
+\index{Playlist@{Playlist}!setList@{setList}}
+\index{setList@{setList}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{setList()}{setList()}}
+{\footnotesize\ttfamily void Playlist\+::set\+List (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \&}]{\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+list} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file Playlist.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_playlist_a084c7e16d0d11abbc0f020475fde56d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_playlist_a40cbb4ad8d4d839e7e1e9b22159e103d}\label{class_playlist_a40cbb4ad8d4d839e7e1e9b22159e103d}} 
+\index{Playlist@{Playlist}!setName@{setName}}
+\index{setName@{setName}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Playlist\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Playlist.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_playlist_a40cbb4ad8d4d839e7e1e9b22159e103d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_playlist_aaa69cdde80b5a3fa4f3f03fb272e037f}\label{class_playlist_aaa69cdde80b5a3fa4f3f03fb272e037f}} 
+\index{Playlist@{Playlist}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_playlist}{Playlist}} \&}]{playlist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Оператор за печатане на плейлиста в поток 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em playlist} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Playlist.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/\mbox{\hyperlink{_playlist_8h}{Playlist.\+h}}\item 
+App/\mbox{\hyperlink{_playlist_8cpp}{Playlist.\+cpp}}\end{DoxyCompactItemize}

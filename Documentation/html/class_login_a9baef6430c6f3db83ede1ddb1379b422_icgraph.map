@@ -1,0 +1,6 @@
+<map id="Login::setUsername" name="Login::setUsername">
+<area shape="rect" id="node1" title="Мутатор с аргумент, който се вкарва в член&#45;данната userName." alt="" coords="385,5,524,32"/>
+<area shape="rect" id="node2" href="$class_login.html#a0b294d9d1ddd309d3d22bdc328dc3cd2" title="UI за логин на потребител и връща отговор дали е логнат успешно или не" alt="" coords="220,5,337,32"/>
+<area shape="rect" id="node3" href="$namespace_u_i.html#a6dceb4c77315203f2cd106723d67e26d" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="104,5,172,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Стартиращия файл на програмата" alt="" coords="5,5,56,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Date::read" name="Date::read">
+<area shape="rect" id="node1" title="Четене от конзола на дата докато тя не е валидна според условията за валидност" alt="" coords="421,31,504,57"/>
+<area shape="rect" id="node2" href="$class_user.html#ac4f64881802146c3286abc0c7b0075e1" title="Функция, която сменя Рождената дата" alt="" coords="220,5,373,32"/>
+<area shape="rect" id="node5" href="$class_register.html#a3d15ab707f3c4fb2a63445cf94d2f771" title="Функция, която създава нов профил на потребителя" alt="" coords="231,56,363,83"/>
+<area shape="rect" id="node3" href="$namespace_u_i.html#a6dceb4c77315203f2cd106723d67e26d" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="104,31,172,57"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Стартиращия файл на програмата" alt="" coords="5,31,56,57"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Song::setAverageRating" name="Song::setAverageRating">
+<area shape="rect" id="node1" title="Функция, която добавя рейтинг от текущия потребител" alt="" coords="720,56,881,83"/>
+<area shape="rect" id="node2" href="$class_song.html#ab40e1eb93bd2a6b8899ca5750ca03de7" title="Функция, която чете от поток данните за песента и ги добавя в класа" alt="" coords="549,56,672,83"/>
+<area shape="rect" id="node3" href="$class_song.html#aecbb9f7753eca2e71b186e32c94cb889" title="функция четяща от поток" alt="" coords="391,5,477,32"/>
+<area shape="rect" id="node4" href="$class_playlist.html#a744c2fc9db4e04344ecaebc41544dcd1" title="функция за четене на данни за плейлиста от поток" alt="" coords="367,56,501,83"/>
+<area shape="rect" id="node7" href="$namespace_u_i.html#a6dceb4c77315203f2cd106723d67e26d" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="104,81,172,108"/>
+<area shape="rect" id="node5" href="$class_playlist.html#a40ed0cff3193e578a9519e3745dead8d" title="Функция която чете вика хелпъра" alt="" coords="220,5,319,32"/>
+<area shape="rect" id="node6" href="$class_user.html#a1f263f6b8cf2f84c6f35d9872753710c" title="Функция, която чете от поток данните за Юзъра и ги добавя в класа" alt="" coords="228,56,311,83"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Стартиращия файл на програмата" alt="" coords="5,81,56,108"/>
+</map>

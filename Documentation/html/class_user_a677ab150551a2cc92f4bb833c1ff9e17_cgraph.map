@@ -1,0 +1,4 @@
+<map id="User::changeFullName" name="User::changeFullName">
+<area shape="rect" id="node1" title="Функция, която сменя Пълното име" alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$class_user.html#ad51056e4d3d1913965466774d9a3dcab" title="Мутатор с аргумент, който се вкарва в член&#45;данната fullName." alt="" coords="208,5,339,32"/>
+</map>

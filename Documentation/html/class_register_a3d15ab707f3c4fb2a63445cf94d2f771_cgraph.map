@@ -1,0 +1,10 @@
+<map id="Register::registrate" name="Register::registrate">
+<area shape="rect" id="node1" title="Функция, която създава нов профил на потребителя" alt="" coords="5,157,137,184"/>
+<area shape="rect" id="node2" href="$class_date.html#a8aab9042d942addfd16f3a7e40813fa8" title="Четене от конзола на дата докато тя не е валидна според условията за валидност" alt="" coords="221,5,304,32"/>
+<area shape="rect" id="node3" href="$class_user.html#ae4f3480527679d5dea87bad2178559d6" title="Мутатор с аргумент, който се вкарва в член&#45;данната born." alt="" coords="198,56,327,83"/>
+<area shape="rect" id="node4" href="$class_user.html#ad51056e4d3d1913965466774d9a3dcab" title="Мутатор с аргумент, който се вкарва в член&#45;данната fullName." alt="" coords="197,107,328,133"/>
+<area shape="rect" id="node5" href="$class_user.html#a9c1dd78965d2c3ecafe73d12d14af0d2" title="Мутатор с аргумент, който се вкарва в член&#45;данната genres." alt="" coords="204,157,321,184"/>
+<area shape="rect" id="node6" href="$class_user.html#adf01f1d4afe61625701b70f2ac7cfec7" title="Мутатор с аргумент, който се вкарва в член&#45;данната password." alt="" coords="197,208,329,235"/>
+<area shape="rect" id="node7" href="$class_register.html#ab642b194e332bde9ca59b0434e2ee14a" title="Мутатор с аргумент, който се вкарва в член&#45;данната userName." alt="" coords="185,259,340,285"/>
+<area shape="rect" id="node8" href="$class_user.html#a66e2d4e7b083d5833acbce6ccfee5923" title="Мутатор с аргумент, който се вкарва в член&#45;данната username." alt="" coords="195,309,330,336"/>
+</map>

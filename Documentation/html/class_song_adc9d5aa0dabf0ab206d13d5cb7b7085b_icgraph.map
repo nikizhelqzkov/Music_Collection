@@ -1,0 +1,11 @@
+<map id="Song::setAlbum" name="Song::setAlbum">
+<area shape="rect" id="node1" title="Мутатор с аргумент, който се вкарва в член&#45;данната album." alt="" coords="745,44,860,71"/>
+<area shape="rect" id="node2" href="$class_song.html#af0e69b0828a8fd4e2a6b18dfd8e098a8" title="Добавяне на информация за песента от конзолата" alt="" coords="549,5,697,32"/>
+<area shape="rect" id="node5" href="$class_song.html#ab40e1eb93bd2a6b8899ca5750ca03de7" title="Функция, която чете от поток данните за песента и ги добавя в класа" alt="" coords="562,81,685,108"/>
+<area shape="rect" id="node3" href="$namespace_u_i.html#a6dceb4c77315203f2cd106723d67e26d" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="104,43,172,69"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Стартиращия файл на програмата" alt="" coords="5,43,56,69"/>
+<area shape="rect" id="node6" href="$class_song.html#aecbb9f7753eca2e71b186e32c94cb889" title="функция четяща от поток" alt="" coords="391,93,477,120"/>
+<area shape="rect" id="node7" href="$class_playlist.html#a744c2fc9db4e04344ecaebc41544dcd1" title="функция за четене на данни за плейлиста от поток" alt="" coords="367,144,501,171"/>
+<area shape="rect" id="node8" href="$class_playlist.html#a40ed0cff3193e578a9519e3745dead8d" title="Функция която чете вика хелпъра" alt="" coords="220,93,319,120"/>
+<area shape="rect" id="node9" href="$class_user.html#a1f263f6b8cf2f84c6f35d9872753710c" title="Функция, която чете от поток данните за Юзъра и ги добавя в класа" alt="" coords="228,144,311,171"/>
+</map>

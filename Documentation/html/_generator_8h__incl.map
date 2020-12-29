@@ -1,0 +1,19 @@
+<map id="App/Generator.h" name="App/Generator.h">
+<area shape="rect" id="node1" title=" " alt="" coords="325,5,443,32"/>
+<area shape="rect" id="node2" href="$_utils_8h.html" title=" " alt="" coords="355,80,413,107"/>
+<area shape="rect" id="node3" href="$boot_8h.html" title="Тук се пазят някои библиотеки, които се извикват в генератора и UI." alt="" coords="355,155,413,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="141,229,187,256"/>
+<area shape="rect" id="node5" href="$_login_8h.html" title=" " alt="" coords="317,229,381,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="275,528,330,555"/>
+<area shape="rect" id="node15" href="$_register_8h.html" title=" " alt="" coords="211,229,293,256"/>
+<area shape="rect" id="node16" title=" " alt="" coords="457,229,514,256"/>
+<area shape="rect" id="node17" title=" " alt="" coords="539,229,613,256"/>
+<area shape="rect" id="node6" href="$_user_8h.html" title=" " alt="" coords="201,304,261,331"/>
+<area shape="rect" id="node14" title=" " alt="" coords="315,379,381,405"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,528,61,555"/>
+<area shape="rect" id="node9" href="$_date_8h.html" title=" " alt="" coords="185,453,245,480"/>
+<area shape="rect" id="node11" href="$_playlist_8h.html" title=" " alt="" coords="91,379,167,405"/>
+<area shape="rect" id="node10" title=" " alt="" coords="179,528,251,555"/>
+<area shape="rect" id="node12" href="$_song_8h.html" title=" " alt="" coords="98,453,161,480"/>
+<area shape="rect" id="node13" title=" " alt="" coords="86,528,154,555"/>
+</map>

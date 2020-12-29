@@ -1,0 +1,809 @@
+\hypertarget{class_user}{}\doxysection{User Class Reference}
+\label{class_user}\index{User@{User}}
+
+
+Класа пазещ информацията за даден потребител  
+
+
+
+
+{\ttfamily \#include $<$User.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_a4dd5fde1b81bb132994a67f27bc203d1}{User}} ()=default
+\item 
+\mbox{\hyperlink{class_user_a84623043b31d23cbeee0d2598f5871d2}{User}} (const std\+::string \&username, const std\+::string \&password, const std\+::string \&full\+Name, const \mbox{\hyperlink{class_date}{Date}} \&born, const std\+::vector$<$ std\+::string $>$ \&genres, const std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $>$ \&playlists)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_user}{User}}\+:\+: \mbox{\hyperlink{class_user}{User}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_a78184063f5f8320a84dcbb18dcbeaceb}{User}} (const \mbox{\hyperlink{class_user}{User}} \&)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_user}{User}}\+:\+: \mbox{\hyperlink{class_user}{User}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user}{User}} \& \mbox{\hyperlink{class_user_a2b3a3b191b8f02c7bbb32f9bffca2436}{operator=}} (const \mbox{\hyperlink{class_user}{User}} \&)
+\begin{DoxyCompactList}\small\item\em Оператор за присвояване от една песен на друга \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_aaaa11924d837d07cbf5deb2cb71b83c1}{$\sim$\+User}} ()=default
+\item 
+std\+::string \mbox{\hyperlink{class_user_a7079d6aefd9d1b930d837039c1b3e7df}{get\+Username}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната username. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_user_a180e5acdc4b150463652d90d54caa8fc}{get\+Password}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната password. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_user_a41aaa8d1f105ff225353dfe895306fde}{get\+Full\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната full\+Name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_user_a7c37822ee1bf01ba510e80132cc34caa}{get\+Born\+Date}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната born. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_user_a3eb610704d117f2fbd6517be44997d6a}{get\+Genres}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната genres. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $>$ \mbox{\hyperlink{class_user_a2974ca52e96c631ccafd966366c62796}{get\+Playlists}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната playlists. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_a4b76284d9c968c04218d2d7d12eaef02}{get\+Rep\+Vote}} () const
+\item 
+void \mbox{\hyperlink{class_user_a66e2d4e7b083d5833acbce6ccfee5923}{set\+Username}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната username. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_adf01f1d4afe61625701b70f2ac7cfec7}{set\+Password}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната password. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_ad51056e4d3d1913965466774d9a3dcab}{set\+Full\+Name}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната full\+Name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_ae4f3480527679d5dea87bad2178559d6}{set\+Born\+Date}} (const \mbox{\hyperlink{class_date}{Date}} \&)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната born. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a9c1dd78965d2c3ecafe73d12d14af0d2}{set\+Genres}} (const std\+::vector$<$ std\+::string $>$ \&)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната genres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a68cb89e71ef98f3dbbb4c1dca52b7397}{set\+Playlist}} (const std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната playlists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_ad88faf39a8df02904b3686676fb34b70}{set\+Rep\+Vote}} (const bool \&)
+\item 
+void \mbox{\hyperlink{class_user_a80f33b52001de177f24b3e62ddc78b01}{add\+Types\+Of\+Music}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната genres. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_user_a1f263f6b8cf2f84c6f35d9872753710c}{read}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Функция, която чете от поток данните за Юзъра и ги добавя в класа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a048a1b5d18948a6058beea9dc586209f}{change\+User\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Функция, която сменя потребителското име \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a51a98d3fdfb03383f6d91ed2fc683a68}{change\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Функция, която сменя паролата \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a677ab150551a2cc92f4bb833c1ff9e17}{change\+Full\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Функция, която сменя Пълното име \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_ac4f64881802146c3286abc0c7b0075e1}{change\+Born\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Функция, която сменя Рождената дата \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a2bc217163f5469859ccae27c3b0b43b1}{add\+Genre}} ()
+\begin{DoxyCompactList}\small\item\em Функция, която добавя жанр в класа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a883629c67df240aa50bfb7d4a6232468}{remove\+Genre}} ()
+\begin{DoxyCompactList}\small\item\em Функция, която маха жанр от класа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_acabeec1cc2767b7c87590d4a075b7e6c}{remove\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em Функция, която маха плейлист от класа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a2fcf8858fe56db8f16addeb96e51a282}{add\+Playlist}} (const \mbox{\hyperlink{class_playlist}{Playlist}} \&)
+\begin{DoxyCompactList}\small\item\em Функция, която добавя плейлиста към списъка от плейлисти на класа \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_ac369c46c3dd29f2412ff0f45d49b54b5}{all\+Playlists\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Функция, която извежда на екрана всички имена на плейлисти от класа \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_user_abfe099b0ca9a4051e4cd9c15a31985ab}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_user}{User}} \&)
+\begin{DoxyCompactList}\small\item\em Оператор за печатане на Юзър в поток \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класа пазещ информацията за даден потребител 
+
+
+
+Definition at line 12 of file User.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_a4dd5fde1b81bb132994a67f27bc203d1}\label{class_user_a4dd5fde1b81bb132994a67f27bc203d1}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_user_a84623043b31d23cbeee0d2598f5871d2}\label{class_user_a84623043b31d23cbeee0d2598f5871d2}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+username,  }\item[{const std\+::string \&}]{\+\_\+password,  }\item[{const std\+::string \&}]{\+\_\+full\+Name,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{\+\_\+born,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{\+\_\+genres,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $>$ \&}]{\+\_\+playlists }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_user}{User}}\+:\+: \mbox{\hyperlink{class_user}{User}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+username} & \\
+\hline
+{\em \+\_\+password} & \\
+\hline
+{\em \+\_\+full\+Name} & \\
+\hline
+{\em \+\_\+born} & \\
+\hline
+{\em \+\_\+genres} & \\
+\hline
+{\em \+\_\+playlists} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file User.\+cpp.
+
+\mbox{\Hypertarget{class_user_a78184063f5f8320a84dcbb18dcbeaceb}\label{class_user_a78184063f5f8320a84dcbb18dcbeaceb}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user}{User}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_user}{User}}\+:\+: \mbox{\hyperlink{class_user}{User}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file User.\+cpp.
+
+\mbox{\Hypertarget{class_user_aaaa11924d837d07cbf5deb2cb71b83c1}\label{class_user_aaaa11924d837d07cbf5deb2cb71b83c1}} 
+\index{User@{User}!````~User@{$\sim$User}}
+\index{````~User@{$\sim$User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{$\sim$User()}{~User()}}
+{\footnotesize\ttfamily User\+::$\sim$\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_a2bc217163f5469859ccae27c3b0b43b1}\label{class_user_a2bc217163f5469859ccae27c3b0b43b1}} 
+\index{User@{User}!addGenre@{addGenre}}
+\index{addGenre@{addGenre}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addGenre()}{addGenre()}}
+{\footnotesize\ttfamily void User\+::add\+Genre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, която добавя жанр в класа 
+
+
+
+Definition at line 354 of file User.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_user_a2bc217163f5469859ccae27c3b0b43b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_user_a2bc217163f5469859ccae27c3b0b43b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a2fcf8858fe56db8f16addeb96e51a282}\label{class_user_a2fcf8858fe56db8f16addeb96e51a282}} 
+\index{User@{User}!addPlaylist@{addPlaylist}}
+\index{addPlaylist@{addPlaylist}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addPlaylist()}{addPlaylist()}}
+{\footnotesize\ttfamily void User\+::add\+Playlist (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_playlist}{Playlist}} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Функция, която добавя плейлиста към списъка от плейлисти на класа 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 496 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a2fcf8858fe56db8f16addeb96e51a282_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a80f33b52001de177f24b3e62ddc78b01}\label{class_user_a80f33b52001de177f24b3e62ddc78b01}} 
+\index{User@{User}!addTypesOfMusic@{addTypesOfMusic}}
+\index{addTypesOfMusic@{addTypesOfMusic}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addTypesOfMusic()}{addTypesOfMusic()}}
+{\footnotesize\ttfamily void User\+::add\+Types\+Of\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната genres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a80f33b52001de177f24b3e62ddc78b01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_ac369c46c3dd29f2412ff0f45d49b54b5}\label{class_user_ac369c46c3dd29f2412ff0f45d49b54b5}} 
+\index{User@{User}!allPlaylistsNames@{allPlaylistsNames}}
+\index{allPlaylistsNames@{allPlaylistsNames}!User@{User}}
+\doxysubsubsection{\texorpdfstring{allPlaylistsNames()}{allPlaylistsNames()}}
+{\footnotesize\ttfamily void User\+::all\+Playlists\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Функция, която извежда на екрана всички имена на плейлисти от класа 
+
+
+
+Definition at line 504 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_ac369c46c3dd29f2412ff0f45d49b54b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_ac4f64881802146c3286abc0c7b0075e1}\label{class_user_ac4f64881802146c3286abc0c7b0075e1}} 
+\index{User@{User}!changeBornDate@{changeBornDate}}
+\index{changeBornDate@{changeBornDate}!User@{User}}
+\doxysubsubsection{\texorpdfstring{changeBornDate()}{changeBornDate()}}
+{\footnotesize\ttfamily void User\+::change\+Born\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, която сменя Рождената дата 
+
+
+
+Definition at line 342 of file User.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{class_user_ac4f64881802146c3286abc0c7b0075e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_ac4f64881802146c3286abc0c7b0075e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a677ab150551a2cc92f4bb833c1ff9e17}\label{class_user_a677ab150551a2cc92f4bb833c1ff9e17}} 
+\index{User@{User}!changeFullName@{changeFullName}}
+\index{changeFullName@{changeFullName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{changeFullName()}{changeFullName()}}
+{\footnotesize\ttfamily void User\+::change\+Full\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, която сменя Пълното име 
+
+
+
+Definition at line 318 of file User.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_user_a677ab150551a2cc92f4bb833c1ff9e17_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a677ab150551a2cc92f4bb833c1ff9e17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a51a98d3fdfb03383f6d91ed2fc683a68}\label{class_user_a51a98d3fdfb03383f6d91ed2fc683a68}} 
+\index{User@{User}!changePassword@{changePassword}}
+\index{changePassword@{changePassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{changePassword()}{changePassword()}}
+{\footnotesize\ttfamily void User\+::change\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, която сменя паролата 
+
+
+
+Definition at line 294 of file User.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_user_a51a98d3fdfb03383f6d91ed2fc683a68_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a51a98d3fdfb03383f6d91ed2fc683a68_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a048a1b5d18948a6058beea9dc586209f}\label{class_user_a048a1b5d18948a6058beea9dc586209f}} 
+\index{User@{User}!changeUserName@{changeUserName}}
+\index{changeUserName@{changeUserName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{changeUserName()}{changeUserName()}}
+{\footnotesize\ttfamily void User\+::change\+User\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, която сменя потребителското име 
+
+
+
+Definition at line 255 of file User.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_user_a048a1b5d18948a6058beea9dc586209f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a048a1b5d18948a6058beea9dc586209f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a7c37822ee1bf01ba510e80132cc34caa}\label{class_user_a7c37822ee1bf01ba510e80132cc34caa}} 
+\index{User@{User}!getBornDate@{getBornDate}}
+\index{getBornDate@{getBornDate}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getBornDate()}{getBornDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} User\+::get\+Born\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната born. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_date}{Date}} 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file User.\+cpp.
+
+\mbox{\Hypertarget{class_user_a41aaa8d1f105ff225353dfe895306fde}\label{class_user_a41aaa8d1f105ff225353dfe895306fde}} 
+\index{User@{User}!getFullName@{getFullName}}
+\index{getFullName@{getFullName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getFullName()}{getFullName()}}
+{\footnotesize\ttfamily std\+::string User\+::get\+Full\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната full\+Name. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file User.\+cpp.
+
+\mbox{\Hypertarget{class_user_a3eb610704d117f2fbd6517be44997d6a}\label{class_user_a3eb610704d117f2fbd6517be44997d6a}} 
+\index{User@{User}!getGenres@{getGenres}}
+\index{getGenres@{getGenres}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getGenres()}{getGenres()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ User\+::get\+Genres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната genres. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file User.\+cpp.
+
+\mbox{\Hypertarget{class_user_a180e5acdc4b150463652d90d54caa8fc}\label{class_user_a180e5acdc4b150463652d90d54caa8fc}} 
+\index{User@{User}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily std\+::string User\+::get\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната password. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file User.\+cpp.
+
+\mbox{\Hypertarget{class_user_a2974ca52e96c631ccafd966366c62796}\label{class_user_a2974ca52e96c631ccafd966366c62796}} 
+\index{User@{User}!getPlaylists@{getPlaylists}}
+\index{getPlaylists@{getPlaylists}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPlaylists()}{getPlaylists()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $>$ User\+::get\+Playlists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната playlists. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Playlist$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a2974ca52e96c631ccafd966366c62796_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a4b76284d9c968c04218d2d7d12eaef02}\label{class_user_a4b76284d9c968c04218d2d7d12eaef02}} 
+\index{User@{User}!getRepVote@{getRepVote}}
+\index{getRepVote@{getRepVote}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getRepVote()}{getRepVote()}}
+{\footnotesize\ttfamily bool User\+::get\+Rep\+Vote (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_user_a7079d6aefd9d1b930d837039c1b3e7df}\label{class_user_a7079d6aefd9d1b930d837039c1b3e7df}} 
+\index{User@{User}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily std\+::string User\+::get\+Username (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната username. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_user_a7079d6aefd9d1b930d837039c1b3e7df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a2b3a3b191b8f02c7bbb32f9bffca2436}\label{class_user_a2b3a3b191b8f02c7bbb32f9bffca2436}} 
+\index{User@{User}!operator=@{operator=}}
+\index{operator=@{operator=}!User@{User}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_user}{User}} \& User\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user}{User}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Оператор за присвояване от една песен на друга 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_user}{User}}\& 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file User.\+cpp.
+
+\mbox{\Hypertarget{class_user_a1f263f6b8cf2f84c6f35d9872753710c}\label{class_user_a1f263f6b8cf2f84c6f35d9872753710c}} 
+\index{User@{User}!read@{read}}
+\index{read@{read}!User@{User}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int User\+::read (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Функция, която чете от поток данните за Юзъра и ги добавя в класа 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 191 of file User.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a1f263f6b8cf2f84c6f35d9872753710c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_user_a1f263f6b8cf2f84c6f35d9872753710c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a883629c67df240aa50bfb7d4a6232468}\label{class_user_a883629c67df240aa50bfb7d4a6232468}} 
+\index{User@{User}!removeGenre@{removeGenre}}
+\index{removeGenre@{removeGenre}!User@{User}}
+\doxysubsubsection{\texorpdfstring{removeGenre()}{removeGenre()}}
+{\footnotesize\ttfamily void User\+::remove\+Genre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, която маха жанр от класа 
+
+
+
+Definition at line 391 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_user_a883629c67df240aa50bfb7d4a6232468_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_acabeec1cc2767b7c87590d4a075b7e6c}\label{class_user_acabeec1cc2767b7c87590d4a075b7e6c}} 
+\index{User@{User}!removePlaylist@{removePlaylist}}
+\index{removePlaylist@{removePlaylist}!User@{User}}
+\doxysubsubsection{\texorpdfstring{removePlaylist()}{removePlaylist()}}
+{\footnotesize\ttfamily void User\+::remove\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, която маха плейлист от класа 
+
+
+
+Definition at line 443 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_user_acabeec1cc2767b7c87590d4a075b7e6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_ae4f3480527679d5dea87bad2178559d6}\label{class_user_ae4f3480527679d5dea87bad2178559d6}} 
+\index{User@{User}!setBornDate@{setBornDate}}
+\index{setBornDate@{setBornDate}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setBornDate()}{setBornDate()}}
+{\footnotesize\ttfamily void User\+::set\+Born\+Date (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната born. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+data} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 128 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_ae4f3480527679d5dea87bad2178559d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_ad51056e4d3d1913965466774d9a3dcab}\label{class_user_ad51056e4d3d1913965466774d9a3dcab}} 
+\index{User@{User}!setFullName@{setFullName}}
+\index{setFullName@{setFullName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setFullName()}{setFullName()}}
+{\footnotesize\ttfamily void User\+::set\+Full\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната full\+Name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+data} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_ad51056e4d3d1913965466774d9a3dcab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a9c1dd78965d2c3ecafe73d12d14af0d2}\label{class_user_a9c1dd78965d2c3ecafe73d12d14af0d2}} 
+\index{User@{User}!setGenres@{setGenres}}
+\index{setGenres@{setGenres}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setGenres()}{setGenres()}}
+{\footnotesize\ttfamily void User\+::set\+Genres (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната genres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+data} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a9c1dd78965d2c3ecafe73d12d14af0d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_adf01f1d4afe61625701b70f2ac7cfec7}\label{class_user_adf01f1d4afe61625701b70f2ac7cfec7}} 
+\index{User@{User}!setPassword@{setPassword}}
+\index{setPassword@{setPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setPassword()}{setPassword()}}
+{\footnotesize\ttfamily void User\+::set\+Password (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+data} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_adf01f1d4afe61625701b70f2ac7cfec7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_a68cb89e71ef98f3dbbb4c1dca52b7397}\label{class_user_a68cb89e71ef98f3dbbb4c1dca52b7397}} 
+\index{User@{User}!setPlaylist@{setPlaylist}}
+\index{setPlaylist@{setPlaylist}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setPlaylist()}{setPlaylist()}}
+{\footnotesize\ttfamily void User\+::set\+Playlist (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $>$ \&}]{\+\_\+playlists }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната playlists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+playlists} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 146 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a68cb89e71ef98f3dbbb4c1dca52b7397_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_user_ad88faf39a8df02904b3686676fb34b70}\label{class_user_ad88faf39a8df02904b3686676fb34b70}} 
+\index{User@{User}!setRepVote@{setRepVote}}
+\index{setRepVote@{setRepVote}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setRepVote()}{setRepVote()}}
+{\footnotesize\ttfamily void User\+::set\+Rep\+Vote (\begin{DoxyParamCaption}\item[{const bool \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_a66e2d4e7b083d5833acbce6ccfee5923}\label{class_user_a66e2d4e7b083d5833acbce6ccfee5923}} 
+\index{User@{User}!setUsername@{setUsername}}
+\index{setUsername@{setUsername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setUsername()}{setUsername()}}
+{\footnotesize\ttfamily void User\+::set\+Username (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната username. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+data} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file User.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a66e2d4e7b083d5833acbce6ccfee5923_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_user_abfe099b0ca9a4051e4cd9c15a31985ab}\label{class_user_abfe099b0ca9a4051e4cd9c15a31985ab}} 
+\index{User@{User}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!User@{User}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_user}{User}} \&}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Оператор за печатане на Юзър в поток 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em user} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file User.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/\mbox{\hyperlink{_user_8h}{User.\+h}}\item 
+App/\mbox{\hyperlink{_user_8cpp}{User.\+cpp}}\end{DoxyCompactItemize}

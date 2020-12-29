@@ -1,0 +1,144 @@
+\hypertarget{class_login}{}\doxysection{Login Class Reference}
+\label{class_login}\index{Login@{Login}}
+
+
+Класа логин е направен за проверка дали даден потребител има профил в ситемата или не  
+
+
+
+
+{\ttfamily \#include $<$Login.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_login_af18334f7ac84d8ccba22562ea44f325b}{Login}} ()=default
+\item 
+\mbox{\hyperlink{class_login_ac483a2042bd8c981551ff0037cb3beaa}{$\sim$\+Login}} ()=default
+\item 
+bool \mbox{\hyperlink{class_login_a0b294d9d1ddd309d3d22bdc328dc3cd2}{user\+Login}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_u_i}{UI}} за логин на потребител и връща отговор дали е логнат успешно или не \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_login_aa8edf199b624e24f9d39346ed274839e}{get\+Username}} () const
+\begin{DoxyCompactList}\small\item\em Мутатор извеждащ стойността на член-\/данната user\+Name;. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_login_a9baef6430c6f3db83ede1ddb1379b422}{set\+Username}} (std\+::string username)
+\begin{DoxyCompactList}\small\item\em Мутатор с аргумент, който се вкарва в член-\/данната user\+Name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класа логин е направен за проверка дали даден потребител има профил в ситемата или не 
+
+
+
+Definition at line 9 of file Login.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_login_af18334f7ac84d8ccba22562ea44f325b}\label{class_login_af18334f7ac84d8ccba22562ea44f325b}} 
+\index{Login@{Login}!Login@{Login}}
+\index{Login@{Login}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{Login()}{Login()}}
+{\footnotesize\ttfamily Login\+::\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_login_ac483a2042bd8c981551ff0037cb3beaa}\label{class_login_ac483a2042bd8c981551ff0037cb3beaa}} 
+\index{Login@{Login}!````~Login@{$\sim$Login}}
+\index{````~Login@{$\sim$Login}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{$\sim$Login()}{~Login()}}
+{\footnotesize\ttfamily Login\+::$\sim$\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_login_aa8edf199b624e24f9d39346ed274839e}\label{class_login_aa8edf199b624e24f9d39346ed274839e}} 
+\index{Login@{Login}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily std\+::string Login\+::get\+Username (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Мутатор извеждащ стойността на член-\/данната user\+Name;. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file Login.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_login_aa8edf199b624e24f9d39346ed274839e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_login_a9baef6430c6f3db83ede1ddb1379b422}\label{class_login_a9baef6430c6f3db83ede1ddb1379b422}} 
+\index{Login@{Login}!setUsername@{setUsername}}
+\index{setUsername@{setUsername}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{setUsername()}{setUsername()}}
+{\footnotesize\ttfamily void Login\+::set\+Username (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+username }\end{DoxyParamCaption})}
+
+
+
+Мутатор с аргумент, който се вкарва в член-\/данната user\+Name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+username} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Login.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_login_a9baef6430c6f3db83ede1ddb1379b422_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_login_a0b294d9d1ddd309d3d22bdc328dc3cd2}\label{class_login_a0b294d9d1ddd309d3d22bdc328dc3cd2}} 
+\index{Login@{Login}!userLogin@{userLogin}}
+\index{userLogin@{userLogin}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{userLogin()}{userLogin()}}
+{\footnotesize\ttfamily bool Login\+::user\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{namespace_u_i}{UI}} за логин на потребител и връща отговор дали е логнат успешно или не 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Login.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_login_a0b294d9d1ddd309d3d22bdc328dc3cd2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_login_a0b294d9d1ddd309d3d22bdc328dc3cd2_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/\mbox{\hyperlink{_login_8h}{Login.\+h}}\item 
+App/\mbox{\hyperlink{_login_8cpp}{Login.\+cpp}}\end{DoxyCompactItemize}

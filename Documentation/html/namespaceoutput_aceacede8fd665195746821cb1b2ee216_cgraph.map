@@ -1,0 +1,4 @@
+<map id="output::printSongInfo" name="output::printSongInfo">
+<area shape="rect" id="node1" title="Функция, която печата на екрана информация за всичките песни, които има потребителя" alt="" coords="5,5,147,32"/>
+<area shape="rect" id="node2" href="$class_user.html#a2974ca52e96c631ccafd966366c62796" title="Мутатор извеждащ стойността на член&#45;данната playlists." alt="" coords="195,5,320,32"/>
+</map>

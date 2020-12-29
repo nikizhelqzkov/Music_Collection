@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['patrona_402',['patrona',['../koko25_8txt.html#ae32c3e86fb0d170fed8885fb07d3b9ea',1,'patrona():&#160;koko25.txt'],['../nikizhelqzkov_8txt.html#ae32c3e86fb0d170fed8885fb07d3b9ea',1,'patrona():&#160;nikizhelqzkov.txt'],['../_songs_8txt.html#ae32c3e86fb0d170fed8885fb07d3b9ea',1,'patrona():&#160;Songs.txt']]],
+  ['piyan_403',['Piyan',['../koko25_8txt.html#ab3a5e31d01418ddaef393c514300695c',1,'Piyan():&#160;koko25.txt'],['../malkata18_8txt.html#ab3a5e31d01418ddaef393c514300695c',1,'Piyan():&#160;malkata18.txt'],['../nikizhelqzkov_8txt.html#ab3a5e31d01418ddaef393c514300695c',1,'Piyan():&#160;nikizhelqzkov.txt'],['../_songs_8txt.html#ab3a5e31d01418ddaef393c514300695c',1,'Piyan():&#160;Songs.txt']]],
+  ['plylist_404',['plylist',['../malkata18_8txt.html#a9a77711faaa51885d16b117bc575ec09',1,'malkata18.txt']]],
+  ['pop_405',['pop',['../niko000_8txt.html#a3d6967bba35bdc550931a6acacface60',1,'pop():&#160;niko000.txt'],['../sisi_8txt.html#a3d6967bba35bdc550931a6acacface60',1,'pop():&#160;sisi.txt']]],
+  ['predatel_406',['Predatel',['../koko25_8txt.html#afd800f47796efcb0bf79ec2e4e4dfc22',1,'Predatel():&#160;koko25.txt'],['../malkata18_8txt.html#afd800f47796efcb0bf79ec2e4e4dfc22',1,'Predatel():&#160;malkata18.txt'],['../nikizhelqzkov_8txt.html#afd800f47796efcb0bf79ec2e4e4dfc22',1,'Predatel():&#160;nikizhelqzkov.txt'],['../_songs_8txt.html#afd800f47796efcb0bf79ec2e4e4dfc22',1,'Predatel():&#160;Songs.txt']]],
+  ['preslava_407',['Preslava',['../koko25_8txt.html#aef2daca2ecb2c7553c44251169aca857',1,'Preslava():&#160;koko25.txt'],['../malkata18_8txt.html#aade90cff42fcabb7f383b59b11e8f377',1,'Preslava():&#160;malkata18.txt'],['../nikizhelqzkov_8txt.html#aef2daca2ecb2c7553c44251169aca857',1,'Preslava():&#160;nikizhelqzkov.txt'],['../_songs_8txt.html#aef2daca2ecb2c7553c44251169aca857',1,'Preslava():&#160;Songs.txt']]]
+];

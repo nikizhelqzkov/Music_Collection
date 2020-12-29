@@ -1,0 +1,171 @@
+\hypertarget{namespaceoutput}{}\doxysection{output Namespace Reference}
+\label{namespaceoutput}\index{output@{output}}
+
+
+Namespace, който има функции за печатане на данни  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceoutput_a8262d2e6cd21c138f1b7448828eb8803}{printing\+Songs}} (const std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \&sv)
+\begin{DoxyCompactList}\small\item\em Функция, която печата песни в файла с песните на системата \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceoutput_abde6735738eca9964ee6fdc2e3042c27}{get\+Playlist}} (const \mbox{\hyperlink{class_user}{User}} \&u, std\+::string name, \mbox{\hyperlink{class_playlist}{Playlist}} \&pl)
+\begin{DoxyCompactList}\small\item\em Мутатор, който намира дадената плейлиста \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceoutput_ac9d9fba70a38940aefac8528287f7858}{printing\+One\+Song}} (const \mbox{\hyperlink{class_playlist}{Playlist}} \&pl, int pos)
+\begin{DoxyCompactList}\small\item\em Функция, която печата на екрана информация за една песен на дадена позиция от плейлистата \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceoutput_aceacede8fd665195746821cb1b2ee216}{print\+Song\+Info}} (const \mbox{\hyperlink{class_user}{User}} \&u, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Функция, която печата на екрана информация за всичките песни, които има потребителя \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace, който има функции за печатане на данни 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceoutput_abde6735738eca9964ee6fdc2e3042c27}\label{namespaceoutput_abde6735738eca9964ee6fdc2e3042c27}} 
+\index{output@{output}!getPlaylist@{getPlaylist}}
+\index{getPlaylist@{getPlaylist}!output@{output}}
+\doxysubsubsection{\texorpdfstring{getPlaylist()}{getPlaylist()}}
+{\footnotesize\ttfamily bool output\+::get\+Playlist (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user}{User}} \&}]{u,  }\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{class_playlist}{Playlist}} \&}]{pl }\end{DoxyParamCaption})}
+
+
+
+Мутатор, който намира дадената плейлиста 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em name} & \\
+\hline
+{\em pl} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file Utils.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{namespaceoutput_abde6735738eca9964ee6fdc2e3042c27_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{namespaceoutput_abde6735738eca9964ee6fdc2e3042c27_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutput_ac9d9fba70a38940aefac8528287f7858}\label{namespaceoutput_ac9d9fba70a38940aefac8528287f7858}} 
+\index{output@{output}!printingOneSong@{printingOneSong}}
+\index{printingOneSong@{printingOneSong}!output@{output}}
+\doxysubsubsection{\texorpdfstring{printingOneSong()}{printingOneSong()}}
+{\footnotesize\ttfamily void output\+::printing\+One\+Song (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_playlist}{Playlist}} \&}]{pl,  }\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Функция, която печата на екрана информация за една песен на дадена позиция от плейлистата 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pl} & \\
+\hline
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file Utils.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{namespaceoutput_ac9d9fba70a38940aefac8528287f7858_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutput_ac9d9fba70a38940aefac8528287f7858_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutput_a8262d2e6cd21c138f1b7448828eb8803}\label{namespaceoutput_a8262d2e6cd21c138f1b7448828eb8803}} 
+\index{output@{output}!printingSongs@{printingSongs}}
+\index{printingSongs@{printingSongs}!output@{output}}
+\doxysubsubsection{\texorpdfstring{printingSongs()}{printingSongs()}}
+{\footnotesize\ttfamily void output\+::printing\+Songs (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \&}]{sv }\end{DoxyParamCaption})}
+
+
+
+Функция, която печата песни в файла с песните на системата 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sv} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 91 of file Utils.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutput_a8262d2e6cd21c138f1b7448828eb8803_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutput_aceacede8fd665195746821cb1b2ee216}\label{namespaceoutput_aceacede8fd665195746821cb1b2ee216}} 
+\index{output@{output}!printSongInfo@{printSongInfo}}
+\index{printSongInfo@{printSongInfo}!output@{output}}
+\doxysubsubsection{\texorpdfstring{printSongInfo()}{printSongInfo()}}
+{\footnotesize\ttfamily void output\+::print\+Song\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user}{User}} \&}]{u,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Функция, която печата на екрана информация за всичките песни, които има потребителя 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file Utils.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespaceoutput_aceacede8fd665195746821cb1b2ee216_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{namespaceoutput_aceacede8fd665195746821cb1b2ee216_icgraph}
+\end{center}
+\end{figure}

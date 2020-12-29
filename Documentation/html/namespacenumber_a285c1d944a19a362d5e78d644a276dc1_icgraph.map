@@ -1,0 +1,6 @@
+<map id="number::isNumber" name="number::isNumber">
+<area shape="rect" id="node1" title="Функция, която проверява дали дадения стринг е целочислено число" alt="" coords="405,31,533,57"/>
+<area shape="rect" id="node2" href="$class_generator.html#a4747e1d2848624319ca20e0b03fccc75" title="Функция която върши основната работа по генериране на плейлиста." alt="" coords="220,5,357,32"/>
+<area shape="rect" id="node3" href="$namespace_u_i.html#a6dceb4c77315203f2cd106723d67e26d" title="Функция, която извършва основата част от визуалния изглед на приложението" alt="" coords="104,31,172,57"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Стартиращия файл на програмата" alt="" coords="5,31,56,57"/>
+</map>
