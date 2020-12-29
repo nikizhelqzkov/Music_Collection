@@ -3,6 +3,7 @@
 #include "Utils.h"
 using namespace number;
 using namespace text;
+
 class Generator
 {
 private:

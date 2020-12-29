@@ -264,6 +264,16 @@ int Generator::fourthCriteria(const std::vector<Song> &songs, const int &plSize,
     plList.insert(plList.end(), temp.begin(), temp.end());
     return count;
 }
+/**
+ * @brief 
+ * 
+ * @param input 
+ * @param songs 
+ * @param plSize 
+ * @param plList 
+ * @param u 
+ * @return int 
+ */
 int Generator::tokenizator(const std::string &input, const std::vector<Song> &songs, const int &plSize, std::vector<Song> &plList, const User &u)
 {
     if (input == "1")
@@ -280,6 +290,12 @@ int Generator::tokenizator(const std::string &input, const std::vector<Song> &so
     }
     return fourthCriteria(songs, plSize, plList);
 }
+/**
+ * @brief 
+ * 
+ * @param songs 
+ * @param user 
+ */
 void Generator::generate(const std::vector<Song> &songs, User &user)
 {
 
@@ -408,7 +424,6 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
 
     if ((count - 1) == 0)
     {
-        //pushkane na size pesni v pleilistata
         if (size > songs.size())
         {
             sList = songs;

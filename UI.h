@@ -4,7 +4,6 @@
 using namespace output;
 namespace UI
 {
-
     void start();
 }
 

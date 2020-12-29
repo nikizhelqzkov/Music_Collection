@@ -117,8 +117,6 @@ void UI::start()
             {
                 c = -1;
             }
-
-            //std::cin >> c;
             if (c == 1)
             {
                 std::cout << "\n\nYou choose: Edit your profile!\nChoose one of the options:\n\n";
