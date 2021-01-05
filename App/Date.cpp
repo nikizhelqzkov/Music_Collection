@@ -249,7 +249,6 @@ bool Date::operator==(const Date &other) const
  */
 std::ostream &operator<<(std::ostream &out, const Date &date)
 {
-    // out << date.day << '-' << date.month << '-' << date.year<<" ";
     bool d = true;
     bool m = true;
     if (date.month < 10)

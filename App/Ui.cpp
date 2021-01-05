@@ -150,7 +150,6 @@ void UI::start()
                     {
                         cEditProfile = -1;
                     }
-                    //  std::cin >> cEditProfile;
                     if (cEditProfile == 1)
                     {
                         u.changeUserName();

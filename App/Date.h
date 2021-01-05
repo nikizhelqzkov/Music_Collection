@@ -32,7 +32,6 @@ public:
 	unsigned getYear() const;
 	void setYear(unsigned);
 
-	//Date &getLiveData();
 	bool operator==(const Date &) const;
 	bool isEqual(const Date &other) const;
 	bool isBefore(const Date &other) const;
