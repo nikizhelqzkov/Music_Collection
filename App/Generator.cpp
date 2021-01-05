@@ -925,7 +925,7 @@ void Generator::generate(const std::vector<Song> &songs, User &user)
     do
     {
         nPl = false;
-        std::cout << "Write name for the newest playlist: ";
+        std::cout << "\nWrite name for the newest playlist: ";
         std::getline(std::cin, nameOfPlaylist);
         if (nameOfPlaylist.empty())
         {
